@@ -18,7 +18,9 @@ class CreateGamesTable extends Migration
             $table->string('nombre_juego',140);
             $table->integer('edad_restricción');
             $table->integer('almacenamiento');
-            
+
+            $table->unsignedBigInteger('id_ranking')->nullable();
+            $table->foreign('id_ranking')->references('id')->on('rankings');
         });
     }
 
