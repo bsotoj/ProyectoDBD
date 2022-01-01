@@ -18,6 +18,12 @@ class CreateReactionsTable extends Migration
             $table->text('mensaje_reacción');
             $table->string('tipo_reacción',30);
             $table->timestamp(); 
+
+            $table->unsignedBigInteger('id_publicación')->nullable();
+            $table->foreign('id_publicación')->references('id')->on('posts');
+
+            $table->unsignedBigInteger('id_usuario')->nullable();
+            $table->foreign('id_usuario')->references('id')->on('users');
         });
     }
 
