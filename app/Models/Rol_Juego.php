@@ -8,11 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Rol_Juego extends Model
 {
     use HasFactory;
-}
 
-class Rol_Juego extends Model{
     public function game()
     {
     return $this->belongsTo('App\Models\Game');
+    }
+
+    public function rol()
+    {
+    return $this->belongsTo('App\Models\Rol');
     }
 }

@@ -8,5 +8,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Rol extends Model
 {
     use HasFactory;
-    use SoftDeletes; 
+    use SoftDeletes;
+
+    public function rol_usuario()
+    {
+    return $this->hasMany('App\Models\Rol_Usuario');
+    }
+
+    public function rol_juego()
+    {
+    return $this->hasMany('App\Models\Rol_Juego');
+    }
 }

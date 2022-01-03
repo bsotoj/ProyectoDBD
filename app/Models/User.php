@@ -51,4 +51,29 @@ class User extends Authenticatable
     {
     return $this->belongsTo('App\Models\Geozone');
     }
+
+    public function rol_usuario()
+    {
+    return $this->hasMany('App\Models\Rol_Usuario');
+    }
+
+    public function post()
+    {
+    return $this->hasMany('App\Models\Post');
+    }
+
+    public function usuario_comunidad()
+    {
+    return $this->hasMany('App\Models\Usuario_Comunidad');
+    }
+
+    public function reaction()
+    {
+    return $this->hasOne('App\Models\Reaction'); 
+    }
+
+    public function sale()
+    {
+    return $this->hasMany('App\Models\Sale');
+    }
 }
