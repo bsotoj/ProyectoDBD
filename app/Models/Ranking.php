@@ -9,3 +9,10 @@ class Ranking extends Model
 {
     use HasFactory;
 }
+
+class Ranking extends Model{
+    public function game()
+    {
+    return $this->hasMany(‘App\Models\Game’);
+    }
+}

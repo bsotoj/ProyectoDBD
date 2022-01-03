@@ -15,4 +15,4 @@ class Community extends Model{
     {
     return $this->belongsTo(Game::class);
     }
-    }
+}

@@ -29,4 +29,18 @@ class Game extends Model{
     {
     return $this->hasOne(Community::class);
     }
+}
+
+class Game extends Model{
+    public function achievement()
+    {
+    return $this->hasMany(‘App\Models\Achievement’);
     }
+}
+
+class Game extends Model{
+    public function ranking()
+    {
+    return $this->belongsTo('App\Models\Ranking');
+    }
+}
