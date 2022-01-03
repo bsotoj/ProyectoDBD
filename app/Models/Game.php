@@ -51,3 +51,10 @@ class Game extends Model{
     return $this->hasMany(‘App\Models\Juego_Geozone);
     }
 }
+
+class Game extends Model{
+    public function ventaJuego()
+    {
+    return $this->hasMany(‘App\Models\Venta_Juego’);
+    }
+}

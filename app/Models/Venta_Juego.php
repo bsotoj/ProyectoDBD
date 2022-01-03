@@ -9,3 +9,10 @@ class Venta_Juego extends Model
 {
     use HasFactory;
 }
+
+class Venta_Juego extends Model{
+    public function game()
+    {
+    return $this->belongsTo('App\Models\Game');
+    }
+}
