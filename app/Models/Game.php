@@ -9,3 +9,17 @@ class Game extends Model
 {
     use HasFactory;
 }
+
+class Subject extends Model{
+    public function course()
+    {
+    return $this->hasMany(‘App\Models\Rol_Juego’);
+    }
+}
+
+class Subject extends Model{
+    public function course()
+    {
+    return $this->hasMany(‘App\Models\Wishlist’);
+    }
+}
