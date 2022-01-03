@@ -44,3 +44,10 @@ class Game extends Model{
     return $this->belongsTo('App\Models\Ranking');
     }
 }
+
+class Game extends Model{
+    public function juegoGeozone()
+    {
+    return $this->hasMany(‘App\Models\Juego_Geozone);
+    }
+}
