@@ -9,3 +9,10 @@ class Community extends Model
 {
     use HasFactory;
 }
+
+class Community extends Model{
+    public function game()
+    {
+    return $this->belongsTo(Game::class);
+    }
+    }

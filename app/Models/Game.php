@@ -10,16 +10,23 @@ class Game extends Model
     use HasFactory;
 }
 
-class Subject extends Model{
-    public function course()
+class Game extends Model{
+    public function rolJuego()
     {
     return $this->hasMany(‘App\Models\Rol_Juego’);
     }
 }
 
-class Subject extends Model{
-    public function course()
+class Game extends Model{
+    public function wishList()
     {
     return $this->hasMany(‘App\Models\Wishlist’);
     }
 }
+
+class Game extends Model{
+    public function community()
+    {
+    return $this->hasOne(Community::class);
+    }
+    }

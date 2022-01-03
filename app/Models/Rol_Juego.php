@@ -10,8 +10,8 @@ class Rol_Juego extends Model
     use HasFactory;
 }
 
-class Course extends Model{
-    public function subject()
+class Rol_Juego extends Model{
+    public function game()
     {
     return $this->belongsTo('App\Models\Game');
     }
