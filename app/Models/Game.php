@@ -58,3 +58,10 @@ class Game extends Model{
     return $this->hasMany(‘App\Models\Venta_Juego’);
     }
 }
+
+class Game extends Model{
+    public function juegoReaccion()
+    {
+    return $this->hasMany(‘App\Models\Juego_Reaccion’);
+    }
+}
