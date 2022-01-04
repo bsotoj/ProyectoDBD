@@ -8,9 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Achievement extends Model
 {
     use HasFactory;
-}
 
-class Achievement extends Model{
     public function game()
     {
     return $this->belongsTo('App\Models\Game');

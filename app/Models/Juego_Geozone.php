@@ -8,9 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Juego_Geozone extends Model
 {
     use HasFactory;
-}
 
-class Course extends Model{
     public function game()
     {
     return $this->belongsTo('App\Models\Game');

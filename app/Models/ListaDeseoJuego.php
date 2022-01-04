@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class ListaDeseoJuego extends Model
 {
     use HasFactory;
+
+    public function game()
+    {
+    return $this->belongsTo('App\Models\Game');
+    }
 }
