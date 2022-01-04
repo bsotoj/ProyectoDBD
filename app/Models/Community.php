@@ -13,4 +13,14 @@ class Community extends Model
     {
     return $this->belongsTo(Game::class);
     }
+
+    public function post()
+    {
+    return $this->hasOne(Post::class);
+    }
+
+    public function usuario_comunidad()
+    {
+    return $this->hasMany('App\Models\Usuario_Comunidad');
+    }
 }

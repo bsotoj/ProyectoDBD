@@ -13,4 +13,9 @@ class Venta_Juego extends Model
     {
     return $this->belongsTo('App\Models\Game');
     }
+
+    public function sale()
+    {
+    return $this->belongsTo('App\Models\Sale');
+    }
 }

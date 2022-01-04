@@ -15,7 +15,7 @@ class CreateSalesTable extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
-            $table->timestamps('fecha_venta',$precision = 0);
+            $table->timestamps('fecha_venta');
             $table->integer('monto');
             $table->integer('descuento');
 

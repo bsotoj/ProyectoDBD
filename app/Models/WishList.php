@@ -8,5 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class WishList extends Model
 {
     use HasFactory;
+
+    public function user()
+    {
+    return $this->hasOne(User::class);
+    }
+
+    public function listaDeseoJuego()
+    {
+    return $this->hasMany('App\Models\ListaDeseoJueo');
+    }
 }
 

@@ -14,9 +14,9 @@ class Game extends Model
     return $this->hasMany('App\Models\Rol_Juego');
     }
 
-    public function wishList()
+    public function listaDeseoJuego()
     {
-    return $this->hasMany('App\Models\Wishlist');
+    return $this->hasMany('App\Models\ListaDeseoJuego');
     }
 
     public function community()
@@ -47,5 +47,10 @@ class Game extends Model
     public function juegoReaccion()
     {
     return $this->hasMany('App\Models\Juego_Reaccion');
+    }
+
+    public function usuario_juego()
+    {
+    return $this->hasMany('App\Models\Usuario_Juego');
     }
 }

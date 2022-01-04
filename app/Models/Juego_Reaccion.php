@@ -13,4 +13,9 @@ class Juego_Reaccion extends Model
     {
     return $this->belongsTo('App\Models\Game');
     }
+
+    public function reaction()
+    {
+    return $this->belongsTo('App\Models\Reaction');
+    }
 }

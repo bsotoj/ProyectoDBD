@@ -13,4 +13,14 @@ class Post extends Model
     {
     return $this->belongsTo('App\Models\User');
     }
+
+    public function community()
+    {
+    return $this->belongsTo(Community::class);
+    }
+
+    public function reaction()
+    {
+    return $this->hasMany('App\Models\Reaction');
+    }
 }

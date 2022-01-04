@@ -13,4 +13,9 @@ class Sale extends Model
     {
     return $this->belongsTo('App\Models\User');
     }
+
+    public function venta_juego()
+    {
+    return $this->hasMany('App\Models\Venta_Juego');
+    }
 }

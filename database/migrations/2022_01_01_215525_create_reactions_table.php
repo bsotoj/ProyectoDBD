@@ -17,7 +17,7 @@ class CreateReactionsTable extends Migration
             $table->id();
             $table->text('mensaje_reacción');
             $table->string('tipo_reacción',30);
-            $table->timestamp(); 
+            $table->timestamp('fecha_reacción'); 
 
             $table->unsignedBigInteger('id_publicación')->nullable();
             $table->foreign('id_publicación')->references('id')->on('posts');

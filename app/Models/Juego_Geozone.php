@@ -13,4 +13,9 @@ class Juego_Geozone extends Model
     {
     return $this->belongsTo('App\Models\Game');
     }
+
+    public function geozone()
+    {
+    return $this->belongsTo('App\Models\GeoZone');
+    }
 }

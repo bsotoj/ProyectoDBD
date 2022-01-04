@@ -76,4 +76,14 @@ class User extends Authenticatable
     {
     return $this->hasMany('App\Models\Sale');
     }
+
+    public function wishlist()
+    {
+    return $this->belongsTo(WishList::class);
+    }
+
+    public function usuario_juego()
+    {
+    return $this->hasMany('App\Models\Usuario_Juego');
+    }
 }

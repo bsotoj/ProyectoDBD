@@ -13,4 +13,14 @@ class Reaction extends Model
     {
     return $this->belongsTo('App\Models\User');
     }
+
+    public function juego_reaccion()
+    {
+    return $this->hasMany('App\Models\Juego-Reaccion');
+    }
+
+    public function post()
+    {
+    return $this->belongsTo('App\Models\Post');
+    }
 }
