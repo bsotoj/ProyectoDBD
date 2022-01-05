@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Eloquent\Model;
 
 class CreateSalesTable extends Migration
 {
@@ -15,7 +16,7 @@ class CreateSalesTable extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
-            $table->timestamps('fecha_venta');
+            $table->timestamps();
             $table->integer('monto');
             $table->integer('descuento');
 
