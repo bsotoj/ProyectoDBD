@@ -11,7 +11,7 @@ class Geozone extends Model
 
     public function user()
     {
-    return $this->hasMany('App\Models\User');
+    return $this->hasMany('App\Models\Usuario');
     }
 
     public function juego_geozone()

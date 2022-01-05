@@ -15,7 +15,7 @@ class CreateUsuarioJuegosTable extends Migration
     {
         Schema::create('usuario__juegos', function (Blueprint $table) {
             $table->unsignedBigInteger('id_usuario')->nullable();
-            $table->foreign('id_usuario')->references('id')->on('users');
+            $table->foreign('id_usuario')->references('id')->on('usuarios');
 
             $table->unsignedBigInteger('id_juego')->nullable();
             $table->foreign('id_juego')->references('id')->on('games');

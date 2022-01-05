@@ -22,7 +22,7 @@ class CreatePostsTable extends Migration
             $table->foreign('id_comunidad')->references('id')->on('communities');
 
             $table->unsignedBigInteger('id_usuario')->nullable();
-            $table->foreign('id_usuario')->references('id')->on('users');
+            $table->foreign('id_usuario')->references('id')->on('usuarios');
         });
     }
 

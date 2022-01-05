@@ -16,8 +16,10 @@ class CreateWalletsTable extends Migration
         Schema::create('wallets', function (Blueprint $table) {
             $table->id();
             $table->string('método_recarga',20);
-            $table->string('país',40);
+            $table->string('país');
             $table->integer('monto');
+            $table->timestamp('updated_at');
+            $table->timestamp('created_at');
         });
     }
 

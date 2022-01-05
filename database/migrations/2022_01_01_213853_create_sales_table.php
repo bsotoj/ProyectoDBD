@@ -21,7 +21,7 @@ class CreateSalesTable extends Migration
             $table->integer('descuento');
 
             $table->unsignedBigInteger('id_usuario')->nullable();
-            $table->foreign('id_usuario')->references('id')->on('users');
+            $table->foreign('id_usuario')->references('id')->on('usuarios');
 
 
         });

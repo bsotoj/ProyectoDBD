@@ -18,6 +18,6 @@ Route::get('/', function () {
 });
 
 //Subjects
-Route::get('/subjects','SubjectController@index');
-Route::get('/subjects/{id}', 'SubjectController@show');
-Route::delete('/subjects/delete/{id}','SubjectController@destroy');
+//Route::get('/subjects','SubjectController@index');
+//Route::get('/subjects/{id}', 'SubjectController@show');
+//Route::delete('/subjects/delete/{id}','SubjectController@destroy');

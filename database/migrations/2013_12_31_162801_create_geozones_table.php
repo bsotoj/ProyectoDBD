@@ -17,6 +17,7 @@ class CreateGeozonesTable extends Migration
             $table->id();
             $table->string('dirección',40);
             $table->string('nombre_país',40);
+            $table->timestamp('updated_at');
         });
     }
 
