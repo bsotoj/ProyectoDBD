@@ -8,6 +8,7 @@ use App\Models\Wallet;
 use App\Models\WishList;
 use App\Models\Course;
 use App\Models\Group;
+use App\Models\Geozone;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,7 +22,9 @@ class DatabaseSeeder extends Seeder
        
         Wallet::factory(10)->create();
         WishList::factory(10)->create();
+        Geozone::factory(10)->create();
         Usuario::factory(10)->create();
+        
         
       
     }

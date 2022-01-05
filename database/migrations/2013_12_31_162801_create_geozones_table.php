@@ -15,9 +15,9 @@ class CreateGeozonesTable extends Migration
     {
         Schema::create('geozones', function (Blueprint $table) {
             $table->id();
-            $table->string('dirección',40);
-            $table->string('nombre_país',40);
-            $table->timestamp('updated_at');
+            $table->string('dirección');
+            $table->string('nombre_país');
+            $table->timestamps();
         });
     }
 

@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Factories;
+use App\Models\Geozone;
 use App\Models\Usuario;
 use App\Models\Wallet;
 use App\Models\WishList;
@@ -22,6 +23,7 @@ class UsuarioFactory extends Factory
             'password'=>$this->faker->password,
             'id_cartera'=>Wallet::all()->random()->id,
             'id_lista_deseo' =>WishList::all()->random()->id,
+            'código_postal' =>Geozone::all()->random()->id,
         ];
     }
 }
