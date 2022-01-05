@@ -29,8 +29,7 @@ class CreateUsersTable extends Migration
             $table->foreign('id_lista_deseo')->references('id')->on('wish_lists');
 
         
-
-
+         
            
         });
     }

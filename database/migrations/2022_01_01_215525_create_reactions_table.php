@@ -23,7 +23,7 @@ class CreateReactionsTable extends Migration
             $table->foreign('id_publicación')->references('id')->on('posts');
 
             $table->unsignedBigInteger('id_usuario')->nullable();
-            $table->foreign('id_usuario')->references('id')->on('users');
+            $table->foreign('id_usuario')->references('id')->on('usuarios');
         });
     }
 

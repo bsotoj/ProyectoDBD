@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Usuario;
 use App\Models\Wallet;
+use App\Models\WishList;
 use App\Models\Course;
 use App\Models\Group;
 
@@ -17,7 +18,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+       
         Wallet::factory(10)->create();
+        WishList::factory(10)->create();
         Usuario::factory(10)->create();
         
       

@@ -15,7 +15,7 @@ class CreateWishListsTable extends Migration
     {
         Schema::create('wish_lists', function (Blueprint $table) {
             $table->id();
-            $table->string('Nombre_ListaDeseo');
+            $table->string('nombre_lista');
             $table->timestamps();
         });
     }

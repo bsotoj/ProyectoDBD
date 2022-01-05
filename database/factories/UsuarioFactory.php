@@ -3,6 +3,7 @@
 namespace Database\Factories;
 use App\Models\Usuario;
 use App\Models\Wallet;
+use App\Models\WishList;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class UsuarioFactory extends Factory
@@ -20,6 +21,7 @@ class UsuarioFactory extends Factory
             'edad' =>$this->faker->numberBetween($min=15,$max=60),
             'password'=>$this->faker->password,
             'id_cartera'=>Wallet::all()->random()->id,
+            'id_lista_deseo' =>WishList::all()->random()->id,
         ];
     }
 }
