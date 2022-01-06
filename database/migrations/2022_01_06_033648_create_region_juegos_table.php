@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBibliotecasTable extends Migration
+class CreateRegionJuegosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateBibliotecasTable extends Migration
      */
     public function up()
     {
-        Schema::create('bibliotecas', function (Blueprint $table) {
+        Schema::create('region_juegos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedBigInteger('idUsuario')->nullable();
-            $table->foreign('idUsuario')->references('id')->on('usuarios');
+            $table->unsignedBigInteger('idRegion')->nullable();
+            $table->foreign('idRegion')->references('id')->on('regions');
             $table->unsignedBigInteger('idJuego')->nullable();
             $table->foreign('idJuego')->references('id')->on('juegos');
         });
@@ -30,6 +30,6 @@ class CreateBibliotecasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bibliotecas');
+        Schema::dropIfExists('region_juegos');
     }
 }
