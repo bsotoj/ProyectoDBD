@@ -20,5 +20,41 @@ class Usuario extends Model
         return $this->belongsTo('App\Models\ListaDeseos');
     }
 
+    public function biblioteca(){
+        return $this->hasMany('App\Models\Biblioteca');
+    }
+
+    public function like(){
+        return $this->hasMany('App\Models\Like');
+    }
+
+    public function usuario_rol(){
+        return $this->hasMany('App\Models\UsuarioRol');
+    }
+
+    public function venta(){
+        return $this->hasMany('App\Models\Venta');
+    }
+
+    public function comentario(){
+        return $this->hasMany('App\Models\Comentario');
+    }
+
+    public function comunidad_usuario(){
+        return $this->hasMany('App\Models\ComunidadUsuario');
+    }
+    
+    public function publicacion(){
+        return $this->hasMany('App\Models\Publicacion');
+    }
+
+    public function amigo(){
+        return $this->hasMany('App\Models\Amigo');
+    }
+
+
+
+    
+
 
 }

@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Biblioteca extends Model
 {
     use HasFactory;
+
+    public function usuario(){
+        return $this->belongsTo('App\Models\Usuario');
+    }
+
+    public function juego(){
+        return $this->belongsTo('App\Models\Juego');
+    }
 }

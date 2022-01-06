@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Cartera extends Model
 {
     use HasFactory;
+    public function usuario(){
+        return $this->hasOne('App\Models\Usuario');
+    }
 }
