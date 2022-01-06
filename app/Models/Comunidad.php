@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Comunidad extends Model
 {
     use HasFactory;
+
+    public function juego(){
+        return $this->belongsTo('App\Models\Juego');
+    }
 }

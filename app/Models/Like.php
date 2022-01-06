@@ -12,5 +12,7 @@ class Like extends Model
     public function usuario(){
         return $this->belongsTo('App\Models\Usuario');
     }
-    
+    public function juego(){
+        return $this->belongsTo('App\Models\Juego');
+    }
 }
