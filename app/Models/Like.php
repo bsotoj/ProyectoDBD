@@ -9,10 +9,12 @@ class Like extends Model
 {
     use HasFactory;
 
-    public function usuario(){
-        return $this->belongsTo('App\Models\Usuario');
-    }
     public function juego(){
         return $this->belongsTo('App\Models\Juego');
     }
+    
+    public function usuario(){
+        return $this->belongsTo('App\Models\Usuario');
+    }
+    
 }

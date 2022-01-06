@@ -9,7 +9,11 @@ class RegionJuego extends Model
 {
     use HasFactory;
 
+    public function region(){
+        return $this->belongsTo('App\Models\Region');
+    }
+
     public function juego(){
-        return $this->hasOne('App\Models\Juego');
+        return $this->belongsTo('App\Models\Juego');
     }
 }

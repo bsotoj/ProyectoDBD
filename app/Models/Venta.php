@@ -12,4 +12,8 @@ class Venta extends Model
     public function usuario(){
         return $this->hasOne('App\Models\Usuario');
     }
+
+    public function venta_juegos(){
+        return $this->hasMany('App\Models\VentaJuegos');
+    }
 }

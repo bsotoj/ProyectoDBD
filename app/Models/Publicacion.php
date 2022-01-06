@@ -9,7 +9,11 @@ class Publicacion extends Model
 {
     use HasFactory;
 
+    public function comunidad(){
+        return $this->belongsTo('App\Models\Comunidad');
+    }
+
     public function usuario(){
-        return $this->hasOne('App\Models\Usuario');
+        return $this->belongsTo('App\Models\Usuario');
     }
 }

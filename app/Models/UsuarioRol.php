@@ -8,7 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class UsuarioRol extends Model
 {
     use HasFactory;
-    public function usuario_rol(){
-        return $this->hasOne('App\Models\UsuarioRol');
+    
+    public function usuario(){
+        return $this->belongsTo('App\Models\Usuario');
+    }
+
+    public function rol(){
+        return $this->belongsTo('App\Models\Rol');
     }
 }

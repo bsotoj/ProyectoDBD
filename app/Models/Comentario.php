@@ -9,11 +9,12 @@ class Comentario extends Model
 {
     use HasFactory;
     
+    public function juego(){
+        return $this->belongsTo('App\Models\Juego');
+    }
+    
     public function usuario(){
         return $this->belongsTo('App\Models\Usuario');
     }
 
-    public function juego(){
-        return $this->belongsTo('App\Models\Juego');
-    }
 }

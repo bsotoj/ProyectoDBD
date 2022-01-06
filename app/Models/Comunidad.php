@@ -12,4 +12,12 @@ class Comunidad extends Model
     public function juego(){
         return $this->belongsTo('App\Models\Juego');
     }
+
+    public function comunidad_usuario(){
+        return $this->hasMany('App\Models\ComunidadUsuario');
+    }
+
+    public function publicacion(){
+        return $this->hasOne('App\Models\Publicacion');
+    }
 }
