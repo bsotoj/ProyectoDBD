@@ -19,6 +19,7 @@ class CreateRegionsTable extends Migration
 
             $table->unsignedBigInteger('idPais')->nullable();
             $table->foreign('idPais')->references('id')->on('pais');
+            $table->string('nombreRegion');
         });
     }
 

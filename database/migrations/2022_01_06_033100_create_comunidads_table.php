@@ -16,7 +16,8 @@ class CreateComunidadsTable extends Migration
         Schema::create('comunidads', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-
+            $table->unsignedBigInteger('idJuego')->nullable();
+            $table->foreign('idJuego')->references('id')->on('juegos');
             $table->string('nombreComunidad');
         });
     }
