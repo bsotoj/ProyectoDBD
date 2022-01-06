@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGenerosTable extends Migration
+class CreateVentasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class CreateGenerosTable extends Migration
      */
     public function up()
     {
-        Schema::create('generos', function (Blueprint $table) {
+        Schema::create('ventas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('nombreGenero');
+            $table->unsignedBigInteger('idUsuario')->nullable();
+            $table->foreign('idUsuario')->references('id')->on('usuarios');
+            $table->date('fechaVenta');
+            $table->integer('monto');
+            $table->integer('descuento');
         });
     }
 
@@ -27,6 +31,6 @@ class CreateGenerosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('generos');
+        Schema::dropIfExists('ventas');
     }
 }
