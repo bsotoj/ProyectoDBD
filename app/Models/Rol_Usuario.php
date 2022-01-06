@@ -8,14 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Rol_Usuario extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     
     public function user()
     {
-    return $this->belongsTo('App\Models\Usuario');
+    return $this->belongsTo(Usuario::class);
     }
 
     public function rol()
     {
-    return $this->belongsTo('App\Models\Rol');
+    return $this->belongsTo(Rol::class);
     }
 }
