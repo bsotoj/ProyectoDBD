@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Juego;
+use App\Models\Comunidad;
 
 class ComunidadFactory extends Factory
 {
@@ -14,7 +16,8 @@ class ComunidadFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'idJuego'=>Juego:all()->random()->id,
+            'nombreComunidad'=>$this->faker->company
         ];
     }
 }
