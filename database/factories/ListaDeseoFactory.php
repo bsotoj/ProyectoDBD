@@ -14,7 +14,7 @@ class ListaDeseoFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nombreLista'=>$this->faker->word
         ];
     }
 }

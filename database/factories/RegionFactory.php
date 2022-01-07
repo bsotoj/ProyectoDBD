@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Pais;
 
 class RegionFactory extends Factory
 {
@@ -14,7 +15,8 @@ class RegionFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nombreRegion' => $this->faker->state,
+            'idPais' => Pais::all()->randm()->id
         ];
     }
 }
