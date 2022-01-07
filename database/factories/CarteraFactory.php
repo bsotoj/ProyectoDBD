@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Cartera;
 
 class CarteraFactory extends Factory
 {
@@ -16,7 +17,7 @@ class CarteraFactory extends Factory
         return [
             'metodoRecarga' => $this->faker->creditCardType,
             'tipoMoneda' => $this->faker->randomElement($array = array ('CL','USD','JPY')),
-            'monto' => $this->faker->numberBetween($min = 1, $max = 200)
+            'monto' => $this->faker->numberBetween($min = 1, $max = 999999)
         ];
     }
 }

@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Pais;
+use App\Models\Region;
 
 class RegionFactory extends Factory
 {
@@ -16,7 +17,7 @@ class RegionFactory extends Factory
     {
         return [
             'nombreRegion' => $this->faker->state,
-            'idPais' => Pais::all()->randm()->id
+            'idPais' => Pais::all()->random()->id
         ];
     }
 }
