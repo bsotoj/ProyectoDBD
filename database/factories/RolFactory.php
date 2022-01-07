@@ -14,7 +14,9 @@ class RolFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'id'=>Permiso::all()->random()->id,
+            'timestamps'=>$this->faker->date,
+            'nombreRol'=>$this->faker->randomElement($array = array('Admin','Dev','User'))
         ];
     }
 }
