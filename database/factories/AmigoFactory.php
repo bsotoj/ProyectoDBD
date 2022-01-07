@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Amigo;
+use App\Models\Usuario;
 
 class AmigoFactory extends Factory
 {
@@ -14,7 +16,8 @@ class AmigoFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'idUsuario1' => Usuario::all()->random()->id,
+            'idUsuario2' => Usuario::all()->random()->id
         ];
     }
 }
