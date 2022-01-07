@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Rol;
 
 class RolFactory extends Factory
 {
@@ -14,9 +15,7 @@ class RolFactory extends Factory
     public function definition()
     {
         return [
-            'id'=>Permiso::all()->random()->id,
-            'timestamps'=>$this->faker->date,
-            'nombreRol'=>$this->faker->randomElement($array = array('Admin','Dev','User'))
+            'nombreRol'=>$this->faker->randomElement($array = array('Administrador','Desarrollador','Usuario'))
         ];
     }
 }

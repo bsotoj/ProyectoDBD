@@ -15,9 +15,7 @@ class PermisoFactory extends Factory
     public function definition()
     {
         return [
-            'id'=>Permiso::all()->random()->id,
-            'timestamps'=>$this->faker->date,
-            'nombrePermiso'=>$this->faker->randomElement($array = array('Edit','Upload','Download'))
+            'nombrePermiso'=>$this->faker->randomElement($array = array('Editar','Actualizar','Descargar))
         ];
     }
 }
