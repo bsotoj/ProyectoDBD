@@ -3,6 +3,9 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\ComunidadUsuario;
+use App\Models\Usuario;
+use App\Models\Comunidad;
 
 class ComunidadUsuarioFactory extends Factory
 {
@@ -14,7 +17,8 @@ class ComunidadUsuarioFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'idUsuario'=>Usuario::all()->random()->id,
+            'idComunidad'=>Comunidad::all()->random()->id
         ];
     }
 }

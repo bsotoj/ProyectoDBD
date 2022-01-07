@@ -3,6 +3,9 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\VentaJuego;
+use App\Models\Venta;
+use App\Models\Juego;
 
 class VentaJuegoFactory extends Factory
 {
@@ -14,7 +17,8 @@ class VentaJuegoFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'idVenta'=>Venta::all()->random()->id,
+            'idJuego'=>Juego:all()->random()->id
         ];
     }
 }
