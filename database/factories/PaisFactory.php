@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Pais;
 
 class PaisFactory extends Factory
 {
@@ -14,7 +15,7 @@ class PaisFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nombrePais'=>$this->faker->country
         ];
     }
 }
