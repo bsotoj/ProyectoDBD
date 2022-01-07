@@ -3,6 +3,9 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\LogroJuego;
+use App\Models\Logro;
+use App\Models\Juego;
 
 class LogroJuegoFactory extends Factory
 {
@@ -14,7 +17,8 @@ class LogroJuegoFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'idLogro'=> Logro::all()->random()->id,
+            'idJuego'=> Juego::all()->random()->id
         ];
     }
 }
