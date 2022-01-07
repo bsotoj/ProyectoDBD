@@ -14,7 +14,7 @@ class GeneroFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nombreGenero' => $this->faker->randomElement($array = array ('Aventura','Casual','Estrategia')),
         ];
     }
 }

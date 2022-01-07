@@ -14,7 +14,9 @@ class CarteraFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'metodoRecarga' => $this->faker->creditCardType,
+            'tipoMoneda' => $this->faker->randomElement($array = array ('CL','USD','JPY')),
+            'monto' => $this->faker->numberBetween($min = 1, $max = 200)
         ];
     }
 }
