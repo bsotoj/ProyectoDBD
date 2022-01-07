@@ -3,6 +3,9 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Juego;
+use App\Models\Usuario;
+use App\Models\Like;
 
 class LikeFactory extends Factory
 {
@@ -14,7 +17,8 @@ class LikeFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'idJuego'=>Juego::all()->random()->id,
+            'idUsuario'=>Usuario:all()->random()->id
         ];
     }
 }

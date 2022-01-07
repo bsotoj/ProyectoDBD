@@ -3,6 +3,9 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\ListaDeseosJuegos;
+use App\Models\ListaDeseo;
+use App\Models\Juego;
 
 class ListaDeseosJuegosFactory extends Factory
 {
@@ -14,7 +17,8 @@ class ListaDeseosJuegosFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'idListaDeseo'=>ListaDeseo::all()->random()->id,
+            'idJuego'=>Juego::all()->random()->id
         ];
     }
 }
