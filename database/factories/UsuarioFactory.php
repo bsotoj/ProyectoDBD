@@ -26,6 +26,7 @@ class UsuarioFactory extends Factory
             'idCartera'=>Cartera::all()->random()->id,
             'idRegion'=>Region::all()->random()->id,
             'idListaDeseos'=>ListaDeseo::all()->random()->id,
+            'delete' =>FALSE,
         ];
     }
 }

@@ -17,7 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Subjects
-//Route::get('/subjects','SubjectController@index');
-//Route::get('/subjects/{id}', 'SubjectController@show');
-//Route::delete('/subjects/delete/{id}','SubjectController@destroy');
+//rutas de Usuario
+Route::get('/usuarios', 'UsuarioController@index');
+Route::get('/usuarios/{id}', 'UsuarioController@show');
+Route::post('/usuarios/create', 'UsuarioController@store');
+Route::put('/usuarios/update/{id}', 'UsuarioController@update');
+Route::put('/usuarios/delete/{id}', 'UsuarioController@destroy');
