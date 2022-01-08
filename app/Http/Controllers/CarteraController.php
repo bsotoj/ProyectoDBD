@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cartera;
+use Illuminate\Support\Facades\Validator;
 class CarteraController extends Controller
 {
   
@@ -36,7 +37,7 @@ class CarteraController extends Controller
                 'monto' => 'required',
             ]
             );
-        if($validor->fails())
+        if($validator->fails())
         {
             return response()->json([
                 'msg' => 'Datos ingresados invalidos'
@@ -89,7 +90,7 @@ class CarteraController extends Controller
                 'monto' => 'required',
             ]
             );
-        if($validor->fails())
+        if($validator->fails())
         {
             return response()->json([
                 'msg' => 'Datos ingresados invalidos'
