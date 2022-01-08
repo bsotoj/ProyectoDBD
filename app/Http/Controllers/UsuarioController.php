@@ -63,16 +63,14 @@ class UsuarioController extends Controller
 
             $usuario->save();
             return response()->json([
-                'msg' => 'Se ha creado un nuevo usuario',
-                'id' => $usuario->id,
-            ,201]);
+                "msg" => "Se ha creado un nuevo usuario",
+            ],201);
         }
-
-        
+       
 
         else{
            return response()->json([
-                'msg' => $mensajeFallos,
+                "msg" => $mensajeFallos,
             ],400); 
         }
         
@@ -85,8 +83,8 @@ class UsuarioController extends Controller
     {     
         //Validación ID ingresada
         if(ctype_digit($id) != TRUE){
-            return responde()->json([
-                'msg' => 'La ID ingresada no es válida',
+            return response()->json([
+                "msg" => "La ID ingresada no es válida",
             ],400);
         }
 
@@ -96,7 +94,7 @@ class UsuarioController extends Controller
         //considerando la bandera 'delete' 
         if(empty($usuario) || ($usuario->delete == TRUE)){
             return response()->json([
-                'msg' => 'El usuario solicitado no existe',
+                "msg" => "El usuario solicitado no existe",
             ],404);
         }
         return response($usuario,200);
@@ -110,7 +108,7 @@ class UsuarioController extends Controller
         //verificar existencia de tupla 
         if(empty($usuario) || ($usuario->delete == TRUE)){
             return response()->json([
-                'msg' => 'El usuario solicitado no existe',
+                "msg" => "El usuario solicitado no existe",
             ],404);
         }
 
@@ -157,15 +155,14 @@ class UsuarioController extends Controller
          if($fallido == FALSE){
             $usuario->save();
             return response()->json([
-                'msg' => 'Se ha actualizado el usuario',
-                'id' => $usuario->id,
-            ,200]);
+                "msg" => "Se ha actualizado el usuario",
+            ],200);
         }
 
 
         else{
            return response()->json([
-                'msg' => $mensajeFallos,
+                "msg" => $mensajeFallos,
             ],400); 
         }
         
@@ -177,7 +174,7 @@ class UsuarioController extends Controller
         // Validación ID
         if(ctype_digit($id) != TRUE){
             return response()->json([
-                'msg' => 'El id es inválido',
+                "msg" => "El id es inválido",
             ],400);
         }
 
@@ -186,14 +183,14 @@ class UsuarioController extends Controller
         //Valida existencia de tupla
         if(($usuario == NULL) || ($usuario->delete==TRUE)){
             return response()->json([
-                'msg' => 'El usuario no existe',
+                "msg" => "El usuario no existe",
             ],404);
         }
 
         $usuario->delete = TRUE;
         $usuario->save();
         return response()->json([
-            'msg' => 'El usuario ha sido eliminado',
+            "msg" => "El usuario ha sido eliminado",
         ],200);
     }
 }

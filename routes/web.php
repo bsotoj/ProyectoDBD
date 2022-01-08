@@ -18,9 +18,9 @@ Route::get('/', function () {
 
 //rutas de Usuario
 Route::get('/usuarios','UsuarioController@index');
-Route::post('/usuarios/create','UsuarioController@store');
-Route::get('/usuarios/{id}','UsuarioController@show');
-Route::get('/usuarios/update/{id}','UsuarioController@update');
-Route::delete('/usuarios/delete/{id}','UsuarioController@destroy');
+//Route::post('/usuarios/create','UsuarioController@store');
+//Route::get('/usuarios/{id}','UsuarioController@show');
+//Route::get('/usuarios/update/{id}','UsuarioController@update');
+//Route::delete('/usuarios/delete/{id}','UsuarioController@destroy');
 
 Route::get('/carteras','CarteraController@index');
