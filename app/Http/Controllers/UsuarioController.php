@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Usuario;
+use App\Models\Region;
+use App\Models\Cartera;
+use App\Models\ListaDeseo;
 class UsuarioController extends Controller
 {
     public function index()
@@ -21,11 +24,20 @@ class UsuarioController extends Controller
 
         $fallido = FALSE;
         $mensajeFallos = '';
+        //validación 'nombreUsuario'
+         if($request->nombreUsuario == NULL){
+            $fallido = TRUE;
+            $mensajeFallos = $mensajeFallos."El campo 'nombreUsuario' está vacío\n";
+        }
+
+        else{
+            $usuario->nombreUsuario = $request -> nombreUsuario;
+        }
 
         //validación 'nombre'
         if($request->nombre == NULL){
             $fallido = TRUE;
-            $mensajeFallos = $mensajeFallos-"El campo 'nombre' está vacío\n";
+            $mensajeFallos = $mensajeFallos."El campo 'nombre' está vacío\n";
         }
 
         else{
@@ -35,7 +47,7 @@ class UsuarioController extends Controller
         //Validación 'contraseña'
         if($request->contraseña == NULL){
             $fallido=TRUE;
-            $mensajeFallos=$mensajeFallos."- El campo 'contraseña' está vacío\n";
+            $mensajeFallos=$mensajeFallos. "El campo 'contraseña' está vacío\n";
         }
         else{
             $usuario->contraseña = $request->contraseña;
@@ -57,6 +69,24 @@ class UsuarioController extends Controller
         else{
             $usuario->email = $request->email;
         }
+         //validación 'fechaNacimiento'
+         if($request->fechaNacimiento == NULL){
+             $fallido = TRUE;
+             $mensajeFallos=$mensajeFallos."El campo 'fechaNacimiento está vacío";
+         }
+
+         if(((strpos($request->fechaNacimiento,'-') == FALSE)) || (substr_count($request->fechaNacimiento,'-') < 2)
+         || (substr_count($request->fechaNacimiento,'-') > 2) && ($fallido == FALSE)
+         ){
+             $fallido = TRUE;
+             $mensajeFallos = $mensajeFallos."El campo 'fechaNacimiento no es válido";
+         }
+
+
+         else{
+             $usuario->fechaNacimiento = $request->fechaNacimiento;
+         }
+
 
          //en caso de no haber fallado en alguno de los casos se guarda la nueva tupla
          if($fallido == FALSE){
@@ -150,6 +180,25 @@ class UsuarioController extends Controller
         else{
             $usuario->email = $request->email;
         }
+
+        //validación 'fechaNacimiento'
+        if($request->fechaNacimiento == NULL){
+            $fallido = TRUE;
+            $mensajeFallos=$mensajeFallos."El campo 'fechaNacimiento está vacío";
+        }
+
+        if(((strpos($request->fechaNacimiento,'-') == FALSE)) || (substr_count($request->fechaNacimiento,'-') < 2)
+        || (substr_count($request->fechaNacimiento,'-') > 2) && ($fallido == FALSE)
+        ){
+            $fallido = TRUE;
+            $mensajeFallos = $mensajeFallos."El campo 'fechaNacimiento no es válido";
+        }
+
+
+        else{
+            $usuario->fechaNacimiento = $request->fechaNacimiento;
+        }
+
 
          //en caso de no haber fallado en alguno de los casos se modifica la tupla
          if($fallido == FALSE){
