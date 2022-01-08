@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Juego;
 
+
 class JuegoController extends Controller
 {
     /**
@@ -155,7 +156,21 @@ class JuegoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        
+
+        $juego = Juego::find($id);
+        if($juego == NULL){
+            return response()->json([
+                "message" => 'El id es invalido'
+            ]);
+        }
+        if ($request->nombreJuego!= NULL) {
+            $juego->nombreJuego = $request->nombreJuego;
+        }
+
+        $juego->save();
+        return response()->json($juego);
     }
 
     /**
@@ -184,7 +199,7 @@ class JuegoController extends Controller
         $juego->delete = TRUE;
         $juego->save();
         return response()->json([
-        "msg" => "El juego ha sido eliminada",
+        "msg" => "El juego ha sido eliminado",
         ],200);
     }
 }
