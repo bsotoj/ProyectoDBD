@@ -4,20 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Usuario;
-
 class UsuarioController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //como se hace soft delete entonces consideramos a los usuarios
-        //que tengan la bandera 'delete' = TRUE
-        $usuario = Usuario::all()->where('delete',FALSE);
-        return response($usuario,200);
+     
+        $usuario = Usuario::all();
+        return response()->json($usuario);
     }
 
     
@@ -75,6 +68,7 @@ class UsuarioController extends Controller
             ,201]);
         }
 
+        
 
         else{
            return response()->json([
@@ -85,6 +79,8 @@ class UsuarioController extends Controller
 
 
     }
+    
+    
     public function show($id)
     {     
         //Validación ID ingresada

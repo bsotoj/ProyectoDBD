@@ -12,14 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
 
 //rutas de Usuario
-Route::get('/usuarios', 'UsuarioController@index');
-Route::get('/usuarios/{id}', 'UsuarioController@show');
-Route::post('/usuarios/create', 'UsuarioController@store');
-Route::put('/usuarios/update/{id}', 'UsuarioController@update');
-Route::put('/usuarios/delete/{id}', 'UsuarioController@destroy');
+Route::get('/usuarios','UsuarioController@index');
+Route::post('/usuarios/create','UsuarioController@store');
+Route::get('/usuarios/{id}','UsuarioController@show');
+Route::get('/usuarios/update/{id}','UsuarioController@update');
+Route::delete('/usuarios/delete/{id}','UsuarioController@destroy');
+
+Route::get('/carteras','CarteraController@index');
