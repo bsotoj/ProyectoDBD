@@ -17,6 +17,7 @@ class CreateGenerosTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('nombreGenero');
+            $table->boolean('delete');
         });
     }
 

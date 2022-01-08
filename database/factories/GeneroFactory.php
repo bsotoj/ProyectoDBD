@@ -16,6 +16,7 @@ class GeneroFactory extends Factory
     {
         return [
             'nombreGenero' => $this->faker->randomElement($array = array ('Aventura','Casual','Estrategia')),
+            'delete' => FALSE
         ];
     }
 }
