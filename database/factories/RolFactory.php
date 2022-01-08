@@ -16,6 +16,7 @@ class RolFactory extends Factory
     {
         return [
             'nombreRol'=>$this->faker->randomElement($array = array('Administrador','Desarrollador','Usuario')),
+            'delete'=>FALSE
         ];
     }
 }

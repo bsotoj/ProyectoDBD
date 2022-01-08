@@ -36,7 +36,6 @@ Route::get('/juegos','JuegoController@index');
 Route::post('/juegos/create','JuegoController@store');
 Route::get('/juegos/{id}','JuegoController@show');
 
-<<<<<<< Updated upstream
 //rutas de Permiso
 
 Route::get('/permisos','PermisoController@index');
@@ -44,5 +43,11 @@ Route::post('/permisos/create','PermisoController@store');
 Route::get('/permisos/{id}','PermisoController@show');
 Route::get('/permisos/update/{id}','PermisoController@update');
 Route::delete('/permisos/delete/{id}','PermisoController@destroy');
-=======
->>>>>>> Stashed changes
+
+//rutas de Rol
+
+Route::get('/rols','RolController@index');
+Route::post('/rols/create','RolController@store');
+Route::get('/rols/{id}','RolController@show');
+Route::get('/rols/update/{id}','RolController@update');
+Route::delete('/rols/delete/{id}','RolController@destroy');
