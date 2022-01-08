@@ -18,7 +18,7 @@ class UsuarioRolFactory extends Factory
     {
         return [
             'idUsuario' => Usuario::all()->random()->id,
-            'idRol' => Rol::all()->random()->id
+            'idRol' => Rol::all()->random()->id,
         ];
     }
 }

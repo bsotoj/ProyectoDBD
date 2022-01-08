@@ -19,7 +19,7 @@ class VentaFactory extends Factory
             'fechaVenta' => $this->faker->date,
             'monto' => $this->faker->numberBetween($min = 1, $max = 999999),
             'descuento' => $this->faker->numberBetween($min = 1, $max = 1000),
-            'idUsuario' => Usuario::all()->random()->id
+            'idUsuario' => Usuario::all()->random()->id,
         ];
     }
 }

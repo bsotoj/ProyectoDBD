@@ -20,7 +20,8 @@ class CreateJuegosTable extends Migration
             $table->foreign('idGenero')->references('id')->on('generos');
             $table->string('nombreJuego');
             $table->integer('edadRestriccion');
-            $table->integer('almacenamiento');
+            $table->string('almacenamiento');
+            $table->integer('capacidadJuego');
             $table->string('linkJuego');
         });
     }

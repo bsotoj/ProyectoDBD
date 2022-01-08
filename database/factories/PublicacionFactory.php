@@ -20,7 +20,7 @@ class PublicacionFactory extends Factory
             'nombrePublicacion' => $this->faker->word,
             'mensajePublicacion' => $this->faker->text,
             'idComunidad' => Comunidad::all()->random()->id,
-            'idUsuario'=> Usuario::all()->random()->id
+            'idUsuario'=> Usuario::all()->random()->id,
 
         ];
     }

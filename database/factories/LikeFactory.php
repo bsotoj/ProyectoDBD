@@ -18,7 +18,7 @@ class LikeFactory extends Factory
     {
         return [
             'idJuego'=>Juego::all()->random()->id,
-            'idUsuario'=>Usuario:all()->random()->id
+            'idUsuario'=>Usuario::all()->random()->id,
         ];
     }
 }

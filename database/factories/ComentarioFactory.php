@@ -19,7 +19,7 @@ class ComentarioFactory extends Factory
         return [
             'mensaje'=>$this->faker->catchPhrase,
             'idJuego'=>Juego::all()->random()->id,
-            'idUsuario'=>Usuario::all()->random->id
+            'idUsuario'=>Usuario::all()->random()->id,
         ];
     }
 }

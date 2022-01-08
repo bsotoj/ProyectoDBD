@@ -15,7 +15,7 @@ class LogroFactory extends Factory
     public function definition()
     {
         return [
-            'nombreLogro'=>$this->faker->word
+            'nombreLogro'=>$this->faker->word,
         ];
     }
 }

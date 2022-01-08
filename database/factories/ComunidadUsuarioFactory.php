@@ -18,7 +18,7 @@ class ComunidadUsuarioFactory extends Factory
     {
         return [
             'idUsuario'=>Usuario::all()->random()->id,
-            'idComunidad'=>Comunidad::all()->random()->id
+            'idComunidad'=>Comunidad::all()->random()->id,
         ];
     }
 }

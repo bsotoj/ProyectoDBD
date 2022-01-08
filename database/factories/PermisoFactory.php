@@ -15,7 +15,7 @@ class PermisoFactory extends Factory
     public function definition()
     {
         return [
-            'nombrePermiso'=>$this->faker->randomElement($array = array('Editar','Actualizar','Descargar'))
+            'nombrePermiso'=>$this->faker->randomElement($array = array('Editar','Actualizar','Descargar')),
         ];
     }
 }

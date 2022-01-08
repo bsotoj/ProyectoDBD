@@ -16,8 +16,8 @@ class ComunidadFactory extends Factory
     public function definition()
     {
         return [
-            'idJuego'=>Juego:all()->random()->id,
-            'nombreComunidad'=>$this->faker->company
+            'idJuego'=>Juego::all()->random()->id,
+            'nombreComunidad'=>$this->faker->company,
         ];
     }
 }

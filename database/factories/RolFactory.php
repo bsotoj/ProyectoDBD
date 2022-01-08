@@ -15,7 +15,7 @@ class RolFactory extends Factory
     public function definition()
     {
         return [
-            'nombreRol'=>$this->faker->randomElement($array = array('Administrador','Desarrollador','Usuario'))
+            'nombreRol'=>$this->faker->randomElement($array = array('Administrador','Desarrollador','Usuario')),
         ];
     }
 }

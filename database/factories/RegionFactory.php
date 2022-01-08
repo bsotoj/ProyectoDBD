@@ -17,7 +17,7 @@ class RegionFactory extends Factory
     {
         return [
             'nombreRegion' => $this->faker->state,
-            'idPais' => Pais::all()->random()->id
+            'idPais' => Pais::all()->random()->id,
         ];
     }
 }

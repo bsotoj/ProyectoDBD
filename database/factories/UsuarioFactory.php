@@ -25,7 +25,7 @@ class UsuarioFactory extends Factory
             'fechaNacimiento'=>$this->faker->date,
             'idCartera'=>Cartera::all()->random()->id,
             'idRegion'=>Region::all()->random()->id,
-            'idListaDeseos'=>ListaDeseos::all()->random()->id
+            'idListaDeseos'=>ListaDeseo::all()->random()->id,
         ];
     }
 }
