@@ -9,7 +9,10 @@ class Amigo extends Model
 {
     use HasFactory;
 
-    public function usuario(){
-        return $this->hasOne('App\Models\Usuario');
+    public function usuario1(){
+        return $this->belongsTo('App\Models\Usuario');
+    }
+    public function usuario2(){
+        return $this->belongsTo('App\Models\Usuario');
     }
 }

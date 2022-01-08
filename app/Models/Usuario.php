@@ -48,7 +48,10 @@ class Usuario extends Model
         return $this->hasMany('App\Models\Publicacion');
     }
 
-    public function amigo(){
+    public function amigo1(){
+        return $this->hasMany('App\Models\Amigo');
+    }
+    public function amigo2(){
         return $this->hasMany('App\Models\Amigo');
     }
 
