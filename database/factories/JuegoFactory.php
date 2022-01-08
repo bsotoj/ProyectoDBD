@@ -23,6 +23,7 @@ class JuegoFactory extends Factory
             'almacenamiento'=>$this->faker->randomElement($array = array('Nube','Local')),
             'capacidadJuego'=>$this->faker->numberBetween($min = 1, $max = 100),
             'linkJuego'=>$this->faker->url,
+            'delete' =>false
         ];
     }
 }

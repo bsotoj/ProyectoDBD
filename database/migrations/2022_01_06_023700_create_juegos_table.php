@@ -23,6 +23,7 @@ class CreateJuegosTable extends Migration
             $table->string('almacenamiento');
             $table->integer('capacidadJuego');
             $table->string('linkJuego');
+            $table->boolean('delete');
         });
     }
 
