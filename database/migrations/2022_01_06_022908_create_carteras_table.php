@@ -19,6 +19,7 @@ class CreateCarterasTable extends Migration
             $table->string('metodoRecarga');
             $table->string('tipoMoneda');
             $table->integer('monto');
+            $table->boolean('delete');
         });
     }
 

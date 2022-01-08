@@ -12,7 +12,7 @@ class UsuarioController extends Controller
     public function index()
     {
      
-        $usuario = Usuario::all();
+        $usuario = Usuario::all()->where('delete',FALSE);
         return response()->json($usuario);
     }
 
@@ -27,7 +27,7 @@ class UsuarioController extends Controller
         //validación 'nombreUsuario'
          if($request->nombreUsuario == NULL){
             $fallido = TRUE;
-            $mensajeFallos = $mensajeFallos."El campo 'nombreUsuario' está vacío\n";
+            $mensajeFallos = $mensajeFallos."El campo 'nombreUsuario' está vacío";
         }
 
         else{
@@ -37,7 +37,7 @@ class UsuarioController extends Controller
         //validación 'nombre'
         if($request->nombre == NULL){
             $fallido = TRUE;
-            $mensajeFallos = $mensajeFallos."El campo 'nombre' está vacío\n";
+            $mensajeFallos = $mensajeFallos."-El campo 'nombre' está vacío";
         }
 
         else{
@@ -47,7 +47,7 @@ class UsuarioController extends Controller
         //Validación 'contraseña'
         if($request->contraseña == NULL){
             $fallido=TRUE;
-            $mensajeFallos=$mensajeFallos. "El campo 'contraseña' está vacío\n";
+            $mensajeFallos=$mensajeFallos. "-El campo 'contraseña' está vacío";
         }
         else{
             $usuario->contraseña = $request->contraseña;
@@ -56,14 +56,14 @@ class UsuarioController extends Controller
         //Validación 'email'
         if($request->email == NULL){
             $fallido = TRUE; 
-            $mensajeFallos = $mensajeFallos. "El campo 'email' está vacío\n";
+            $mensajeFallos = $mensajeFallos. "-El campo 'email' está vacío";
         }
 
         if( ((strpos($request->email,'.') == FALSE) || (strpos($request->email,'@')==FALSE)
             || (substr_count($request->email,'@') > 1 )) && ($fallido == FALSE)){
 
                 $fallido = TRUE;
-                $mensajeFallos = $mensajeFallos."El campo 'email' no es válido\n";
+                $mensajeFallos = $mensajeFallos."-El campo 'email' no es válido";
             }
 
         else{
@@ -148,7 +148,7 @@ class UsuarioController extends Controller
         //validación 'nombre'
         if($request->nombre == NULL){
             $fallido = TRUE;
-            $mensajeFallos = $mensajeFallos-"El campo 'nombre' está vacío\n";
+            $mensajeFallos = $mensajeFallos-"El campo 'nombre' está vacío";
         }
 
         else{
@@ -158,7 +158,7 @@ class UsuarioController extends Controller
         //Validación 'contraseña'
         if($request->contraseña == NULL){
             $fallido=TRUE;
-            $mensajeFallos=$mensajeFallos."- El campo 'contraseña' está vacío\n";
+            $mensajeFallos=$mensajeFallos."- El campo 'contraseña' está vacío";
         }
         else{
             $usuario->contraseña = $request->contraseña;
@@ -167,14 +167,14 @@ class UsuarioController extends Controller
         //Validación 'email'
         if($request->email == NULL){
             $fallido = TRUE; 
-            $mensajeFallos = $mensajeFallos. "El campo 'email' está vacío\n";
+            $mensajeFallos = $mensajeFallos. "-El campo 'email' está vacío";
         }
 
         if( ((strpos($request->email,'.') == FALSE) || (strpos($request->email,'@')==FALSE)
             || (substr_count($request->email,'@') > 1 )) && ($fallido == FALSE)){
 
                 $fallido = TRUE;
-                $mensajeFallos = $mensajeFallos."El campo 'email' no es válido\n";
+                $mensajeFallos = $mensajeFallos."El campo 'email' no es válido";
             }
 
         else{
@@ -191,7 +191,7 @@ class UsuarioController extends Controller
         || (substr_count($request->fechaNacimiento,'-') > 2) && ($fallido == FALSE)
         ){
             $fallido = TRUE;
-            $mensajeFallos = $mensajeFallos."El campo 'fechaNacimiento no es válido";
+            $mensajeFallos = $mensajeFallos."-El campo 'fechaNacimiento no es válido";
         }
 
 

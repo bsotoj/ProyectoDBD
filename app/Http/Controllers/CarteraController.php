@@ -6,80 +6,138 @@ use Illuminate\Http\Request;
 use App\Models\Cartera;
 class CarteraController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public function index()
     {
-        $cartera = Cartera::all();
-        return response($cartera);
+        $cartera = Cartera::all()->where('delete',FALSE);
+        if($cartera != NULL){
+            return response()->json($cartera);
+
+        }
+        else{
+            return response()->json([
+                'msg' => 'No existen carteras'
+            ],404);
+        }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make(
+            [
+                'metodoRecarga' => $request->metodoRecarga,
+                'tipoMoneda' => $request->tipoMoneda,
+                'monto' => $request->monto,
+            ],
+
+            [
+                'metodoRecarga' => 'required|min:3',
+                'tipoMoneda' => 'required|min:3',
+                'monto' => 'required',
+            ]
+            );
+        if($validor->fails())
+        {
+            return response()->json([
+                'msg' => 'Datos ingresados invalidos'
+            ]);
+        }
+
+
+        $cartera = new Cartera();
+        $cartera->metodoRecarga = $request->metodoRecarga;
+        $cartera->tipoMoneda = $request->tipoMoneda;
+        $cartera->monto = $request->monto; 
+        $cartera->delete = FALSE;
+        $cartera->save();
+
+        if($cartera != NULL){
+            return response()->json([
+                'msg' => 'se ha creado una nueva cartera'
+            ],202);
+
+        return response()->json([
+            'msg' => 'no se ha creado la cartera'
+        ]);    
+        }
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+        $cartera = Cartera::find($id);
+        if($cartera != NULL){
+            return response()->json($cartera);
+        }
+        return response()->json([
+            'msg' => 'no se encontro ningun valor con la id asociada'
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
-    }
+        $validator = Validator::make(
+            [
+                'metodoRecarga' => $request->metodoRecarga,
+                'tipoMoneda' => $request->tipoMoneda,
+                'monto' => $request->monto,
+            ],
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+            [
+                'metodoRecarga' => 'required',
+                'tipoMoneda' => 'required',
+                'monto' => 'required',
+            ]
+            );
+        if($validor->fails())
+        {
+            return response()->json([
+                'msg' => 'Datos ingresados invalidos'
+            ]);
+        }
+
+        $cartera = Cartera::find($id);
+        if($cartera == NULL){
+            return response()->json([
+                "message" => 'El id es invalido'
+            ]);
+        }
+        if ($request->metodoRecarga!= NULL) {
+            $cartera->metodoRecarga = $request->metodoRecarga;
+        }
+        if ($request->tipoMoneda != NULL) {
+            $cartera->tipoMoneda = $request->tipoMoneda;
+        }
+        if ($request->monto != NULL) {
+            $cartera->monto = $request->monto;
+        }
+
+        $cartera->save();
+        return response()->json($cartera);
+    }
+   
     public function destroy($id)
     {
-        //
+     // Validación ID
+     if(ctype_digit($id) != TRUE){
+        return response()->json([
+            "msg" => "El id es inválido",
+        ],400);
+       }
+     
+      $cartera = Cartera::find($id);
+       //Valida existencia de tupla
+       if(($cartera == NULL) || ($cartera->delete==TRUE)){
+        return response()->json([
+            "msg" => "La cartera no existe",
+        ],404);
     }
+
+        $cartera->delete = TRUE;
+        $cartera->save();
+        return response()->json([
+        "msg" => "La cartera ha sido eliminada",
+        ],200);
+} 
+    
 }

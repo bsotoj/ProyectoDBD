@@ -22,5 +22,9 @@ Route::post('/usuarios/create','UsuarioController@store');
 Route::get('/usuarios/{id}','UsuarioController@show');
 Route::get('/usuarios/update/{id}','UsuarioController@update');
 Route::delete('/usuarios/delete/{id}','UsuarioController@destroy');
-
+//rutas de Cartera
 Route::get('/carteras','CarteraController@index');
+Route::post('/carteras/create','CarteraController@store');
+Route::get('/carteras/{id}','CarteraController@show');
+Route::get('/carteras/update/{id}','CarteraController@update');
+Route::delete('/carteras/delete/{id}','CarteraController@destroy');

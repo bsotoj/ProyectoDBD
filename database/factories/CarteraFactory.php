@@ -18,6 +18,7 @@ class CarteraFactory extends Factory
             'metodoRecarga' => $this->faker->creditCardType,
             'tipoMoneda' => $this->faker->randomElement($array = array ('CL','USD','JPY')),
             'monto' => $this->faker->numberBetween($min = 1, $max = 999999),
+            'delete' => FALSE
         ];
     }
 }
