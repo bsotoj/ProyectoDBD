@@ -21,6 +21,7 @@ class CreateUsuariosTable extends Migration
             $table->string('email')->unique();
             $table->string('contraseña');
             $table->date('fechaNacimiento');
+            $table->boolean('delete');
 
 
             $table->unsignedBigInteger('idCartera')->nullable();
