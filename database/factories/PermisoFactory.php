@@ -16,6 +16,7 @@ class PermisoFactory extends Factory
     {
         return [
             'nombrePermiso'=>$this->faker->randomElement($array = array('Editar','Actualizar','Descargar')),
+            'delete'=>FALSE
         ];
     }
 }

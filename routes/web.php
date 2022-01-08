@@ -34,3 +34,11 @@ Route::delete('/carteras/delete/{id}','CarteraController@destroy');
 //rutas de juegos
 Route::get('/juegos','JuegoController@index');
 Route::get('/juegos/{id}','JuegoController@show');
+
+//rutas de Permiso
+
+Route::get('/permisos','PermisoController@index');
+Route::post('/permisos/create','PermisoController@store');
+Route::get('/permisos/{id}','PermisoController@show');
+Route::get('/permisos/update/{id}','PermisoController@update');
+Route::delete('/permisos/delete/{id}','PermisoController@destroy');

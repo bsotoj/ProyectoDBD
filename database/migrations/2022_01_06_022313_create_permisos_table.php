@@ -17,6 +17,7 @@ class CreatePermisosTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('nombrePermiso');
+            $table->boolean('delete');
         });
     }
 
