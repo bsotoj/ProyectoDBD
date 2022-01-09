@@ -21,6 +21,7 @@ class PublicacionFactory extends Factory
             'mensajePublicacion' => $this->faker->text,
             'idComunidad' => Comunidad::all()->random()->id,
             'idUsuario'=> Usuario::all()->random()->id,
+            'delete' => FALSE
 
         ];
     }

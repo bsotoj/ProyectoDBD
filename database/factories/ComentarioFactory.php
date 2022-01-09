@@ -20,6 +20,7 @@ class ComentarioFactory extends Factory
             'mensaje'=>$this->faker->catchPhrase,
             'idJuego'=>Juego::all()->random()->id,
             'idUsuario'=>Usuario::all()->random()->id,
+            'delete' => FALSE
         ];
     }
 }

@@ -18,6 +18,7 @@ class AmigoFactory extends Factory
         return [
             'idUsuario1' => Usuario::all()->random()->id,
             'idUsuario2' => Usuario::all()->random()->id,
+            'delete' => FALSE
         ];
     }
 }

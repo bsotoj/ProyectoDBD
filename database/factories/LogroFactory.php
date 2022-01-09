@@ -16,6 +16,7 @@ class LogroFactory extends Factory
     {
         return [
             'nombreLogro'=>$this->faker->word,
+            'delete' => FALSE
         ];
     }
 }

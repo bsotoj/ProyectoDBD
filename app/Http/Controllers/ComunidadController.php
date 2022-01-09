@@ -48,7 +48,7 @@ class ComunidadController extends Controller
                 "message" => 'Id de pais invalido'
             ]);
         }
-        $comunidad = new comunidad();
+        $comunidad = new Comunidad();
         $comunidad->idJuego = $request->idJuego;
         $comunidad->nombreComunidad = $request->nombreComunidad;
         $comunidad->delete = FALSE;
@@ -72,7 +72,7 @@ class ComunidadController extends Controller
      */
     public function show($id)
     {
-        $comunidad = comunidad::find($id);
+        $comunidad = Comunidad::find($id);
         if ($comunidad != NULL) {
             return response()->json($comunidad);
         }
@@ -148,7 +148,7 @@ class ComunidadController extends Controller
             ],400);
            }
          
-          $comunidad = comunidad::find($id);
+          $comunidad = Comunidad::find($id);
            //Valida existencia de tupla
            if(($comunidad == NULL) || ($comunidad->delete==TRUE)){
             return response()->json([

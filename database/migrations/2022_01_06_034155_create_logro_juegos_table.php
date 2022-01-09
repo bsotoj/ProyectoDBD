@@ -20,6 +20,7 @@ class CreateLogroJuegosTable extends Migration
             $table->foreign('idLogro')->references('id')->on('logros');
             $table->unsignedBigInteger('idJuego')->nullable();
             $table->foreign('idJuego')->references('id')->on('juegos');
+            $table->boolean('delete');
         });
     }
 

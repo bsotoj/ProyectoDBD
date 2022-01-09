@@ -19,6 +19,7 @@ class CreateComunidadsTable extends Migration
             $table->unsignedBigInteger('idJuego')->nullable();
             $table->foreign('idJuego')->references('id')->on('juegos');
             $table->string('nombreComunidad');
+            $table->boolean('delete');
         });
     }
 

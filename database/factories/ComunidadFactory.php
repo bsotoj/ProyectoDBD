@@ -18,6 +18,7 @@ class ComunidadFactory extends Factory
         return [
             'idJuego'=>Juego::all()->random()->id,
             'nombreComunidad'=>$this->faker->company,
+            'delete' => FALSE
         ];
     }
 }

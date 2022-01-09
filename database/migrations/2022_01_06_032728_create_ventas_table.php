@@ -21,6 +21,7 @@ class CreateVentasTable extends Migration
             $table->date('fechaVenta');
             $table->integer('monto');
             $table->integer('descuento');
+            $table->boolean('delete');
         });
     }
 

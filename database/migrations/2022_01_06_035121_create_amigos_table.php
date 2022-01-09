@@ -20,6 +20,7 @@ class CreateAmigosTable extends Migration
             $table->foreign('idUsuario1')->references('id')->on('usuarios');
             $table->unsignedBigInteger('idUsuario2')->nullable();
             $table->foreign('idUsuario2')->references('id')->on('usuarios');
+            $table->boolean('delete');
         });
     }
 

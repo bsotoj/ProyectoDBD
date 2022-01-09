@@ -17,6 +17,7 @@ class CreateLogrosTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('nombreLogro');
+            $table->boolean('delete');
         });
     }
 

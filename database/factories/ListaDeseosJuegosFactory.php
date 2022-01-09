@@ -19,6 +19,7 @@ class ListaDeseosJuegosFactory extends Factory
         return [
             'idListaDeseo'=>ListaDeseo::all()->random()->id,
             'idJuego'=>Juego::all()->random()->id,
+            'delete' => FALSE
         ];
     }
 }

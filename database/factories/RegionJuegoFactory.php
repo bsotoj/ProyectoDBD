@@ -22,6 +22,7 @@ class RegionJuegoFactory extends Factory
             'moneda'=> $this->faker->randomElement($array = array ('CL','USD','JPY')),
             'idRegion'=> Region::all()->random()->id,
             'idJuego'=> Juego::all()->random()->id,
+            'delete' => FALSE
         ];
     }
 }

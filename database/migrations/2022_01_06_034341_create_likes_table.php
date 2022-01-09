@@ -23,6 +23,7 @@ class CreateLikesTable extends Migration
 
             $table->unsignedBigInteger('idUsuario')->nullable();
             $table->foreign('idUsuario')->references('id')->on('usuarios');
+            $table->boolean('delete');
 
         });
     }

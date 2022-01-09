@@ -19,6 +19,7 @@ class BibliotecaFactory extends Factory
         return [
             'idUsuario' => Usuario::all()->random()->id,
             'idJuego' => Juego::all()->random()->id,
+            'delete' => FALSE
         ];
     }
 }

@@ -19,6 +19,7 @@ class RolPermisoFactory extends Factory
         return [
             'idRol' => Rol::all()->random()->id,
             'idPermiso' => Permiso::all()->random()->id,
+            'delete' => FALSE
         ];
     }
 }

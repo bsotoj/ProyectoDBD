@@ -19,6 +19,7 @@ class LogroJuegoFactory extends Factory
         return [
             'idLogro'=> Logro::all()->random()->id,
             'idJuego'=> Juego::all()->random()->id,
+            'delete' => FALSE
         ];
     }
 }

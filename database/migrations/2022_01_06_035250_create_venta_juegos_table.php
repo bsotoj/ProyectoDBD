@@ -20,6 +20,7 @@ class CreateVentaJuegosTable extends Migration
             $table->foreign('idVenta')->references('id')->on('ventas');
             $table->unsignedBigInteger('idJuego')->nullable();
             $table->foreign('idJuego')->references('id')->on('juegos');
+            $table->boolean('delete');
         });
     }
 

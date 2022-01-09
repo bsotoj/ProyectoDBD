@@ -20,6 +20,7 @@ class CreateComunidadUsuariosTable extends Migration
             $table->foreign('idUsuario')->references('id')->on('usuarios');
             $table->unsignedBigInteger('idComunidad')->nullable();
             $table->foreign('idComunidad')->references('id')->on('comunidads');
+            $table->boolean('delete');
         });
     }
 

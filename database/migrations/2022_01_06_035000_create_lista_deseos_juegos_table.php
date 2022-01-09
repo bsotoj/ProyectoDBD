@@ -23,6 +23,7 @@ class CreateListaDeseosJuegosTable extends Migration
 
             $table->unsignedBigInteger('idJuego')->nullable();
             $table->foreign('idJuego')->references('id')->on('juegos');
+            $table->boolean('delete');
         });
     }
 

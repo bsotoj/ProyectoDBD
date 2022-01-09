@@ -20,6 +20,7 @@ class CreateBibliotecasTable extends Migration
             $table->foreign('idUsuario')->references('id')->on('usuarios');
             $table->unsignedBigInteger('idJuego')->nullable();
             $table->foreign('idJuego')->references('id')->on('juegos');
+            $table->boolean('delete');
         });
     }
 

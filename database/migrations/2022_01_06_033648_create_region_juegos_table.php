@@ -23,6 +23,7 @@ class CreateRegionJuegosTable extends Migration
             $table->foreign('idRegion')->references('id')->on('regions');
             $table->unsignedBigInteger('idJuego')->nullable();
             $table->foreign('idJuego')->references('id')->on('juegos');
+            $table->boolean('delete');
         });
     }
 

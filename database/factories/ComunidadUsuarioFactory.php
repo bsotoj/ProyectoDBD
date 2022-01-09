@@ -19,6 +19,7 @@ class ComunidadUsuarioFactory extends Factory
         return [
             'idUsuario'=>Usuario::all()->random()->id,
             'idComunidad'=>Comunidad::all()->random()->id,
+            'delete' => FALSE
         ];
     }
 }

@@ -18,7 +18,8 @@ class VentaJuegoFactory extends Factory
     {
         return [
             'idVenta'=>Venta::all()->random()->id,
-            'idJuego'=>Juego::all()->random()->id
+            'idJuego'=>Juego::all()->random()->id,
+            'delete' => FALSE
         ];
     }
 }
