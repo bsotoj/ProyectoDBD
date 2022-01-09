@@ -154,9 +154,19 @@ Route::post('/publicacions/create','PublicacionController@store');
 Route::get('/publicacions/{id}','PublicacionController@show');
 Route::put('/publicacions/update/{id}','PublicacionController@update');
 Route::delete('/publicacions/delete/{id}','PublicacionController@destroy');
+<<<<<<< Updated upstream
 //rutas de RegionJuego
 Route::get('/region_juegos','RegionJuegoController@index');
 Route::post('/region_juegos/create','RegionJuegoController@store');
 Route::get('/region_juegos/{id}','RegionJuegoController@show');
 Route::put('/region_juegos/update/{id}','RegionJuegoController@update');
 Route::delete('/region_juegos/delete/{id}','RegionJuegoController@destroy');
+=======
+
+//rutas de Amigo
+Route::get('/amigo','AmigoController@index');
+Route::post('/amigo/create','AmigoController@store');
+Route::get('/amigo/{id}','AmigoController@show');
+Route::put('/amigo/update/{id}','AmigoController@update');
+Route::delete('/amigo/delete/{id}','AmigoController@destroy');
+>>>>>>> Stashed changes
