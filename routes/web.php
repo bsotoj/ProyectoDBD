@@ -140,3 +140,10 @@ Route::post('/comunidad_usuarios/create','ComunidadUsuarioController@store');
 Route::get('/comunidad_usuarios/{id}','ComunidadUsuarioController@show');
 Route::put('/comunidad_usuarios/update/{id}','ComunidadUsuarioController@update');
 Route::delete('/comunidad_usuarios/delete/{id}','ComunidadUsuarioController@destroy');
+
+//rutas de ListaDeseoJuego
+Route::get('/lista_deseos_juegos','ListaDeseosJuegosController@index');
+Route::post('/lista_deseos_juegos/create','ListaDeseosJuegosController@store');
+Route::get('/lista_deseos_juegos/{id}','ListaDeseosJuegosController@show');
+Route::put('/lista_deseos_juegos/update/{id}','ListaDeseosJuegosController@update');
+Route::delete('/lista_deseos_juegos/delete/{id}','ListaDeseosJuegosController@destroy');
