@@ -30,7 +30,7 @@ class logroController extends Controller
             ],
 
             [
-                'nombreLogro'=>'required|min:3',
+                'nombreLogro'=>'required',
             ]
         );
         if($validator->fails())
@@ -40,7 +40,7 @@ class logroController extends Controller
             ]);
         }
 
-        
+
         $logro = new logro();
         $logro->nombreLogro = $request->nombreLogro;
         $logro->delete = FALSE;

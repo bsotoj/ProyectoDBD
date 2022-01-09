@@ -99,9 +99,16 @@ Route::get('/regions/{id}','RegionController@show');
 Route::put('/regions/update/{id}','RegionController@update');
 Route::delete('/regions/delete/{id}','RegionController@destroy');
 
-//rutas de Region
+//rutas de Venta
 Route::get('/ventas','VentaController@index');
 Route::post('/ventas/create','VentaController@store');
 Route::get('/ventas/{id}','VentaController@show');
 Route::put('/ventas/update/{id}','VentaController@update');
 Route::delete('/ventas/delete/{id}','VentaController@destroy');
+
+//rutas de Comunidad
+Route::get('/comunidads','ComunidadController@index');
+Route::post('/comunidads/create','ComunidadController@store');
+Route::get('/comunidads/{id}','ComunidadController@show');
+Route::put('/comunidads/update/{id}','ComunidadController@update');
+Route::delete('/comunidads/delete/{id}','ComunidadController@destroy');

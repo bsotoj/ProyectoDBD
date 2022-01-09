@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Venta;
+use App\Models\Usuario;
 use Illuminate\Support\Facades\Validator;
 
 class VentaController extends Controller
@@ -26,14 +27,16 @@ class VentaController extends Controller
     {
         $validator = Validator::make(
             [
+                'idUsuario' => $request->idUsuario,
                 'fechaVenta' => $request->fechaVenta,
                 'descuento' => $request->descuento,
                 'monto' => $request->monto,
             ],
 
             [
-                'fechaVenta' => 'required|min:3',
-                'descuento' => 'required|min:3',
+                'idUsuario' => 'required',
+                'fechaVenta' => 'required',
+                'descuento' => 'required',
                 'monto' => 'required',
             ]
             );
@@ -43,9 +46,15 @@ class VentaController extends Controller
                 'msg' => 'Datos ingresados invalidos'
             ]);
         }
-
+        $usuario = Usuario::find($request->idUsuario);
+        if($usuario == NULL){
+            return response()->json([
+                "message" => 'Id del usuario invalido'
+            ]);
+        }
 
         $venta = new venta();
+        $venta->idUsuario = $request->idUsuario;
         $venta->fechaVenta = $request->fechaVenta;
         $venta->descuento = $request->descuento;
         $venta->monto = $request->monto; 
@@ -79,12 +88,14 @@ class VentaController extends Controller
     {
         $validator = Validator::make(
             [
+                'idUsuario' => $request->idUsuario,
                 'fechaVenta' => $request->fechaVenta,
                 'descuento' => $request->descuento,
                 'monto' => $request->monto,
             ],
 
             [
+                'idUsuario' => 'required',
                 'fechaVenta' => 'required',
                 'descuento' => 'required',
                 'monto' => 'required',
@@ -97,11 +108,21 @@ class VentaController extends Controller
             ]);
         }
 
-        $venta = venta::find($id);
+        $venta = Venta::find($request->idUsuario);
+        if($venta == NULL){
+            return response()->json([
+                "message" => 'Id de venta invalido'
+            ]);
+        }
+
+        $venta = Venta::find($id);
         if($venta == NULL){
             return response()->json([
                 "message" => 'El id es invalido'
             ]);
+        }
+        if ($request->idUsuario!= NULL) {
+            $venta->idUsuario = $request->idUsuario;
         }
         if ($request->fechaVenta!= NULL) {
             $venta->fechaVenta = $request->fechaVenta;
