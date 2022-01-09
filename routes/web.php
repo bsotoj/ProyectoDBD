@@ -176,3 +176,10 @@ Route::get('/venta_juegos/{id}','VentaJuegooController@show');
 Route::put('/venta_juegos/update/{id}','VentaJuegoController@update');
 Route::delete('/venta_juegos/delete/{id}','VentaJuegoController@destroy');
 
+//rutas de UsuarioRol
+Route::get('/usuario_rols','UsuarioRolController@index');
+Route::post('/usuario_rols/create','UsuarioRolController@store');
+Route::get('/usuario_rols/{id}','UsuarioRolController@show');
+Route::put('/usuario_rols/update/{id}','UsuarioRolController@update');
+Route::delete('/usuario_rols/delete/{id}','UsuarioRolController@destroy');
+
