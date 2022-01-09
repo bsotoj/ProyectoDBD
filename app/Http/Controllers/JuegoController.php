@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Juego;
 use App\Models\Genero;
+use Illuminate\Support\Facades\Validator;
+
 
 
 class JuegoController extends Controller
@@ -28,15 +30,6 @@ class JuegoController extends Controller
         }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -46,6 +39,32 @@ class JuegoController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make(
+            [
+                'idGenero' => $request->idGenero,
+                'nombreJuego' => $request -> nombreJuego,
+                'edadRestriccion'=> $request -> edadRestriccion,
+                'almacenamiento'=> $request -> almacenamiento,
+                'capacidadJuego'=> $request -> capacidadJuego,
+                'linkJuego'=> $request -> linkJuego,
+            ],
+
+            [
+                'idGenero' => 'required|min:3',
+                'nombreJuego' => 'required|min:3',
+                'edadRestriccion'=> 'required|min:3',
+                'almacenamiento'=> 'required|min:3',
+                'capacidadJuego'=> 'required|min:3',
+                'linkJuego'=> 'required|min:3',
+
+            ]
+            );
+            if($validator->fails())
+        {
+            return response()->json([
+                'msg' => 'Datos ingresados invalidos'
+            ]);
+        }
         $juego = new Juego();
         $juego->delete = FALSE; 
 
@@ -164,7 +183,32 @@ class JuegoController extends Controller
     public function update(Request $request, $id)
     {
         
-        
+        $validator = Validator::make(
+            [
+                'idGenero' => $request->idGenero,
+                'nombreJuego' => $request -> nombreJuego,
+                'edadRestriccion'=> $request -> edadRestriccion,
+                'almacenamiento'=> $request -> almacenamiento,
+                'capacidadJuego'=> $request -> capacidadJuego,
+                'linkJuego'=> $request -> linkJuego,
+            ],
+
+            [
+                'idGenero' => 'required|min:3',
+                'nombreJuego' => 'required|min:3',
+                'edadRestriccion'=> 'required|min:3',
+                'almacenamiento'=> 'required|min:3',
+                'capacidadJuego'=> 'required|min:3',
+                'linkJuego'=> 'required|min:3',
+
+            ]
+            );
+            if($validator->fails())
+        {
+            return response()->json([
+                'msg' => 'Datos ingresados invalidos'
+            ]);
+        }
 
         $juego = Juego::find($id);
         if(empty($juego)){

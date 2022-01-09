@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Amigo;
+use Illuminate\Support\Facades\Validator;
 
 
 class AmigoController extends Controller
@@ -28,16 +29,6 @@ class AmigoController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -45,7 +36,24 @@ class AmigoController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $validator = Validator::make(
+            [
+                'idUsuario1' => $request->idUsuario1,
+                'idUsuario2' => $request -> idUsuario2,
+            ],
+
+            [
+                'idUsuario1' => 'required|min:3',
+                'idUsuario2' => 'required|min:3',
+
+            ]
+            );
+            if($validator->fails())
+        {
+            return response()->json([
+                'msg' => 'Datos ingresados invalidos'
+            ]);
+        }
         $amigo = new Amigo();
         $amigo->idUsuario1 = $request->idUsuario1;
         $amigo->idUsuario2 = $request->idUsuario2;
@@ -89,16 +97,6 @@ class AmigoController extends Controller
 
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -109,6 +107,24 @@ class AmigoController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validator = Validator::make(
+            [
+                'idUsuario1' => $request->idUsuario1,
+                'idUsuario2' => $request -> idUsuario2,
+            ],
+
+            [
+                'idUsuario1' => 'required|min:3',
+                'idUsuario2' => 'required|min:3',
+
+            ]
+            );
+            if($validator->fails())
+        {
+            return response()->json([
+                'msg' => 'Datos ingresados invalidos'
+            ]);
+        }
         $amigo = Amigo::find($id);
         if(empty($amigo)){
             $fallido = TRUE;
