@@ -69,3 +69,11 @@ Route::post('/generos/create','GeneroController@store');
 Route::get('/generos/{id}','GeneroController@show');
 Route::put('/generos/update/{id}','GeneroController@update');
 Route::delete('/generos/delete/{id}','GeneroController@destroy');
+
+//rutas de Pais
+
+Route::get('/pais','PaisController@index');
+Route::post('/pais/create','PaisController@store');
+Route::get('/pais/{id}','PaisController@show');
+Route::put('/pais/update/{id}','PaisController@update');
+Route::delete('/pais/delete/{id}','PaisController@destroy');

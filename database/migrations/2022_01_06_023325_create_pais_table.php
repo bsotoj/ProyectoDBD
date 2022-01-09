@@ -17,6 +17,7 @@ class CreatePaisTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('nombrePais');
+            $table->boolean('delete');
         });
     }
 

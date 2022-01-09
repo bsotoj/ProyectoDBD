@@ -16,6 +16,7 @@ class PaisFactory extends Factory
     {
         return [
             'nombrePais'=>$this->faker->country,
+            'delete' => FALSE
         ];
     }
 }
