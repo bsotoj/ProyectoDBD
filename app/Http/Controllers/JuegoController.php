@@ -99,7 +99,7 @@ class JuegoController extends Controller
             $mensajeFallos = $mensajeFallos ."-El campo idGenero está vacío";
         }
         else{
-            $juego->idGenero = $request->$idGenero;
+            $juego->idGenero = $request->idGenero;
         }
 
         if($fallido == FALSE){

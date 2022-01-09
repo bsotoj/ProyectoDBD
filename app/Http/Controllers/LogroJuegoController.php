@@ -11,7 +11,7 @@ class LogroJuegoController extends Controller
 {
     public function index()
     {
-        $logroJuego = logroJuego::all()->where('delete',FALSE);
+        $logroJuego = LogroJuego::all()->where('delete',FALSE);
         if($logroJuego != NULL){
             return response()->json($logroJuego);
         }
@@ -119,7 +119,7 @@ class LogroJuegoController extends Controller
             ]);
         }
         
-        $logroJuego = logroJuego::find($id);
+        $logroJuego = LogroJuego::find($id);
         if($logroJuego == NULL || $logroJuego->delete == TRUE ){
             return response()->json([
                 "message" => 'El Id es invalido'
