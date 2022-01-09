@@ -16,8 +16,6 @@ class RegionController extends Controller
      */
     public function index()
     {
-        public function index()
-        {
             $region = Region::all()->where('delete',FALSE);
             if($region != NULL){
                 return response()->json($region);
@@ -85,8 +83,8 @@ class RegionController extends Controller
     public function show($id)
     {
         $region = Region::find($id);
-        if ($Region != NULL) {
-            return response()->json($Region);
+        if ($region != NULL) {
+            return response()->json($region);
         }
         return response()->json([
             "message" => 'No se encontro ningun valor con ese id.'
@@ -173,5 +171,4 @@ class RegionController extends Controller
             "msg" => "La region ha sido eliminado",
             ],200);
         }
-    }
 }
