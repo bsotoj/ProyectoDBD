@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Juego;
+use App\Models\Genero;
 
 
 class JuegoController extends Controller
@@ -93,12 +94,18 @@ class JuegoController extends Controller
             $juego->linkJuego = $request -> linkJuego;
         }
 
+        if($request->idGenero == NULL){
+            $fallido = TRUE;
+            $mensajeFallos = $mensajeFallos ."-El campo idGenero está vacío";
+        }
+        else{
+            $juego->idGenero = $request->$idGenero;
+        }
+
         if($fallido == FALSE){
 
             $juego->save();
-            return response()->json([
-                "msg" => "Se ha creado un nuevo Juego",
-            ],201);
+            return response()->json($juego);
         }
 
         else{
@@ -160,17 +167,71 @@ class JuegoController extends Controller
         
 
         $juego = Juego::find($id);
-        if($juego == NULL){
-            return response()->json([
-                "message" => 'El id es invalido'
-            ]);
+        if(empty($juego)){
+            $fallido = TRUE;
+            $mensajeFallos = $mensajeFallos. "El juego buscado no existe";
         }
-        if ($request->nombreJuego!= NULL) {
-            $juego->nombreJuego = $request->nombreJuego;
+        //validación 'nombreJuego'
+        if($request->nombreJuego == NULL){
+            $fallido = TRUE;
+            $mensajeFallos = $mensajeFallos."El campo 'nombreJuego' está vacío";
+        }
+        else{
+            $juego->nombreJuego = $request -> nombreJuego;
+        }
+        //validacion 'edadRestriccion'
+        if($request->edadRestriccion == NULL){
+            $fallido = TRUE;
+            $mensajeFallos = $mensajeFallos."El campo 'edadRestriccion' está vacío";
+        }
+        else{
+            $juego->edadRestriccion = $request -> edadRestriccion;
+        }
+        //validación 'almacenamiento'
+        if($request->almacenamiento == NULL){
+            $fallido = TRUE;
+            $mensajeFallos = $mensajeFallos."El campo 'almacenamiento' está vacío";
+        }
+        else{
+            $juego->almacenamiento = $request -> almacenamiento;
+        }
+        //validacion 'capacidadJuego'
+        if($request->capacidadJuego == NULL){
+            $fallido = TRUE;
+            $mensajeFallos = $mensajeFallos."El campo 'capacidadJuego' está vacío";
+        }
+        else{
+            $juego->capacidadJuego = $request -> capacidadJuego;
+        }
+        //validacion 'linkJuego'
+        if($request->linkJuego == NULL){
+            $fallido = TRUE;
+            $mensajeFallos = $mensajeFallos."El campo 'linkJuego' está vacío";
+        }
+        else{
+            $juego->linkJuego = $request -> linkJuego;
+        }
+        //validacion 'idGenero'
+        if($request->idGenero == NULL){
+            $fallido = TRUE;
+            $mensajeFallos = $mensajeFallos ."-El campo idGenero está vacío";
+        }
+        else{
+            $juego->idGenero = $request->idGenero;
         }
 
-        $juego->save();
-        return response()->json($juego);
+        if($fallido == FALSE){
+
+            $juego->save();
+            return response()->json($juego);
+        }
+
+        else{
+            return response()->json([
+                 "msg" => $mensajeFallos,
+             ],400); 
+         }
+    
     }
 
     /**
@@ -198,8 +259,6 @@ class JuegoController extends Controller
 
         $juego->delete = TRUE;
         $juego->save();
-        return response()->json([
-        "msg" => "El juego ha sido eliminado",
-        ],200);
+        return response()->json($juego);
     }
 }
