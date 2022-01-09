@@ -98,3 +98,10 @@ Route::post('/regions/create','RegionController@store');
 Route::get('/regions/{id}','RegionController@show');
 Route::put('/regions/update/{id}','RegionController@update');
 Route::delete('/regions/delete/{id}','RegionController@destroy');
+
+//rutas de Region
+Route::get('/ventas','VentaController@index');
+Route::post('/ventas/create','VentaController@store');
+Route::get('/ventas/{id}','VentaController@show');
+Route::put('/ventas/update/{id}','VentaController@update');
+Route::delete('/ventas/delete/{id}','VentaController@destroy');
