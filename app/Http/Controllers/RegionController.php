@@ -133,7 +133,7 @@ class RegionController extends Controller
         }
 
         if ($request->idPais != NULL){
-            $idPais->idPais = $request->idPais;
+            $region->idPais = $request->idPais;
         }
 
         if ($request->nombreRegion!= NULL){
