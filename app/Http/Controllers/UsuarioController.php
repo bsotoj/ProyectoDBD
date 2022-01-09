@@ -87,7 +87,35 @@ class UsuarioController extends Controller
              $usuario->fechaNacimiento = $request->fechaNacimiento;
          }
 
+        $cartera = Cartera::find($request->idCartera);
+        if($cartera == NULL){
+            return response()->json([
+                "message" => 'Id de cartera invalida'
+            ]);
+        }
+        else{
+            $usuario->idCartera = $request->idCartera;
+        }
 
+        $region = Region::find($request->idRegion);
+        if($region == NULL){
+            return response()->json([
+                "message" => 'Id de region invalida'
+            ]);
+        }
+        else{
+            $usuario->idRegion = $request->idRegion;
+        }
+
+        $listaDeseo = ListaDeseo::find($request->idListaDeseo);
+        if($listaDeseo == NULL){
+            return response()->json([
+                "message" => 'Id de listaDeseo invalida'
+            ]);
+        }
+        else{
+            $usuario->idListaDeseo = $request->idListaDeseo;
+        }
          //en caso de no haber fallado en alguno de los casos se guarda la nueva tupla
          if($fallido == FALSE){
 
@@ -200,15 +228,44 @@ class UsuarioController extends Controller
         }
 
 
-         //en caso de no haber fallado en alguno de los casos se modifica la tupla
-         if($fallido == FALSE){
-            $usuario->save();
+        $cartera = Cartera::find($request->idCartera);
+        if($cartera == NULL){
             return response()->json([
-                "msg" => "Se ha actualizado el usuario",
-            ],200);
+                "message" => 'Id de cartera invalida'
+            ]);
+        }
+        else{
+            $usuario->idCartera = $request->idCartera;
         }
 
+        $region = Region::find($request->idRegion);
+        if($region == NULL){
+            return response()->json([
+                "message" => 'Id de region invalida'
+            ]);
+        }
+        else{
+            $usuario->idRegion = $request->idRegion;
+        }
 
+        $listaDeseo = ListaDeseo::find($request->idListaDeseo);
+        if($listaDeseo == NULL){
+            return response()->json([
+                "message" => 'Id de listaDeseo invalida'
+            ]);
+        }
+        else{
+            $usuario->idListaDeseo = $request->idListaDeseo;
+        }
+         //en caso de no haber fallado en alguno de los casos se guarda la nueva tupla
+         if($fallido == FALSE){
+
+            $usuario->save();
+            return response()->json([
+                "msg" => "Se ha creado un nuevo usuario",
+            ],201);
+        }
+       
         else{
            return response()->json([
                 "msg" => $mensajeFallos,
