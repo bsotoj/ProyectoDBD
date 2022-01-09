@@ -86,8 +86,8 @@ Route::put('/lista_deseos/update/{id}','ListaDeseoController@update');
 Route::delete('/lista_deseos/delete/{id}','ListaDeseoController@destroy');
 
 //rutas de Logro
-Route::get('/logro','LogroController@index');
-Route::post('/logro/create','LogroController@store');
-Route::get('/logro/{id}','LogroController@show');
-Route::put('/logro/update/{id}','LogroController@update');
-Route::delete('/logro/delete/{id}','LogroController@destroy');
+Route::get('/logros','LogroController@index');
+Route::post('/logros/create','LogroController@store');
+Route::get('/logros/{id}','LogroController@show');
+Route::put('/logros/update/{id}','LogroController@update');
+Route::delete('/logros/delete/{id}','LogroController@destroy');

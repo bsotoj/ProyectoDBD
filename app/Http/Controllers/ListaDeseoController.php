@@ -31,7 +31,7 @@ class ListaDeseoController extends Controller
             [
                 'nombreLista'=>'required|min:3'
             ]
-        );
+            );
         if($validator->fails()){
             return response()->json([
                 'msg' => 'Datos ingresafos invalidos'
@@ -47,9 +47,9 @@ class ListaDeseoController extends Controller
                 'msg' => 'Se ha creado una nueva lista de deseo'
             ],202);
 
-            return response()->json([
-                'msg' => 'No se ha creado la listaDeseo'
-            ]);
+        return response()->json([
+            'msg' => 'No se ha creado la listaDeseo'
+        ]);
         }
     }
 
@@ -69,7 +69,7 @@ class ListaDeseoController extends Controller
     {
         $validator = Validator::make(
             [
-                'nombreLista' => $request->listaDeseo,
+                'nombreLista' => $request->nombreLista,
             ],
 
             [
@@ -88,8 +88,8 @@ class ListaDeseoController extends Controller
                 "message" => 'El id es invalido'
             ]);
         }
-        if($request->listaDeseo != NULL){
-            $listaDeseo->listaDeseo = $request->listaDeseo;
+        if($request->nombreLista != NULL){
+            $listaDeseo->nombreLista = $request->nombreLista;
         }
 
         $listaDeseo->save();

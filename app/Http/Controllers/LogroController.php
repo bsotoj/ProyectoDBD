@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Logro;
+use App\Models\logro;
 use Illuminate\Support\Facades\Validator;
 
-class LogroController extends Controller
+class logroController extends Controller
 {
     public function index()
     {
-        $Logro = Logro::all()->where('delete',FALSE);
-        if($Logro != NULL){
-            return response()->json($Logro);
+        $logro = logro::all()->where('delete',FALSE);
+        if($logro != NULL){
+            return response()->json($logro);
 
         }
         else{
@@ -28,21 +28,25 @@ class LogroController extends Controller
             [
                 'nombreLogro'=>$request->nombreLogro,
             ],
+
             [
-                'nombreLogro'=>'required|min:3'
+                'nombreLogro'=>'required|min:3',
             ]
         );
-        if($validator->fails()){
+        if($validator->fails())
+        {
             return response()->json([
                 'msg' => 'Datos ingresafos invalidos'
             ]);
         }
-        $Logro = new Logro();
-        $Logro->nombreLogro = $request->nombreLogro;
-        $Logro->delete = FALSE;
-        $Logro->save();
 
-        if($Logro != NULL){
+        
+        $logro = new logro();
+        $logro->nombreLogro = $request->nombreLogro;
+        $logro->delete = FALSE;
+        $logro->save();
+
+        if($logro != NULL){
             return response()->json([
                 'msg' => 'Se ha creado un nuevo logro'
             ],202);
@@ -55,9 +59,9 @@ class LogroController extends Controller
 
     public function show($id)
     {
-        $Logro = Logro::find($id);
-        if($Logro != NULL){
-            return response()->json($Logro);
+        $logro = logro::find($id);
+        if($logro != NULL){
+            return response()->json($logro);
         }
         return response()->json([
             'msg' => 'No se encontro ningun valor con la id asociada'
@@ -69,7 +73,7 @@ class LogroController extends Controller
     {
         $validator = Validator::make(
             [
-                'nombreLogro' => $request->Logro,
+                'nombreLogro' => $request->nombreLogro,
             ],
 
             [
@@ -82,18 +86,19 @@ class LogroController extends Controller
                 'msg' => 'Datos ingresados invalidos'
             ]);
         }
-        $Logro = Logro::find($id);
-        if($Logro == NULL){
+
+        $logro = logro::find($id);
+        if($logro == NULL){
             return response()->json([
                 "message" => 'El id es invalido'
             ]);
         }
-        if($request->Logro != NULL){
-            $Logro->Logro = $request->Logro;
+        if($request->nombreLogro != NULL){
+            $logro->nombreLogro = $request->nombreLogro;
         }
 
-        $Logro->save();
-        return response()->json($Logro);
+        $logro->save();
+        return response()->json($logro);
     }
 
     public function destroy($id)
@@ -104,17 +109,17 @@ class LogroController extends Controller
         ],400);
        }
      
-      $Logro = Logro::find($id);
-       if(($Logro == NULL) || ($Logro->delete==TRUE)){
+      $logro = logro::find($id);
+       if(($logro == NULL) || ($logro->delete==TRUE)){
         return response()->json([
-            "msg" => "La Logro no existe",
+            "msg" => "La logro no existe",
         ],404);
         }
 
-        $Logro->delete = TRUE;
-        $Logro->save();
+        $logro->delete = TRUE;
+        $logro->save();
         return response()->json([
-        "msg" => "La Logro ha sido eliminada",
+        "msg" => "La logro ha sido eliminada",
         ],200);
     } 
 }
