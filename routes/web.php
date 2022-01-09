@@ -133,3 +133,10 @@ Route::post('/logro_juegos/create','LogroJuegoController@store');
 Route::get('/logro_juegos/{id}','LogroJuegoController@show');
 Route::put('/logro_juegos/update/{id}','LogroJuegoController@update');
 Route::delete('/logro_juegos/delete/{id}','LogroJuegoController@destroy');
+
+//rutas de Comunidad Usuarios
+Route::get('/comunidad_usuarios','ComunidadUsuarioController@index');
+Route::post('/comunidad_usuarios/create','ComunidadUsuarioController@store');
+Route::get('/comunidad_usuarios/{id}','ComunidadUsuarioController@show');
+Route::put('/comunidad_usuarios/update/{id}','ComunidadUsuarioController@update');
+Route::delete('/comunidad_usuarios/delete/{id}','ComunidadUsuarioController@destroy');

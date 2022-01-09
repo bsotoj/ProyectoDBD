@@ -4,25 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Biblioteca;
+use App\Models\ComunidadUsuario;
 use App\Models\Usuario;
-use App\Models\Juego;
+use App\Models\Comunidad;
 
-class BibliotecaController extends Controller
+class ComunidadUsuarioController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *patrece mustafa 
+     *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $biblioteca = Biblioteca::all()->where('delete',FALSE);
-        if($biblioteca != NULL){
-            return response()->json($biblioteca);
+        $comunidadUsuario = ComunidadUsuario::all()->where('delete',FALSE);
+        if($comunidadUsuario != NULL){
+            return response()->json($comunidadUsuario);
         }
         return response()->json([
-            'message' => 'Biblioteca no encontrada'
+            'message' => 'Tabla intermedia no encontrada.'
         ], 404);
     }
 
@@ -37,11 +37,11 @@ class BibliotecaController extends Controller
         $validator = Validator::make(
             [
                 'idUsuario' => $request->idUsuario,
-                'idJuego' => $request->idJuego,  
+                'idComunidad' => $request->idComunidad,  
             ],
             [
                 'idUsuario' => 'required',
-                'idJuego' => 'required',
+                'idComunidad' => 'required',
             ]
         );
         if ($validator->fails())
@@ -57,25 +57,25 @@ class BibliotecaController extends Controller
             ]);
         }
 
-        $juego = Juego::find($request->idJuego);
-        if($juego == NULL){
+        $comunidad = Comunidad::find($request->idComunidad);
+        if($comunidad == NULL){
             return response()->json([
-                "message" => 'Id de juego invalido'
+                "message" => 'Id de comunidad invalido.'
             ]);
         }
-        $biblioteca = new Biblioteca();
-        $biblioteca->idUsuario = $request->idUsuario;
-        $biblioteca->idJuego = $request->idJuego;
-        $biblioteca->delete = FALSE;
-        $biblioteca->save();
+        $comunidadUsuario = new ComunidadUsuario();
+        $comunidadUsuario->idUsuario = $request->idUsuario;
+        $comunidadUsuario->idComunidad = $request->idComunidad;
+        $comunidadUsuario->delete = FALSE;
+        $comunidadUsuario->save();
 
-        if ($biblioteca != NULL) {
+        if ($comunidadUsuario != NULL) {
             return response()->json([
-                "message" => 'Se ha creado una biblioteca.'
+                "message" => 'Se ha creado una nueva tabla intermedia.'
             ],202);
         }
         return response()->json([
-            "message" => 'No se ha creado una biblioteca.'
+            "message" => 'No se ha creado la tabla.'
         ]);
     }
 
@@ -87,12 +87,12 @@ class BibliotecaController extends Controller
      */
     public function show($id)
     {
-        $biblioteca = Biblioteca::find($id);
-        if ($biblioteca != NULL) {
-            return response()->json($biblioteca);
+        $comunidadUsuario = ComunidadUsuario::find($id);
+        if ($comunidadUsuario != NULL) {
+            return response()->json($comunidadUsuario);
         }
         return response()->json([
-            "message" => 'No se encontro ninguna biblioteca con ese id.'
+            "message" => 'No se encontro ninguna tabla con ese id.'
         ]);
     }
 
@@ -108,11 +108,11 @@ class BibliotecaController extends Controller
         $validator = Validator::make(
             [
                 'idUsuario' => $request->idUsuario,
-                'idJuego' => $request->idJuego,
+                'idComunidad' => $request->idComunidad,
             ],
             [
                 'idUsuario' => 'required',
-                'idJuego' => 'required',
+                'idComunidad' => 'required',
             ]
         );
 
@@ -129,28 +129,28 @@ class BibliotecaController extends Controller
             ]);
         }
 
-        $juego = Juego::find($request->idJuego);
-        if($juego == NULL){
+        $comunidad = Comunidad::find($request->idComunidad);
+        if($comunidad == NULL){
             return response()->json([
-                "message" => 'Id de juego invalido.'
+                "message" => 'Id de comunidad invalido.'
             ]);
         }
         
-        $biblioteca = Biblioteca::find($id);
-        if($biblioteca == NULL){
+        $comunidadUsuario = ComunidadUsuario::find($id);
+        if($comunidadUsuario == NULL){
             return response()->json([
                 "message" => 'El Id es invalido.'
             ]);
         }
 
         if ($request->idUsuario != NULL) {
-            $biblioteca->idUsuario = $request->idUsuario;
+            $comunidadUsuario->idUsuario = $request->idUsuario;
         }
-        if ($request->idJuego != NULL) {
-            $biblioteca->idJuego = $request->idJuego;
+        if ($request->idComunidad != NULL) {
+            $comunidadUsuario->idComunidad = $request->idComunidad;
         }
-        $biblioteca->save();
-        return response()->json($biblioteca);
+        $comunidadUsuario->save();
+        return response()->json($comunidadUsuario);
     }
 
     /**
@@ -168,16 +168,15 @@ class BibliotecaController extends Controller
             ],400);
            }
          
-          $biblioteca = Biblioteca::find($id);
+          $comunidadUsuario = ComunidadUsuario::find($id);
            //Valida existencia de tupla
-           if(($biblioteca == NULL) || ($biblioteca->delete==TRUE)){
+           if(($comunidadUsuario == NULL) || ($comunidadUsuario->delete==TRUE)){
             return response()->json([
-                "msg" => "La biblioteca no existe.",
+                "msg" => "La tabla no existe.",
             ],404);
         }
-    
-            $biblioteca->delete = TRUE;
-            $biblioteca->save();
-            return response()->json($biblioteca);
-    } 
+            $comunidadUsuario->delete = TRUE;
+            $comunidadUsuario->save();
+            return response()->json($comunidadUsuario);
+    }
 }
