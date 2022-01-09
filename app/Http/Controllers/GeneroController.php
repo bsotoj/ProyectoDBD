@@ -50,10 +50,12 @@ class GeneroController extends Controller
                 'msg' => 'Datos ingresados invalidos'
             ]); 
         }
+
         $genero = new Genero();
-        $genero->'nombreGenero' = $request->nombreGenero;
+        $genero->nombreGenero = $request->nombreGenero;
         $genero->delete = FALSE;
         $genero->save();
+
         if($genero != NULL){
             return response()->json([
                 'msg' => 'se ha agregado un nuevo genero'
@@ -112,7 +114,7 @@ class GeneroController extends Controller
                 ]);
             }
             if ($request->nombreGenero!= NULL) {
-                $cartera->nombreGenero = $request->nombreGenero;
+                $genero->nombreGenero = $request->nombreGenero;
             }
             $genero->save();
             return response()->json($genero);

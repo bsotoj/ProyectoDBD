@@ -61,3 +61,11 @@ Route::post('/rol_permisos/create','RolPermisoController@store');
 Route::get('/rol_permisos/{id}','RolPermisoController@show');
 Route::put('/rol_permisos/update/{id}','RolPermisoController@update');
 Route::delete('/rol_permisos/delete/{id}','RolPermisoController@destroy');
+
+//rutas de Genero
+
+Route::get('/generos','GeneroController@index');
+Route::post('/generos/create','GeneroController@store');
+Route::get('/generos/{id}','GeneroController@show');
+Route::put('/generos/update/{id}','GeneroController@update');
+Route::delete('/generos/delete/{id}','GeneroController@destroy');
