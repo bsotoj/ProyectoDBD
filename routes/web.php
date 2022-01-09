@@ -99,7 +99,7 @@ Route::get('/regions/{id}','RegionController@show');
 Route::put('/regions/update/{id}','RegionController@update');
 Route::delete('/regions/delete/{id}','RegionController@destroy');
 
-//rutas de Venta
+//rutas de Ventas
 Route::get('/ventas','VentaController@index');
 Route::post('/ventas/create','VentaController@store');
 Route::get('/ventas/{id}','VentaController@show');
@@ -112,3 +112,10 @@ Route::post('/comunidads/create','ComunidadController@store');
 Route::get('/comunidads/{id}','ComunidadController@show');
 Route::put('/comunidads/update/{id}','ComunidadController@update');
 Route::delete('/comunidads/delete/{id}','ComunidadController@destroy');
+
+//rutas de Biblioteca
+Route::get('/bibliotecas','BibliotecaController@index');
+Route::post('/bibliotecas/create','BibliotecaController@store');
+Route::get('/bibliotecas/{id}','BibliotecaController@show');
+Route::put('/bibliotecas/update/{id}','BibliotecaController@update');
+Route::delete('/bibliotecas/delete/{id}','BibliotecaController@destroy');
