@@ -126,3 +126,10 @@ Route::post('/comentarios/create','ComentarioController@store');
 Route::get('/comentarios/{id}','ComentarioController@show');
 Route::put('/comentarios/update/{id}','ComentarioController@update');
 Route::delete('/comentarios/delete/{id}','ComentarioController@destroy');
+
+//rutas de LogroJuego
+Route::get('/logro_juegos','LogroJuegoController@index');
+Route::post('/logro_juegos/create','LogroJuegoController@store');
+Route::get('/logro_juegos/{id}','LogroJuegoController@show');
+Route::put('/logro_juegos/update/{id}','LogroJuegoController@update');
+Route::delete('/logro_juegos/delete/{id}','LogroJuegoController@destroy');
