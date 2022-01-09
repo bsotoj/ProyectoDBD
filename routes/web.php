@@ -53,7 +53,6 @@ Route::post('/rols/create','RolController@store');
 Route::get('/rols/{id}','RolController@show');
 Route::put('/rols/update/{id}','RolController@update');
 Route::delete('/rols/delete/{id}','RolController@destroy');
-<<<<<<< HEAD
 
 //rutas de RolPermiso
 
@@ -62,5 +61,3 @@ Route::post('/rol_permisos/create','RolPermisoController@store');
 Route::get('/rol_permisos/{id}','RolPermisoController@show');
 Route::put('/rol_permisos/update/{id}','RolPermisoController@update');
 Route::delete('/rol_permisos/delete/{id}','RolPermisoController@destroy');
-=======
->>>>>>> main
