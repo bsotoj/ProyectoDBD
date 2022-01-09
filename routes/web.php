@@ -119,3 +119,10 @@ Route::post('/bibliotecas/create','BibliotecaController@store');
 Route::get('/bibliotecas/{id}','BibliotecaController@show');
 Route::put('/bibliotecas/update/{id}','BibliotecaController@update');
 Route::delete('/bibliotecas/delete/{id}','BibliotecaController@destroy');
+
+//rutas de Comentario
+Route::get('/comentarios','ComentarioController@index');
+Route::post('/comentarios/create','ComentarioController@store');
+Route::get('/comentarios/{id}','ComentarioController@show');
+Route::put('/comentarios/update/{id}','ComentarioController@update');
+Route::delete('/comentarios/delete/{id}','ComentarioController@destroy');

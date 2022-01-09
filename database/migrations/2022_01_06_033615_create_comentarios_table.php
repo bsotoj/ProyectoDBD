@@ -17,14 +17,11 @@ class CreateComentariosTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('mensaje');
-
             $table->unsignedBigInteger('idJuego')->nullable();
             $table->foreign('idJuego')->references('id')->on('juegos');
-
             $table->unsignedBigInteger('idUsuario')->nullable();
             $table->foreign('idUsuario')->references('id')->on('usuarios');
             $table->boolean('delete');
-            
         });
     }
 
