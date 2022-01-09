@@ -78,9 +78,16 @@ Route::get('/pais/{id}','PaisController@show');
 Route::put('/pais/update/{id}','PaisController@update');
 Route::delete('/pais/delete/{id}','PaisController@destroy');
 
-//rutas de Genero
+//rutas de Lista Deseo
 Route::get('/lista_deseos','ListaDeseoController@index');
 Route::post('/lista_deseos/create','ListaDeseoController@store');
 Route::get('/lista_deseos/{id}','ListaDeseoController@show');
 Route::put('/lista_deseos/update/{id}','ListaDeseoController@update');
 Route::delete('/lista_deseos/delete/{id}','ListaDeseoController@destroy');
+
+//rutas de Logro
+Route::get('/logro','LogroController@index');
+Route::post('/logro/create','LogroController@store');
+Route::get('/logro/{id}','LogroController@show');
+Route::put('/logro/update/{id}','LogroController@update');
+Route::delete('/logro/delete/{id}','LogroController@destroy');
