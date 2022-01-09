@@ -16,6 +16,7 @@ class ListaDeseoFactory extends Factory
     {
         return [
             'nombreLista'=>$this->faker->word,
+            'delete'=>FALSE
         ];
     }
 }

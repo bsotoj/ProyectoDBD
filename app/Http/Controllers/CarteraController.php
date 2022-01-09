@@ -54,11 +54,11 @@ class CarteraController extends Controller
 
         if($cartera != NULL){
             return response()->json([
-                'msg' => 'se ha creado una nueva cartera'
+                'msg' => 'Se ha creado una nueva cartera'
             ],202);
 
         return response()->json([
-            'msg' => 'no se ha creado la cartera'
+            'msg' => 'No se ha creado la cartera'
         ]);    
         }
 
@@ -71,7 +71,7 @@ class CarteraController extends Controller
             return response()->json($cartera);
         }
         return response()->json([
-            'msg' => 'no se encontro ningun valor con la id asociada'
+            'msg' => 'No se encontro ningun valor con la id asociada'
         ]);
     }
 
@@ -122,7 +122,7 @@ class CarteraController extends Controller
      // Validación ID
      if(ctype_digit($id) != TRUE){
         return response()->json([
-            "msg" => "El id es inválido",
+            "msg" => "El id es invalido",
         ],400);
        }
      
@@ -132,13 +132,12 @@ class CarteraController extends Controller
         return response()->json([
             "msg" => "La cartera no existe",
         ],404);
-    }
+        }
 
         $cartera->delete = TRUE;
         $cartera->save();
         return response()->json([
         "msg" => "La cartera ha sido eliminada",
         ],200);
-} 
-    
+    }   
 }

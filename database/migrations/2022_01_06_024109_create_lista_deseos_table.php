@@ -17,6 +17,7 @@ class CreateListaDeseosTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('nombreLista');
+            $table->boolean('delete');
         });
     }
 

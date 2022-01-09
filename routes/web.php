@@ -77,3 +77,10 @@ Route::post('/pais/create','PaisController@store');
 Route::get('/pais/{id}','PaisController@show');
 Route::put('/pais/update/{id}','PaisController@update');
 Route::delete('/pais/delete/{id}','PaisController@destroy');
+
+//rutas de Genero
+Route::get('/lista_deseos','ListaDeseoController@index');
+Route::post('/lista_deseos/create','ListaDeseoController@store');
+Route::get('/lista_deseos/{id}','ListaDeseoController@show');
+Route::put('/lista_deseos/update/{id}','ListaDeseoController@update');
+Route::delete('/lista_deseos/delete/{id}','ListaDeseoController@destroy');
