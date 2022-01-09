@@ -91,3 +91,10 @@ Route::post('/logros/create','LogroController@store');
 Route::get('/logros/{id}','LogroController@show');
 Route::put('/logros/update/{id}','LogroController@update');
 Route::delete('/logros/delete/{id}','LogroController@destroy');
+
+//rutas de Region
+Route::get('/regions','RegionController@index');
+Route::post('/regions/create','RegionController@store');
+Route::get('/regions/{id}','RegionController@show');
+Route::put('/regions/update/{id}','RegionController@update');
+Route::delete('/regions/delete/{id}','RegionController@destroy');
