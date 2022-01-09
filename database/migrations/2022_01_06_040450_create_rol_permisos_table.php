@@ -22,7 +22,7 @@ class CreateRolPermisosTable extends Migration
 
             $table->unsignedBigInteger('idPermiso')->nullable();
             $table->foreign('idPermiso')->references('id')->on('permisos');
-            $table->boolean('delete');
+        
 
         });
     }

@@ -107,14 +107,14 @@ class UsuarioController extends Controller
             $usuario->idRegion = $request->idRegion;
         }
 
-        $listaDeseo = ListaDeseo::find($request->idListaDeseo);
+        $listaDeseo = ListaDeseo::find($request->idListaDeseos);
         if($listaDeseo == NULL){
             return response()->json([
                 "message" => 'Id de listaDeseo invalida'
             ]);
         }
         else{
-            $usuario->idListaDeseo = $request->idListaDeseo;
+            $usuario->idListaDeseos = $request->idListaDeseos;
         }
          //en caso de no haber fallado en alguno de los casos se guarda la nueva tupla
          if($fallido == FALSE){
@@ -248,21 +248,21 @@ class UsuarioController extends Controller
             $usuario->idRegion = $request->idRegion;
         }
 
-        $listaDeseo = ListaDeseo::find($request->idListaDeseo);
+        $listaDeseo = ListaDeseo::find($request->idListaDeseos);
         if($listaDeseo == NULL){
             return response()->json([
                 "message" => 'Id de listaDeseo invalida'
             ]);
         }
         else{
-            $usuario->idListaDeseo = $request->idListaDeseo;
+            $usuario->idListaDeseos = $request->idListaDeseos;
         }
          //en caso de no haber fallado en alguno de los casos se guarda la nueva tupla
          if($fallido == FALSE){
 
             $usuario->save();
             return response()->json([
-                "msg" => "Se ha creado un nuevo usuario",
+                "msg" => "Se ha modificado el usuario",
             ],201);
         }
        
