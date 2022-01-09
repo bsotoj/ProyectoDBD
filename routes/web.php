@@ -169,3 +169,10 @@ Route::get('/amigo/{id}','AmigoController@show');
 Route::put('/amigo/update/{id}','AmigoController@update');
 Route::delete('/amigo/delete/{id}','AmigoController@destroy');
 
+//rutas de VentaJuego
+Route::get('/venta_juegos','VentaJuegoController@index');
+Route::post('/venta_juegos/create','VentaJuegoController@store');
+Route::get('/venta_juegos/{id}','VentaJuegooController@show');
+Route::put('/venta_juegos/update/{id}','VentaJuegoController@update');
+Route::delete('/venta_juegos/delete/{id}','VentaJuegoController@destroy');
+
