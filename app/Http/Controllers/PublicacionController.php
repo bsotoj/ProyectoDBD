@@ -108,7 +108,7 @@ class PublicacionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    { 
         $validator = Validator::make(
             [
                 'nombrePublicacion' => $request->nombrePublicacion,
@@ -161,6 +161,7 @@ class PublicacionController extends Controller
             $publicacion->save();
             return response()->json($publicacion);
     }
+}
 
     /**
      * Remove the specified resource from storage.
@@ -190,3 +191,4 @@ class PublicacionController extends Controller
             return response()->json($publicacion);
     }
 }
+
