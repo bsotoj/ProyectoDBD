@@ -3,13 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ListaDeseosJuegos;
 use App\Models\ListaDeseo;
 use App\Models\Juego;
-use App\Models\ListaDeseosJuegos;
-use Illuminate\Support\Facades\Validator;
-class ListaDeseosJuegos extends Controller
+class ListaDeseosJuegosController extends Controller
 {
-    
     public function index()
     {
         $listaDeseosJuegos = ListaDeseosJuegos::all()->where('delete',FALSE);
