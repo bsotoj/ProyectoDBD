@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Subject;
 use App\Models\RolPermiso;
+use App\Models\Rol;
+use App\Models\Permiso;
 use Illuminate\Http\Request;
 
 class RolPermisoController extends Controller
@@ -60,6 +61,7 @@ class RolPermisoController extends Controller
         }
  
         $rolPermiso = new RolPermiso();
+        $rolPermiso->delete = FALSE; 
         $rolPermiso->idRol = $request->idRol;
         $rolPermiso->idPermiso = $request->idPermiso;
         $rolPermiso->save();
@@ -78,7 +80,7 @@ class RolPermisoController extends Controller
 
     public function show($id)
     {
-        $rolPermiso = PermisoRol::find($id);
+        $rolPermiso = RolPermiso::find($id);
         if ($rolPermiso != NULL) {
             return response()->json($rolPermiso);
         }
@@ -133,11 +135,12 @@ class RolPermisoController extends Controller
             ]);
         }
         if ($request->idPermiso != NULL) {
-            $puestoProducto->idPermiso = $request->idPermiso;
+            $rolPermiso->idPermiso = $request->idPermiso;
         }
         if ($request->idRol != NULL) {
-            $idRol->idRol = $request->idRol;
+            $rolPermiso->idRol = $request->idRol;
     }
+        return response()->json($rolPermiso);
 }
 
     public function destroy($id)
@@ -159,8 +162,6 @@ class RolPermisoController extends Controller
    
            $rolPermiso->delete = TRUE;
            $rolPermiso->save();
-           return response()->json([
-           "msg" => "El rolPermiso ha sido eliminado",
-           ],200);
+           return response()->json($rolPermiso);
        }    
 }

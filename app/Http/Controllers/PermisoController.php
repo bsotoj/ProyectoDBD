@@ -122,8 +122,6 @@ class PermisoController extends Controller
 
         $permiso->delete = TRUE;
         $permiso->save();
-        return response()->json([
-        "msg" => "El permiso ha sido eliminado",
-        ],200);
+        return response()->json($permiso);
 }    
 }

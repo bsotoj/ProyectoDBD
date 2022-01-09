@@ -178,8 +178,6 @@ class ComentarioController extends Controller
         }
             $comentario->delete = TRUE;
             $comentario->save();
-            return response()->json([
-            "msg" => "El comentario ha sido eliminado.",
-            ],200);
+            return response()->json($comentario);
     }
 }

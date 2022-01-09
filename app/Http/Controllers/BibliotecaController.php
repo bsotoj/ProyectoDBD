@@ -177,8 +177,6 @@ class BibliotecaController extends Controller
     
             $biblioteca->delete = TRUE;
             $biblioteca->save();
-            return response()->json([
-            "msg" => "La biblioteca ha sido eliminado.",
-            ],200);
+            return response()->json($biblioteca);
         } 
 }

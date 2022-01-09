@@ -121,8 +121,6 @@ class RolController extends Controller
 
         $rol->delete = TRUE;
         $rol->save();
-        return response()->json([
-        "msg" => "El rol ha sido eliminado",
-        ],200);
+        return response()->json($rol);
     }    
 }

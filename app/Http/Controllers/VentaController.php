@@ -157,8 +157,6 @@ class VentaController extends Controller
 
         $venta->delete = TRUE;
         $venta->save();
-        return response()->json([
-        "msg" => "La venta ha sido eliminada",
-        ],200);
+        return response()->json($venta);
     }   
 }

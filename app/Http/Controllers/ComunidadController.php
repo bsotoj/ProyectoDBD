@@ -157,8 +157,6 @@ class ComunidadController extends Controller
         }
             $comunidad->delete = TRUE;
             $comunidad->save();
-            return response()->json([
-            "msg" => "La comunidad ha sido eliminado",
-            ],200);
+            return response()->json($comunidad);
         }
 }

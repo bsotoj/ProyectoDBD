@@ -53,9 +53,7 @@ class CarteraController extends Controller
         $cartera->save();
 
         if($cartera != NULL){
-            return response()->json([
-                'msg' => 'Se ha creado una nueva cartera'
-            ],202);
+            return response()->json($cartera);
 
         return response()->json([
             'msg' => 'No se ha creado la cartera'
@@ -136,8 +134,6 @@ class CarteraController extends Controller
 
         $cartera->delete = TRUE;
         $cartera->save();
-        return response()->json([
-        "msg" => "La cartera ha sido eliminada",
-        ],200);
+        return response()->json($cartera);
     }   
 }

@@ -118,8 +118,6 @@ class LogroController extends Controller
 
         $logro->delete = TRUE;
         $logro->save();
-        return response()->json([
-        "msg" => "El logro ha sido eliminado",
-        ],200);
+        return response()->json($logro);
     } 
 }

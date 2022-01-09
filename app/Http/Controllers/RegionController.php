@@ -121,14 +121,14 @@ class RegionController extends Controller
         $pais = Pais::find($request->idPais);
         if($pais == NULL){
             return response()->json([
-                "message" => 'Id de pais invalido'
+                "message" => 'ID de pais invalido'
             ]);
         }
 
         $region = Region::find($id);
         if($region == NULL){
             return response()->json([
-                "message" => 'El Id es invalido'
+                "message" => 'ID de region es invalido'
             ]);
         }
 
@@ -168,7 +168,7 @@ class RegionController extends Controller
             $region->delete = TRUE;
             $region->save();
             return response()->json([
-            "msg" => "La region ha sido eliminado",
+            "msg" => "La region ha sido eliminada",
             ],200);
         }
 }

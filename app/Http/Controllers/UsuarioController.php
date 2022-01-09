@@ -261,9 +261,7 @@ class UsuarioController extends Controller
          if($fallido == FALSE){
 
             $usuario->save();
-            return response()->json([
-                "msg" => "Se ha modificado el usuario",
-            ],201);
+            return response()->json($usuario);
         }
        
         else{
@@ -295,8 +293,6 @@ class UsuarioController extends Controller
 
         $usuario->delete = TRUE;
         $usuario->save();
-        return response()->json([
-            "msg" => "El usuario ha sido eliminado",
-        ],200);
+        return response()->json($usuario);
     }
 }

@@ -113,8 +113,6 @@ class ListaDeseoController extends Controller
 
         $listaDeseo->delete = TRUE;
         $listaDeseo->save();
-        return response()->json([
-        "msg" => "La listaDeseo ha sido eliminada",
-        ],200);
+        return response()->json($listaDeseo);
     } 
 }

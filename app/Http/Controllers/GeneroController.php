@@ -145,8 +145,6 @@ class GeneroController extends Controller
 
         $genero->delete = TRUE;
         $genero->save();
-        return response()->json([
-        "msg" => "El genero ha sido eliminado",
-        ],200);
+        return response()->json($genero);
     } 
 }

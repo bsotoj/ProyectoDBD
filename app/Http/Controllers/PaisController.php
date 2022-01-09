@@ -56,9 +56,7 @@ class PaisController extends Controller
         $pais->save();
         
         if($pais != NULL){
-            return response()->json([
-                'msg' => 'se ha agregado un nuevo pais'
-            ],202);
+            return response()->json($pais);
 
         return response()->json([
             'msg' => 'no se ha agregado un nuevo pais'
@@ -145,8 +143,6 @@ class PaisController extends Controller
 
         $pais->delete = TRUE;
         $pais->save();
-        return response()->json([
-        "msg" => "El pais ha sido eliminado",
-        ],200);
+        return response()->json($pais);
     }
 }
