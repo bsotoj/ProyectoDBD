@@ -3,21 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\logro;
+use App\Models\Logro;
 use Illuminate\Support\Facades\Validator;
 
-class logroController extends Controller
+class LogroController extends Controller
 {
     public function index()
     {
-        $logro = logro::all()->where('delete',FALSE);
+        $logro = Logro::all()->where('delete',FALSE);
         if($logro != NULL){
             return response()->json($logro);
 
         }
         else{
             return response()->json([
-                'msg' => 'No existen listas de deseo'
+                'msg' => 'No existen logros'
             ],404);
         }
     }
@@ -36,12 +36,12 @@ class logroController extends Controller
         if($validator->fails())
         {
             return response()->json([
-                'msg' => 'Datos ingresafos invalidos'
+                'msg' => 'Datos ingresados invalidos'
             ]);
         }
 
 
-        $logro = new logro();
+        $logro = new Logro();
         $logro->nombreLogro = $request->nombreLogro;
         $logro->delete = FALSE;
         $logro->save();
@@ -59,7 +59,7 @@ class logroController extends Controller
 
     public function show($id)
     {
-        $logro = logro::find($id);
+        $logro = Logro::find($id);
         if($logro != NULL){
             return response()->json($logro);
         }
@@ -87,7 +87,7 @@ class logroController extends Controller
             ]);
         }
 
-        $logro = logro::find($id);
+        $logro = Logro::find($id);
         if($logro == NULL){
             return response()->json([
                 "message" => 'El id es invalido'
@@ -109,17 +109,17 @@ class logroController extends Controller
         ],400);
        }
      
-      $logro = logro::find($id);
+      $logro = Logro::find($id);
        if(($logro == NULL) || ($logro->delete==TRUE)){
         return response()->json([
-            "msg" => "La logro no existe",
+            "msg" => "El logro no existe",
         ],404);
         }
 
         $logro->delete = TRUE;
         $logro->save();
         return response()->json([
-        "msg" => "La logro ha sido eliminada",
+        "msg" => "El logro ha sido eliminado",
         ],200);
     } 
 }

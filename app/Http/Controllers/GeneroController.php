@@ -22,7 +22,7 @@ class GeneroController extends Controller
         }
         else{
             return response()->json([
-                'msg' => 'No existen ese genero'
+                'msg' => 'No existe ese genero'
             ],404);
         }
     }

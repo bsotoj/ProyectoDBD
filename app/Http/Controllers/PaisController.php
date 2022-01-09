@@ -22,7 +22,7 @@ class PaisController extends Controller
         }
         else{
             return response()->json([
-                'msg' => 'No existen ese pais en la base de datos'
+                'msg' => 'No existe ese pais en la base de datos'
             ],404);
         }
     }

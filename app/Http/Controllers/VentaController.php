@@ -53,7 +53,7 @@ class VentaController extends Controller
             ]);
         }
 
-        $venta = new venta();
+        $venta = new Venta();
         $venta->idUsuario = $request->idUsuario;
         $venta->fechaVenta = $request->fechaVenta;
         $venta->descuento = $request->descuento;
@@ -75,7 +75,7 @@ class VentaController extends Controller
 
     public function show($id)
     {
-        $venta = venta::find($id);
+        $venta = Venta::find($id);
         if($venta != NULL){
             return response()->json($venta);
         }
@@ -147,7 +147,7 @@ class VentaController extends Controller
         ],400);
        }
      
-      $venta = venta::find($id);
+      $venta = Venta::find($id);
        //Valida existencia de tupla
        if(($venta == NULL) || ($venta->delete==TRUE)){
         return response()->json([

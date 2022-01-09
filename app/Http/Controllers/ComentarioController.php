@@ -64,7 +64,7 @@ class ComentarioController extends Controller
                 "message" => 'Id de usuario invalido.'
             ]);
         }
-        $comentario = new comentario();
+        $comentario = new Comentario();
         $comentario->mensaje = $request->mensaje;
         $comentario->idJuego = $request->idJuego;
         $comentario->idUsuario = $request->idUsuario;
@@ -135,7 +135,7 @@ class ComentarioController extends Controller
                 "message" => 'Id de usuario invalido.'
             ]);
         }
-        $comentario = comentario::find($id);
+        $comentario = Comentario::find($id);
         if($comentario == NULL){
             return response()->json([
                 "message" => 'El Id es invalido.'

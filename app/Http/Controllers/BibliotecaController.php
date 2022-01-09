@@ -135,7 +135,7 @@ class BibliotecaController extends Controller
             ]);
         }
         
-        $biblioteca = biblioteca::find($id);
+        $biblioteca = Biblioteca::find($id);
         if($biblioteca == NULL){
             return response()->json([
                 "message" => 'El Id es invalido.'
@@ -175,7 +175,7 @@ class BibliotecaController extends Controller
             ],404);
         }
     
-            $bibliteca->delete = TRUE;
+            $biblioteca->delete = TRUE;
             $biblioteca->save();
             return response()->json([
             "msg" => "La biblioteca ha sido eliminado.",

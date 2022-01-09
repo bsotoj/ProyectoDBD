@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Subject;
+use App\Models\RolPermiso;
 use Illuminate\Http\Request;
 
 class RolPermisoController extends Controller
@@ -137,6 +138,7 @@ class RolPermisoController extends Controller
         if ($request->idRol != NULL) {
             $idRol->idRol = $request->idRol;
     }
+}
 
     public function destroy($id)
     {

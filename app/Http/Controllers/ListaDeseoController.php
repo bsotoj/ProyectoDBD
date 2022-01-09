@@ -34,7 +34,7 @@ class ListaDeseoController extends Controller
             );
         if($validator->fails()){
             return response()->json([
-                'msg' => 'Datos ingresafos invalidos'
+                'msg' => 'Datos ingresados invalidos'
             ]);
         }
         $listaDeseo = new ListaDeseo();
@@ -104,7 +104,7 @@ class ListaDeseoController extends Controller
         ],400);
        }
      
-      $listaDeseo = listaDeseo::find($id);
+      $listaDeseo = ListaDeseo::find($id);
        if(($listaDeseo == NULL) || ($listaDeseo->delete==TRUE)){
         return response()->json([
             "msg" => "La listaDeseo no existe",
