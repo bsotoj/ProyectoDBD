@@ -18,10 +18,8 @@ class CreatePublicacionsTable extends Migration
             $table->timestamps();
             $table->string('nombrePublicacion');
             $table->string('mensajePublicacion');
-
             $table->unsignedBigInteger('idComunidad')->nullable();
             $table->foreign('idComunidad')->references('id')->on('comunidads');
-
             $table->unsignedBigInteger('idUsuario')->nullable();
             $table->foreign('idUsuario')->references('id')->on('usuarios');
             $table->boolean('delete');

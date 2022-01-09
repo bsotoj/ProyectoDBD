@@ -147,3 +147,10 @@ Route::post('/lista_deseos_juegos/create','ListaDeseosJuegosController@store');
 Route::get('/lista_deseos_juegos/{id}','ListaDeseosJuegosController@show');
 Route::put('/lista_deseos_juegos/update/{id}','ListaDeseosJuegosController@update');
 Route::delete('/lista_deseos_juegos/delete/{id}','ListaDeseosJuegosController@destroy');
+
+//rutas de Publicacion
+Route::get('/publicacions','PublicacionController@index');
+Route::post('/publicacions/create','PublicacionController@store');
+Route::get('/publicacions/{id}','PublicacionController@show');
+Route::put('/publicacions/update/{id}','PublicacionController@update');
+Route::delete('/publicacions/delete/{id}','PublicacionController@destroy');

@@ -22,7 +22,6 @@ class PublicacionFactory extends Factory
             'idComunidad' => Comunidad::all()->random()->id,
             'idUsuario'=> Usuario::all()->random()->id,
             'delete' => FALSE
-
         ];
     }
 }
