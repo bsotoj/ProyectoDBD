@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Models\ListaDeseosJuegos;
 use App\Models\ListaDeseo;
 use App\Models\Juego;
