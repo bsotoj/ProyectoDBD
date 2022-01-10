@@ -43,7 +43,15 @@ class UsuarioController extends Controller
         else{
             $usuario->nombre = $request -> nombre;
         }
+         //validación 'nombreUsuario'
+         if($request->nombreUsuario == NULL){
+            $fallido = TRUE;
+            $mensajeFallos = $mensajeFallos."-El campo 'nombreUsuario' está vacío";
+        }
 
+        else{
+            $usuario->nombreUsuario = $request -> nombreUsuario;
+        }
         //Validación 'contraseña'
         if($request->contraseña == NULL){
             $fallido=TRUE;
