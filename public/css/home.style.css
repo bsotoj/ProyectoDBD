@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500;700;800&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    --title-color: #189E49;
+    --subtitle-color: #1FD060;
+    --black-color:#24252A;
+    --white-color:#fff;
+}
+body h1{
+    color: var(--title-color);
+}
+body p{
+    color: var(--black-color);
+    font-size:2.3vmin;
+}
+body a{
+    text-decoration: none;/*Quita el subrayado del link*/
+    color: var(--white-color);
+}
+
+li,a{
+    font-weight: 500;
+    font-size:16px;
+    color: #edf0f1;
+    text-decoration:none;
+    background: #24252A;
+}
+
+header{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    padding: 30px 5%;
+    background: #24252A;
+}
+
+/*-------NAV------*/
+.nav{
+    position: absolute;
+    top: 0;
+    left:0;
+    display:flex;
+    width: 100%;
+    padding: 10px 30px;
+    align-items: center;
+    background: #24252A;
+}
+.nav ul{
+    flex: 1;
+    text-align: right;
+}
+
+.nav ul li{
+    list-style: none;/*Quita el punteo de la lista*/
+    display:inline-block;/*Coloca la lista de manera lineal*/
+    margin: 0 1px;/*Separación entre items*/
+    padding: 0 20px;
+}
+
+.nav-list li a{
+    transition: all .05s ease 0s;
+}
+
+.nav-list a:hover{
+    border-bottom: 3px solid #1FD060; /*Crea una línea debajo del texto*/
+}
+.logo{
+    width: 40px;
+}
+
+
+/*-------HOME------*/
+.home{
+    height: 96vh;
+    width: 100%;
+    display: flex;
+    background-image: url(https://images.unsplash.com/photo-1634335572482-c43700ecbc23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80);
+    background-position:right;
+    -webkit-background-size:cover;
+    background-color: #B0D1C1;
+
+}
+.content{
+    padding-left: 60%;
+    padding-top: 30vh;
+    text-align: center;
+}
+
+.home h2{
+    margin: 0;
+    font-size: 70px;
+    color: var(--title-color);
+}
+.home p{
+    font-size: 32px;
+    margin: 0;
+    color:var(--white-color);
+}
+
+.home a{
+    text-decoration: none;
+    font-size: 22px;
+    border: 1px solid var(--title-color);
+    padding: 10px 35px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+/*Boton login*/
+.login{
+    padding: 10px 20px;
+    color: var(--white-color);
+    background-color: #000000;
+    border-radius: 15px;
+    transition: all .5s ease;/*Tiempo transicion*/
+}
+
+/*Boton register*/
+.register{
+    padding: 10px 20px;
+    border:1px solid var(--subtitle-color);
+    border-radius: 15px;
+    color: var(--white-color);
+    background-color: var(--title-color);
+    transition: all .4s ease;/*Tiempo transicion*/
+}
+.register:hover{
+    background-color: var(--subtitle-color);
+    border: 1px solid var(--subtitle-color);
+}
+
+
+/*------FOOTER-----*/
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer{
+    padding: 30px 0;    
+    background-color: #24252A;
+}
+
+.footer-col{
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4{
+    font-size: 18px;
+    color: #F0F0F0;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.footer-col h4::before{
+    content: '';
+    position: absolute; /*Línea debajo del título*/
+    left:0;
+    bottom: -10px;
+    background-color: #1FD060;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+    
+}
+
+.footer-col ul li{
+    margin-bottom: 10px;
+    list-style-type: none; /*Elimina los puntos de lista*/
+}
+
+.footer-col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbb;
+    display: block;
+    transition: all .3s ease; /*Tiempo transisción*/
+}
+.footer-col ul li a:hover{
+    color:#edf0f1;
+    padding-left: 10px; /*Mueve hacia la derecha al pasar mouse*/
+}
