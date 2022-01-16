@@ -7,8 +7,8 @@
     margin: 0;
     padding: 0;
     font-family: "Montserrat", sans-serif;
-    --title-color: #189E49;
-    --subtitle-color: #1FD060;
+    --title-color:#FF4574 ;
+    --subtitle-color: #B14FD2;
     --black-color:#24252A;
     --white-color:#fff;
 }
@@ -29,7 +29,7 @@ li,a{
     font-size:16px;
     color: #edf0f1;
     text-decoration:none;
-    background: #24252A;
+    background: var(--black-color);
 }
 
 header{
@@ -37,7 +37,7 @@ header{
     justify-content:flex-end;
     align-items:center;
     padding: 30px 5%;
-    background: #24252A;
+    background: var(--black-color);
 }
 
 /*-------NAV------*/
@@ -49,7 +49,7 @@ header{
     width: 100%;
     padding: 10px 30px;
     align-items: center;
-    background: #24252A;
+    background: var(--black-color);
 }
 .nav ul{
     flex: 1;
@@ -68,7 +68,7 @@ header{
 }
 
 .nav-list a:hover{
-    border-bottom: 3px solid #1FD060; /*Crea una línea debajo del texto*/
+    border-bottom: 3px solid var(--subtitle-color); /*Crea una línea debajo del texto*/
 }
 .logo{
     width: 40px;
@@ -80,14 +80,12 @@ header{
     height: 96vh;
     width: 100%;
     display: flex;
-    background-image: url(https://images.unsplash.com/photo-1634335572482-c43700ecbc23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80);
-    background-position:right;
+    background-image: url(https://images.unsplash.com/photo-1635336969198-ec9553adc0e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80);
+    background-position:left;
     -webkit-background-size:cover;
-    background-color: #B0D1C1;
-
 }
 .content{
-    padding-left: 60%;
+    padding-left: 20%;
     padding-top: 30vh;
     text-align: center;
 }
@@ -100,12 +98,14 @@ header{
 .home p{
     font-size: 32px;
     margin: 0;
+    margin-bottom: 10px;
     color:var(--white-color);
 }
 
 .home a{
     text-decoration: none;
     font-size: 22px;
+    margin: 3px;
     border: 1px solid var(--title-color);
     padding: 10px 35px;
     display: inline-block;
@@ -116,7 +116,7 @@ header{
 .login{
     padding: 10px 20px;
     color: var(--white-color);
-    background-color: #000000;
+    background-color: #1e233a;
     border-radius: 15px;
     transition: all .5s ease;/*Tiempo transicion*/
 }
@@ -128,7 +128,7 @@ header{
     border-radius: 15px;
     color: var(--white-color);
     background-color: var(--title-color);
-    transition: all .4s ease;/*Tiempo transicion*/
+    transition: all .7s ease;/*Tiempo transicion*/
 }
 .register:hover{
     background-color: var(--subtitle-color);
@@ -165,7 +165,7 @@ header{
     position: absolute; /*Línea debajo del título*/
     left:0;
     bottom: -10px;
-    background-color: #1FD060;
+    background-color: var(--subtitle-color);
     height: 2px;
     box-sizing: border-box;
     width: 50px;

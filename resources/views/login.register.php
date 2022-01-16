@@ -15,7 +15,7 @@
 <body>
 <header>
         <div class="nav">
-            <img src="{{ asset('images/logo2.png')}}" alt="" class="logo">
+            <img src="{{ asset('images/logo.png')}}" alt="" class="logo">
             <ul class="nav-list">
                 <li><a href="#">Ayuda</a></li>
             </ul>
@@ -43,11 +43,10 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Institución</h4>
+                    <h4>Institucion</h4>
                     <ul>
                         <li><a>Universidad de Santiago de Chile</a></li>
                         <li><a>Departamento de Ingeniería Informática</a></li>
-                        <li><a>Laboratorio Diseño de Base de Datos</a></li>
                     </ul>
                 </div>
             </div>
