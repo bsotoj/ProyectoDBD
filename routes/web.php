@@ -13,11 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', function () {
-    return view('home');
+    return view('register');
 });
 
 Route::get('/login', function () {
-    return view('login');
+    return view('home');
 });
 
 //rutas de Usuario
@@ -187,3 +187,4 @@ Route::get('/usuario_rols/{id}','UsuarioRolController@show');
 Route::put('/usuario_rols/update/{id}','UsuarioRolController@update');
 Route::delete('/usuario_rols/delete/{id}','UsuarioRolController@destroy');
 
+Route::post('/crearusuario','RegistroController@registrar')->name('crearusuario');

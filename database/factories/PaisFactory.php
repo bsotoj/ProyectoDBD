@@ -15,7 +15,7 @@ class PaisFactory extends Factory
     public function definition()
     {
         return [
-            'nombrePais'=>$this->faker->country,
+            'nombrePais'=>"Chile",
             'delete' => FALSE
         ];
     }

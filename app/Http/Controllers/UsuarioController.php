@@ -22,79 +22,53 @@ class UsuarioController extends Controller
         $usuario = new Usuario();
         $usuario->delete = FALSE; 
 
-        $fallido = FALSE;
-        $mensajeFallos = '';
-        //validación 'nombreUsuario'
-         if($request->nombreUsuario == NULL){
-            $fallido = TRUE;
-            $mensajeFallos = $mensajeFallos."El campo 'nombreUsuario' está vacío";
-        }
+        $validator = Validator::make(
+            $request->all(),
+            [
+            'nombreUsuario' => 'required|min:2|max:255',
+            'nombre' => 'required|min:2|max:255',
+            'contraseña' => 'required|min:2|max:20',
+            'email' => 'required|regex:/^.+@.+$/i',
+            'fechaNacimiento' => 'required',
+            'idCartera'=> 'required|integer',
+            'idRegion' => 'required|integer',
+            'idListaDeseos' =>'required|integer',
 
-        else{
-            $usuario->nombreUsuario = $request -> nombreUsuario;
-        }
+            ],
 
-        //validación 'nombre'
-        if($request->nombre == NULL){
-            $fallido = TRUE;
-            $mensajeFallos = $mensajeFallos."-El campo 'nombre' está vacío";
-        }
+            [
+            'nombreUsuario.required' => 'Debes ingresar un nombre de usuario',
+            'nombreUsuario.min'=>'Debe ser de largo mínimo :min',
+            'nombreUsuario.max'=>'Debe ser de largo máximo :max',
 
-        else{
-            $usuario->nombre = $request -> nombre;
-        }
-         //validación 'nombreUsuario'
-         if($request->nombreUsuario == NULL){
-            $fallido = TRUE;
-            $mensajeFallos = $mensajeFallos."-El campo 'nombreUsuario' está vacío";
-        }
+            'nombre.required' => 'Debes ingresar un nombre',
+            'nombre.min'=>'Debe ser de largo mínimo :min',
+            'nombre.max'=>'Debe ser de largo máximo :max',
 
-        else{
-            $usuario->nombreUsuario = $request -> nombreUsuario;
-        }
-        //Validación 'contraseña'
-        if($request->contraseña == NULL){
-            $fallido=TRUE;
-            $mensajeFallos=$mensajeFallos. "-El campo 'contraseña' está vacío";
-        }
-        else{
-            $usuario->contraseña = $request->contraseña;
-        }
+            'contraseña.required' => 'Debes ingresar una contraseña',
+            'contraseña.min'=>'Debe ser de largo mínimo :min',
+            'contraseña.max'=>'Debe ser de largo máximo :max',
 
-        //Validación 'email'
-        if($request->email == NULL){
-            $fallido = TRUE; 
-            $mensajeFallos = $mensajeFallos. "-El campo 'email' está vacío";
-        }
+            'email.required' => 'Email requerido',
 
-        if( ((strpos($request->email,'.') == FALSE) || (strpos($request->email,'@')==FALSE)
-            || (substr_count($request->email,'@') > 1 )) && ($fallido == FALSE)){
+            'fechaNacimiento.required' => 'Fecha Nacimiento requerida',
 
-                $fallido = TRUE;
-                $mensajeFallos = $mensajeFallos."-El campo 'email' no es válido";
-            }
+            'idCartera.required' => 'Debes asociar una cartera',
+            'idCartera.integer' => 'Debe ser un número',
 
-        else{
-            $usuario->email = $request->email;
-        }
-         //validación 'fechaNacimiento'
-         if($request->fechaNacimiento == NULL){
-             $fallido = TRUE;
-             $mensajeFallos=$mensajeFallos."El campo 'fechaNacimiento está vacío";
-         }
+            'idRegion.required' => 'Debes asociar una region',
+            'idRegion.integer' => 'Debe ser un número',
 
-         if(((strpos($request->fechaNacimiento,'-') == FALSE)) || (substr_count($request->fechaNacimiento,'-') < 2)
-         || (substr_count($request->fechaNacimiento,'-') > 2) && ($fallido == FALSE)
-         ){
-             $fallido = TRUE;
-             $mensajeFallos = $mensajeFallos."El campo 'fechaNacimiento no es válido";
-         }
+            'idListaDeseos.required' => 'Debes asociar una lista de deseo',
+            'idListaDeseos.integer' => 'Debe ser un número',
+            ]
+            );
 
 
-         else{
-             $usuario->fechaNacimiento = $request->fechaNacimiento;
-         }
-
+//Caso falla la validación
+if($validator->fails()){
+    return response($validator->errors(), 400);
+}
         $cartera = Cartera::find($request->idCartera);
         if($cartera == NULL){
             return response()->json([

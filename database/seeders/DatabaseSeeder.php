@@ -44,10 +44,15 @@ class DatabaseSeeder extends Seeder
        Logro::factory(10)->create();
        ListaDeseo::factory(10)->create();
        Pais::factory(10)->create();
+
+       
        Rol::factory(10)->create();
        Permiso::factory(10)->create();
        RolPermiso::factory(10)->create();
-       Region::factory(10)->create();
+
+
+      //Region::factory(10)->create();
+        $this->call(RegionSeeder::class);
        Usuario::factory(10)->create();
        Venta::factory(10)->create();
        UsuarioRol::factory(10)->create();

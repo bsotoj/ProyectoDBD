@@ -16,7 +16,7 @@ class RegionFactory extends Factory
     public function definition()
     {
         return [
-            'nombreRegion' => $this->faker->state,
+            'nombreRegion' => $this->faker->randomElement($array = array('Tarapacá','Antofagasta','Coquimbo','Valparaíso','OHiggins','Maule','Bío Bío','Araucanía','Los lagos','Aysen','Magallanes y Antártica Chilena', 'Metropolitana','Los Ríos','Arica y Parinacota','Ñuble')),
             'idPais' => Pais::all()->random()->id,
             'delete' => FALSE
         ];

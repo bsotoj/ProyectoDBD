@@ -19,7 +19,7 @@ class RegionJuegoFactory extends Factory
         return [
             'nombre'=> $this->faker->word,
             'precio'=> $this->faker->numberBetween($min = 1, $max = 4000),
-            'moneda'=> $this->faker->randomElement($array = array ('CL','USD','JPY')),
+            'moneda'=> $this->faker->randomElement($array = array ('CL')),
             'idRegion'=> Region::all()->random()->id,
             'idJuego'=> Juego::all()->random()->id,
             'delete' => FALSE

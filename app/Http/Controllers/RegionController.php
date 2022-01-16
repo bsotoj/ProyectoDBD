@@ -16,9 +16,10 @@ class RegionController extends Controller
      */
     public function index()
     {
-            $region = Region::all()->where('delete',FALSE);
-            if($region != NULL){
-                return response()->json($region);
+            $regions = Region::all()->where('delete',FALSE);
+            if($regions != NULL){
+                return view('register',compact('regions'));
+                
     
             }
             else{

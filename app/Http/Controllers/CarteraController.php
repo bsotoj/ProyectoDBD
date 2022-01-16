@@ -28,13 +28,11 @@ class CarteraController extends Controller
             [
                 'metodoRecarga' => $request->metodoRecarga,
                 'tipoMoneda' => $request->tipoMoneda,
-                'monto' => $request->monto,
             ],
 
             [
                 'metodoRecarga' => 'required|min:3',
                 'tipoMoneda' => 'required|min:3',
-                'monto' => 'required',
             ]
             );
         if($validator->fails())
@@ -48,7 +46,7 @@ class CarteraController extends Controller
         $cartera = new Cartera();
         $cartera->metodoRecarga = $request->metodoRecarga;
         $cartera->tipoMoneda = $request->tipoMoneda;
-        $cartera->monto = $request->monto; 
+        $cartera->monto = 0; 
         $cartera->delete = FALSE;
         $cartera->save();
 
