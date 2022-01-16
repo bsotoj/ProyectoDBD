@@ -27,7 +27,7 @@
             <h2>DEBEDE</h2>
             <p>Lorem ipsum dolor sit</p>
             <a href="/regions" class="register">Registrarse</a>
-            <a href="#" class="login">Iniciar sesion</a>
+            <a href="/login" class="login">Iniciar sesion</a>
         </div>
     </div>
     <div class="footer">

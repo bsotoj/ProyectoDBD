@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500;700;800&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    --title-color:#FF4574 ;
+    --subtitle-color: #B14FD2;
+    --black-color:#24252A;
+    --white-color:#fff;
+}
+body h1{
+    color: var(--title-color);
+}
+body p{
+    color: var(--black-color);
+    font-size:2.3vmin;
+}
+body a{
+    text-decoration: none;/*Quita el subrayado del link*/
+    color: var(--white-color);
+}
+
+li,a{
+    font-weight: 500;
+    font-size:16px;
+    color: #edf0f1;
+    text-decoration:none;
+    background: var(--black-color);
+}
+
+header{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    padding: 30px 5%;
+    background: var(--black-color);
+}
+
+/*-------NAV------*/
+.nav{
+    position: absolute;
+    top: 0;
+    left:0;
+    display:flex;
+    width: 100%;
+    padding: 10px 30px;
+    align-items: center;
+    background: var(--black-color);
+}
+.nav ul{
+    flex: 1;
+    text-align: right;
+}
+
+.nav ul li{
+    list-style: none;/*Quita el punteo de la lista*/
+    display:inline-block;/*Coloca la lista de manera lineal*/
+    margin: 0 1px;/*Separación entre items*/
+    padding: 0 20px;
+}
+
+.nav-list li a{
+    transition: all .05s ease 0s;
+}
+
+.nav-list a:hover{
+    border-bottom: 3px solid var(--subtitle-color); /*Crea una línea debajo del texto*/
+}
+.logo{
+    width: 40px;
+}
+
+
+/*-------HOME------*/
+body{
+    margin:0;
+    padding: 0;
+    background: linear-gradient(120deg,#B14FD2,#FF9671);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.login-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    background: var(--white-color);
+    border-radius: 10px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.login-container h1{
+    text-align: center;
+    padding-bottom: 10px;
+    color: var(--subtitle-color);
+}
+
+.login-container form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+form .txt_field{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.txt_field input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.txt_field label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.txt_field span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--subtitle-color);
+    transition: .5s;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label{
+    top: -5px;
+    color: var(--subtitle-color);
+}
+
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before{
+    width: 100%;
+}
+
+input[type="submit"]{
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: var(--subtitle-color);
+    border-radius:20px;
+    font-size: 18px;
+    color: var(--white-color);
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    transition: all .5s ease;
+}
+input[type="submit"]:hover{
+    background-color: var(--title-color);
+}
