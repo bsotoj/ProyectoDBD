@@ -4,12 +4,7 @@
 <head>
     <title>DEBEDE</title>
     <!--Referencia a archivo .css-->
-    <link rel="stylesheet" type="text/CSS" href="login_style.css">
-    <!--Incluye archivo normalize-->
-    <link rel="stylesheet" type="text/CSS" href="normalize.css">
-    <link href="{{ asset('css/login2.style.css') }}" rel="stylesheet">
-
-
+    <link href="{{ asset('css/login3.style.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -35,6 +30,7 @@
                 <label>Contraseña</label>
             </div>
             <input type="submit" value="Iniciar sesión">
+            <div class="signup_link">¿No estas registradx?<a href="/register">Regístrate aqui</a>
         </form>
     </div>
 </body>

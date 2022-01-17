@@ -26,7 +26,7 @@
         <div class="content">
             <h2>DEBEDE</h2>
             <p>Lorem ipsum dolor sit</p>
-            <a href="/regions" class="register">Registrarse</a>
+            <a href="/register" class="register">Registrarse</a>
             <a href="/login" class="login">Iniciar sesion</a>
         </div>
     </div>
