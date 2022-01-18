@@ -18,7 +18,7 @@ class RegionController extends Controller
     {
             $regions = Region::all()->where('delete',FALSE);
             if($regions != NULL){
-                return view('register',compact('regions'));
+                return view('register2',compact('regions'));
                 
     
             }

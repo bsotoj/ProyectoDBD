@@ -16,9 +16,11 @@ Route::get('/', function () {
     return view('home');
 });
 
+/*
 Route::get('/login', function () {
-    return view('login');
+    return view('home');
 });
+*/
 Route::get('/register2', function () {
     return view('register2');
 });
@@ -102,7 +104,7 @@ Route::put('/logros/update/{id}','LogroController@update');
 Route::delete('/logros/delete/{id}','LogroController@destroy');
 
 //rutas de Region
-Route::get('/regions','RegionController@index');
+Route::get('/regions','RegionController@index')->name('regiones');
 Route::post('/regions/create','RegionController@store');
 Route::get('/regions/{id}','RegionController@show');
 Route::put('/regions/update/{id}','RegionController@update');
