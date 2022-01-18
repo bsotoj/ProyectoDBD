@@ -30,47 +30,43 @@
         <form action="{{route('crearusuario')}}" method="post">
 
             <div class="txt_field">
-                <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" value="">
+                <input type="text" required name="nombre">
+                <label>Nombre</label>
             </div>
 
 
             <div class="txt_field">
-                <label for="username" class="form-label">Usuario</label>
-                <input type="text" class="form-control" id="username" name="nombreUsuario" value="">
-            </div>
-
-
-            <div class="txt_field">
-                <label for="password" class="form-label">Contraseña</label>
-                <input type="text" class="form-control" id="password" name="contraseña" value="">
-            </div>
-
-
-
-            <div class="txt_field">
-                <label for="email" class="form-label">Correo Electrónico</label>
-                <input type="text" class="form-control" id="email" name="email" 
-                    value="">
+                <input type="text" required name="nombreUsuario">
+                <label>Usuario</label>
             </div>
 
             <div class="txt_field">
-                <label for="fechaNacimiento" class="form-label">Fecha de nacimiento</label>
-                <input type="text" class="form-control" id="fechaNacimiento" name="fechaNacimiento"
-                     value="">
+                <input type="password" required name="contraseña">
+                <label>Contraseña</label>
             </div>
 
             <div class="txt_field">
-                <label for="nombreLista" class="form-label">Nombre lista de deseo</label>
-                <input type="text" class="form-control" id="nombreLista" name="nombreLista"
-                     value="">
+                <input type="email" required name="email">
+                <label>Correo electrónico</label>
+            </div>
+
+            
+            <div class="txt_field">
+                <h5>Fecha de nacimiento</h5>
+                <input type="date" required name="fechaNacimiento">
+            </div>
+
+            
+            <div class="txt_field">
+                <input type="text" required name="nombreLista">
+                <label>Nombre lista de deseos</label>
             </div>
 
 
+               
             <div class="txt_field">
-                <label for="metodoRecarga" class="form-label">Forma de Pago</label>
-                <input type="text" class="form-control" id="metodoRecarga" name="metodoRecarga"
-                    value="">
+                <input type="text" required name="metodoRecarga">  
+                <label>Forma de pago</label>
             </div>
 
             <div class="txt_field">
