@@ -16,6 +16,15 @@ class JuegoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function index()
+    {   
+        $juego = Juego::all();
+        if($juego->isEmpty()){
+            return response()->json([], 204);
+        }
+        return view('mainview',compact('juego'));    }
+    /*
     public function index()
     {
         $juego = Juego::all()->where('delete',FALSE);
@@ -29,7 +38,7 @@ class JuegoController extends Controller
             ],404);
         }
     }
-
+*/
 
     /**
      * Store a newly created resource in storage.
