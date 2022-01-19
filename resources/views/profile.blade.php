@@ -28,9 +28,9 @@
                         <img src="./images/steam.png" alt="" />
                         <h2>Lista</h2>
                     </div>
-                    <div class="link">
-                        <img src="./images/upcoming.png" alt="" />
-                        <h2>Monedero</h2>
+                    <div class="links">
+                            <img src="./images/upcoming.png" alt="" />
+                            <a href="/cartera" class="cartera">Monedero</a>
                     </div>
                     <div class="link">
                         <img src="./images/library.png" alt="" />
@@ -76,4 +76,5 @@
     <div class="circle1"></div>
     <div class="circle2"></div>
 </body>
+
 </html>

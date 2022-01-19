@@ -24,13 +24,31 @@ Route::get('/login', function () {
 Route::get('/register2', function () {
     return view('register2');
 });
-Route::get('/register', function () {
-    return view('register');
-});
 
 Route::get('/profile', function () {
     return view('profile');
 });
+
+Route::get('/cartera', function () {
+    return view('cartera');
+});
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/carrito', function () {
+    return view('carrito');
+});
+
+Route::get('/listaDeseos', function () {
+    return view('listaDeseos');
+});
+
+Route::get('/juego', function () {
+    return view('juego');
+});
+
 
 //rutas de Usuario
 Route::get('/usuarios','UsuarioController@index');
