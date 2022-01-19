@@ -17,18 +17,28 @@
         </div>
     </header>
 
+
     <div class="login-container">
         <h1>Inicia sesión</h1>
-        <form action="{{route('infoLogin')}}" method="GET"class="input-container">
+        <form action="{{route('infoLogin')}}" method="GET" class="input-container">
             <div class="txt_field">
                 <input type="text" required name="nombreUsuario">
-                <label>Usuario</label>
+                <label>Nombre</label>
             </div>
 
             <div class="txt_field">
                 <input type="password" required name="contraseña">
                 <label>Contraseña</label>
             </div>
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             <input type="submit" value="Iniciar sesión">
             <div class="signup_link">¿No estas registradx?<a href="{{route('regiones')}}">Regístrate aqui</a>
         </form>

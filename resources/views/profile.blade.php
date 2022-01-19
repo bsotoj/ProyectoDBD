@@ -38,7 +38,8 @@
                     </div>
                     <div class="link">
                         <img src="./images/library.png" alt="" />
-                        <h2>Librería</h2>
+                        <a href="/biblioteca" class="biblioteca">Biblioteca</a>
+                        
                     </div>
                     
                 </div>

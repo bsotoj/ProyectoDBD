@@ -9,6 +9,7 @@ use App\Models\Cartera;
 use App\Models\ListaDeseo;
 use App\Models\Rol;
 use App\Models\UsuarioRol;
+use Illuminate\Support\Facades\Validator;
 class UsuarioController extends Controller
 {
     public function index()
@@ -146,7 +147,27 @@ if($validator->fails()){
 
 
     public function login(Request $request){
+        /*
+        $validator = Validator::make(
+            $request->nombreUsuario,$request->contraseña,
+            [
+                'nombreUsuario' => 'required|min:2|max:255',
+                'contraseña' => 'required|min:2|max:20',
+            ],
 
+            [
+                'nombreUsuario.required' => 'Debes ingresar un nombre de usuario',
+                'nombreUsuario.min'=>'Debe ser de largo mínimo :min',
+                'nombreUsuario.max'=>'Debe ser de largo máximo :max',
+
+                'contraseña.required' => 'Debes ingresar una contraseña',
+                'contraseña.min'=>'Debe ser de largo mínimo :min',
+                'contraseña.max'=>'Debe ser de largo máximo :max',
+            ]
+        );
+        
+        $validator->validate();
+        */
         $users = Usuario::all()->where('delete',FALSE);
         foreach($users as $usuario){
             if($usuario->nombreUsuario == $request->nombreUsuario & $usuario->contraseña == $request->contraseña){
@@ -161,10 +182,11 @@ if($validator->fails()){
                 }
             }
         }
+        /*
         return response()->json([
             "msg" => "El usuario ingresado no existe",
         ],404);
-
+        */
 
     }
   
