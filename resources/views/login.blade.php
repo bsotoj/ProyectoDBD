@@ -30,7 +30,7 @@
                 <label>Contraseña</label>
             </div>
             <input type="submit" value="Iniciar sesión">
-            <div class="signup_link">¿No estas registradx?<a href="/register">Regístrate aqui</a>
+            <div class="signup_link">¿No estas registradx?<a href="{{route('regiones')}}">Regístrate aqui</a>
         </form>
     </div>
 </body>
