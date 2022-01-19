@@ -49,6 +49,9 @@ Route::get('/juego', function () {
     return view('juego');
 });
 
+Route::get('/catalogo', function () {
+    return view('catalogo');
+});
 
 //rutas de Usuario
 Route::get('/usuarios','UsuarioController@index');
