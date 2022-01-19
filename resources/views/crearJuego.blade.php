@@ -13,38 +13,39 @@
 <body>
     <form action="{{route('nuevoJuego')}}" method="POST">
         <H1 class="center display-4">Agregar un nuevo juego</H1>
-        <div class="contenedorJuego">
+        <div class="txt_field">
             <label for="exampleInputPassword1" class="form-label">Nombre: </label>
             <input type="text" class="form-control" name="nombreJuego" value="" 
                 required>
         </div>
 
-        <div class="contenedorJuego">
+        <div class="txt_field">
             <label for="exampleInputPassword1" class="form-label">Edad Restricción: </label>
-            <input type="text" class="form-control" name="edadRestricción" value="" 
+            <input type="number" class="form-control" name="edadRestriccion" value="" 
                 required>
         </div>
 
-        <div class="contenedorJuego">
+        <div class="txt_field">
             <label for="exampleInputPassword1" class="form-label">Almacenamiento requerido: </label>
             <input type="text" class="form-control" name="almacenamiento" value="" placeholder="100"
                 required>
         </div>
 
-        <div class="contenedorJuego">
+        <div class="txt_field">
             <label for="exampleInputPassword1" class="form-label">Link del Juego: </label>
-            <input type="date" class="form-control" name="linkJuego" value="" placeholder="https://www.youtube.com/watch?v=OOB3j9lmBZI&ab_channel=MaximusDread"
+            <input type="text" class="form-control" name="linkJuego" value="" placeholder="https://www.youtube.com/watch?v=OOB3j9lmBZI&ab_channel=MaximusDread"
                 required>
         </div>
 
+    
         <div class="txt_field">
-            <h5>Género</h5>
-            <select name="format" id="format" name="idGenero" id="idRegion">
-                @foreach ($genero as $g)
-                <option value="{{$g->id}}">{{$g->nombreGenero}}</option>
-                @endforeach
-            </select>
-        </div>
+                <h5>Género</h5>
+                <select name="format" id="format"name="idGenero" id="idGenero">
+                    @foreach ($genero as $gen)
+                    <option value="{{$gen->id}}">{{$gen->nombreGenero}}</option>
+                    @endforeach
+                </select>
+            </div>
 
         <input hidden type="text" class="form-control" name="id" value="{{$usuario['id']}}">
         <button type="submit" class="btn btn-success d-grid gap-2 col-2 mx-auto color3">Agregar juego</button>

@@ -318,7 +318,7 @@ class JuegoController extends Controller
         $juego->save();
         return response()->json($juego);
     }
-
+  
     public function newGame($id){
         $usuario = Usuario::find($id);
         $usuarioRol = UsuarioRol::all()->where('delete',FALSE);
@@ -326,7 +326,7 @@ class JuegoController extends Controller
             if($uR->idUsuario == $usuario->id){
                 $rol = Rol::find($uR->idRol);
                 if($rol->nombreRol == 'Administrador' || $rol->nombreRol == 'Desarrollador'){
-                    $genero = Genero::all()->where('delete',FALSE);
+                    $genero = Genero::all();
                     return view('crearJuego',compact('usuario','genero'));
                 }
                 else{
@@ -339,23 +339,23 @@ class JuegoController extends Controller
         } 
         
     }
-   
+   //ESTE PROVIENE DE LA VISTA crearJuego
     public function crear(Request $request){
         $validator = Validator::make(
             [
-                'nombreJuego' => $request -> nombreJuego,
-                'edadRestriccion'=> $request -> edadRestriccion,
-                'almacenamiento'=> $request -> almacenamiento,
-                'linkJuego'=> $request -> linkJuego,
+                'nombreJuego' => 'required',
+                'edadRestriccion'=>'required',
+                'almacenamiento'=> 'required',
+                'linkJuego'=> 'required',
             ],
-
             [
-                'nombreJuego' => 'required|min:3',
-                'edadRestriccion'=> 'required|min:3',
-                'almacenamiento'=> 'required|min:3',
-                'linkJuego'=> 'required|min:3',
+                'nombreJuego.required' => 'Debes ingresar el nombre del juego',
+                'edadRestriccion.required' => 'Debes ingresar una edad de restricción',
+                'almacenamiento.required' => 'Debes ignresar el almacenamiento',
+                'linkJuego' => 'required',
+                ]
 
-            ]
+
             );
             if($validator->fails())
         {
@@ -368,6 +368,7 @@ class JuegoController extends Controller
        $juego->nombreJuego = $request->nombreJuego;
        $juego->edadRestriccion = $request->edadRestriccion;
        $juego->linkJuego = $request->linkJuego;
+       $juego->almacenamiento = $request->almacenamiento;
        $juego->idGenero = $request->idGenero;
        $juego->delete=FALSE;
        $juego->save(); 
@@ -379,6 +380,6 @@ class JuegoController extends Controller
        $biblioteca->save();
        
        $juegos = Juego::all()->where('delete',FALSE);
-       return view('catalogo','juegos');
+       return view('catalogo',compact('juegos'));
     }
 }

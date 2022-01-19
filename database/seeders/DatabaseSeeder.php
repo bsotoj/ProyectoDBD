@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
     {
       
        Cartera::factory(10)->create();
-       Genero::factory(10)->create();
+       $this->call(GeneroSeeder::class);
        Logro::factory(10)->create();
        ListaDeseo::factory(10)->create();
        Pais::factory(10)->create();

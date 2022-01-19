@@ -53,13 +53,17 @@
                             <h3>Biblioteca</h3>
                         </a>
                     </div>
-
+                
                     <div class="link">
                         <img src="./images/library.png" alt="" />
                         <a href="/juegos/Id={{$user['id']}}/añadirJuego" class="añadirJuego">
                             <h3>Añadir juego</h3>
                         </a>
                     </div>
+                </div>
+                <div class="links">
+                    <img src="./images/library.png" alt="" />
+                    <a href="/" class="cartera">Cerrar Sesión</a>
                 </div>
                 <div class="pro">
                     <a href="/catalogo" class="catalogo">
