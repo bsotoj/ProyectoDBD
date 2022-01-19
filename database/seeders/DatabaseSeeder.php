@@ -46,12 +46,12 @@ class DatabaseSeeder extends Seeder
        Pais::factory(10)->create();
 
        
-       Rol::factory(10)->create();
+       $this->call(RolSeeder::class);
        Permiso::factory(10)->create();
        RolPermiso::factory(10)->create();
 
 
-      //Region::factory(10)->create();
+      
         $this->call(RegionSeeder::class);
        Usuario::factory(10)->create();
        Venta::factory(10)->create();

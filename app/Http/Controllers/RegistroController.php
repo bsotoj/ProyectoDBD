@@ -8,6 +8,8 @@ use App\Models\Pais;
 use App\Models\Usuario;
 use App\Models\Cartera;
 use App\Models\ListaDeseo;
+use App\Models\Rol;
+use App\Models\UsuarioRol;
 use Illuminate\Support\Facades\Validator;
 class RegistroController extends Controller
 {
@@ -69,7 +71,8 @@ class RegistroController extends Controller
             $listaDeseo->delete = FALSE; 
             $listaDeseo->save();
 
- 
+           
+            
             $usuario= new Usuario();
             $usuario->nombreUsuario = $request->nombreUsuario;
             $usuario->nombre = $request->nombre;
@@ -82,8 +85,15 @@ class RegistroController extends Controller
             $usuario->idRegion = $request->idRegion;
             $usuario->save();
 
+            $rol= Rol::all()->Random();
+            $usuarioRol = new UsuarioRol();
+            $usuarioRol->idRol = $rol->id;
+            $usuarioRol->idUsuario = $usuario->id;
+            $usuarioRol->delete = FALSE; 
+            $usuarioRol->save();
+
             $users= Usuario::all()->where('delete',FALSE);
-            return view('usuarios',compact('users'));
+            return view('home',compact('users'));
          
             
    

@@ -19,14 +19,14 @@
 
     <div class="login-container">
         <h1>Inicia sesión</h1>
-        <form class="input-container">
+        <form action="{{route('infoLogin')}}" method="GET"class="input-container">
             <div class="txt_field">
-                <input type="text" required>
+                <input type="text" required name="nombreUsuario">
                 <label>Usuario</label>
             </div>
 
             <div class="txt_field">
-                <input type="password" required>
+                <input type="password" required name="contraseña">
                 <label>Contraseña</label>
             </div>
             <input type="submit" value="Iniciar sesión">

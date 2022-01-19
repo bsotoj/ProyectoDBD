@@ -7,6 +7,8 @@ use App\Models\Usuario;
 use App\Models\Region;
 use App\Models\Cartera;
 use App\Models\ListaDeseo;
+use App\Models\Rol;
+use App\Models\UsuarioRol;
 class UsuarioController extends Controller
 {
     public function index()
@@ -141,6 +143,30 @@ if($validator->fails()){
         return response($usuario,200);
     }
 
+
+
+    public function login(Request $request){
+
+        $users = Usuario::all()->where('delete',FALSE);
+        foreach($users as $usuario){
+            if($usuario->nombreUsuario == $request->nombreUsuario & $usuario->contraseña == $request->contraseña){
+                $answer = Usuario::find($usuario->id);
+                $uRol = UsuarioRol::all()->where('delete',FALSE); 
+                foreach($uRol as $usuarioRolBuscado){
+                    if($usuarioRolBuscado->idUsuario == $answer->id){
+                        $rol = Rol::find($usuarioRolBuscado->idRol);
+                        return view('profile',compact('answer','rol'));
+
+                    }
+                }
+            }
+        }
+        return response()->json([
+            "msg" => "El usuario ingresado no existe",
+        ],404);
+
+
+    }
   
     public function update(Request $request, $id)
     {

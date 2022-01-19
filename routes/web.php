@@ -16,11 +16,11 @@ Route::get('/', function () {
     return view('home');
 });
 
-/*
+
 Route::get('/login', function () {
-    return view('home');
+    return view('login');
 });
-*/
+
 Route::get('/register2', function () {
     return view('register2');
 });
@@ -34,7 +34,7 @@ Route::get('/profile', function () {
 
 //rutas de Usuario
 Route::get('/usuarios','UsuarioController@index');
-
+Route::get('/userlogin','UsuarioController@login')->name('infoLogin');
 Route::post('/usuarios/create','UsuarioController@store');
 Route::get('/usuarios/{id}','UsuarioController@show');
 Route::put('/usuarios/update/{id}','UsuarioController@update');

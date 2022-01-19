@@ -16,8 +16,8 @@
             <div class="dashboard">
                 <div class="user">
                     <img src="./images/profilepic.png" alt="" />
-                    <h3>Nombre Usuario</h3>
-                    <p>Rol</p>
+                    <h3> {{$answer->nombreUsuario}}</h3>
+                    <p>{{$rol->nombreRol}}</p>
                 </div>
                 <div class="links">
                     <div class="link">
