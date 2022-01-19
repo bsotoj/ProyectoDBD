@@ -20,38 +20,51 @@
                     <p>{{$rol->nombreRol}}</p>
                 </div>
                 <div class="links">
-                    <div class="link">
-                        <img src="./images/library.png" alt="" />
-                        <a href="/usuarios/Id={{$user['id']}}/editarPerfil" class="modificarUsuario">Editar Perfil</a>
-                    </div>
-                    <div class="link">
-                        <img src="./images/twitch.png" alt="" />
-                        <h2>Carrito</h2>
-                    </div>
-                    <div class="link">
-                        <img src="./images/steam.png" alt="" />
-                        <h2>Lista</h2>
-                    </div>
-                    <div class="links">
-                            <img src="./images/upcoming.png" alt="" />
-                            <a href="/cartera" class="cartera">Monedero</a>
-                    </div>
-                    <div class="link">
-                        <img src="./images/library.png" alt="" />
-                        <a href="/bibliotecas/Id={{$user['id']}}/verJuegos" class="biblioteca">Biblioteca</a>
 
+                    <div class="link">
+                        <img src="./images/library.png" alt="" />
+                        <a href="/usuarios/Id={{$user['id']}}/editarPerfil" class="modificarUsuario">
+                            <h3>Editar Perfil</h3>
+                        </a>
+                    </div>
+                    <div class="link">
+                        <img src="./images/library.png" alt="" />
+                        <a href="/carrito" class="carrito">
+                            <h3>Carrito</h3>
+                        </a>
+                    </div>
+                    <div class="link">
+                        <img src="./images/library.png" alt="" />
+                        <a href="/listaDeseos" class="listaDeseos">
+                            <h3>Mi Lista</h3>
+                        </a>
                     </div>
 
                     <div class="link">
                         <img src="./images/library.png" alt="" />
-                        <a href="/juegos/Id={{$user['id']}}/añadirJuego" class="biblioteca">Añadir nuevo juego</a>
-                
+                        <a href="/cartera" class="cartera">
+                            <h3>Mi Cartera</h3>
+                        </a>
                     </div>
-                    
-                    
+
+                    <div class="link">
+                        <img src="./images/library.png" alt="" />
+                        <a href="/bibliotecas/Id={{$user['id']}}/verJuegos" class="biblioteca">
+                            <h3>Biblioteca</h3>
+                        </a>
+                    </div>
+
+                    <div class="link">
+                        <img src="./images/library.png" alt="" />
+                        <a href="/juegos/Id={{$user['id']}}/añadirJuego" class="añadirJuego">
+                            <h3>Añadir juego</h3>
+                        </a>
+                    </div>
                 </div>
                 <div class="pro">
-                    <h2>¿Buscas más juegos?</h2>
+                    <a href="/catalogo" class="catalogo">
+                        <h2>Más juegos aquí</h2>
+                    </a>
                     <img src="./images/controller.png" alt="" />
                 </div>
             </div>
@@ -65,21 +78,21 @@
                         <img src="./images/assassins.png" alt="" />
                         <div class="card-info">
                             <h2>Assassins Creed Valhalla</h2>
-                            <p>PC Version</p>
+                            <p>Acción</p>
                         </div>
                     </div>
                     <div class="card">
                         <img src="./images/sackboy.png" alt="" />
                         <div class="card-info">
                             <h2>Sackboy A Great Advanture</h2>
-                            <p>PC Version</p>
+                            <p>Aventura</p>
                         </div>
                     </div>
                     <div class="card">
                         <img src="./images/spiderman.png" alt="" />
                         <div class="card-info">
                             <h2>Spiderman Miles Morales</h2>
-                            <p>PC Version</p>
+                            <p>Acción</p>
                         </div>
                     </div>
                 </div>
