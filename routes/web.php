@@ -45,6 +45,11 @@ Route::get('/listaDeseos', function () {
     return view('listaDeseos');
 });
 
+Route::get('/juego', function () {
+    return view('juego');
+});
+
+
 //rutas de Usuario
 Route::get('/usuarios','UsuarioController@index');
 

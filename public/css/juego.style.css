@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    --title-color: #FF4574;
+    --subtitle-color: #B14FD2;
+    --black-color: #24252A;
+    --white-color: #fff;
+    --grey-color: #adadad;
+}
+
+body h1 {
+    color: var(--title-color);
+}
+
+body p {
+    color: var(--black-color);
+    font-size: 2.3vmin;
+}
+
+body a {
+    text-decoration: none;
+    /*Quita el subrayado del link*/
+    color: var(--white-color);
+}
+
+li, a {
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+    background: var(--black-color);
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 5%;
+    background: var(--black-color);
+}
+
+/*-------NAV------*/
+.nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    padding: 10px 30px;
+    align-items: center;
+    background: var(--black-color);
+}
+
+.nav ul {
+    flex: 1;
+    text-align: right;
+}
+
+.nav ul li {
+    list-style: none;
+    /*Quita el punteo de la lista*/
+    display: inline-block;
+    /*Coloca la lista de manera lineal*/
+    margin: 0 1px;
+    /*Separación entre items*/
+    padding: 0 20px;
+}
+
+.nav-list li a {
+    transition: all .05s ease 0s;
+}
+
+.nav-list a:hover {
+    border-bottom: 3px solid var(--subtitle-color);
+    /*Crea una línea debajo del texto*/
+}
+
+.logo {
+    width: 40px;
+}
+
+/*-------------------*/
+/*Boton login*/
+.wishList{
+    padding: 10px 20px;
+    color: var(--black-color);
+    border:1px solid var(--title-color);
+    background-color: var(--white-color);
+    border-radius: 15px;
+    transition: all .5s ease;/*Tiempo transicion*/
+}
+
+/*Boton register*/
+.cart{
+    padding: 10px 20px;
+    border:1px solid var(--title-color);
+    border-radius: 15px;
+    color: var(--white-color);
+    background-color: var(--title-color);
+    transition: all .7s ease;/*Tiempo transicion*/
+}
+.cart:hover{
+    background-color: var(--subtitle-color);
+    border: 1px solid var(--subtitle-color);
+}
+.row{
+    display:flex;
+    align-items:center;
+    padding-top: 6rem;
+}
+.header-content{
+    flex-basis: 50%;
+    padding-top: 4em;
+    padding-left: 4em;
+    align-items: center;
+    text-align: center;
+}
+.header-content h1{
+    font-size: 7vmin;
+    margin-bottom: 30px;
+}
+.header-content p{
+    margin-bottom: 40px;
+    text-align: justify;/*Justifica el textp*/
+}
+.image{
+    flex-basis: 50%;
+    align-items: center;
+    text-align: center;
+}
