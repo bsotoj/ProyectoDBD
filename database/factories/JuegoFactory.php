@@ -20,8 +20,7 @@ class JuegoFactory extends Factory
             'idGenero'=>Genero::all()->random()->id,
             'nombreJuego'=>$this->faker->name,
             'edadRestriccion'=>$this->faker->numberBetween($min = 12, $max = 18),
-            'almacenamiento'=>$this->faker->randomElement($array = array('Nube','Local')),
-            'capacidadJuego'=>$this->faker->numberBetween($min = 1, $max = 100),
+            'almacenamiento'=>$this->faker->numberBetween($min = 1, $max = 100),
             'linkJuego'=>$this->faker->url,
             'delete' =>false
         ];

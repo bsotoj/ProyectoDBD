@@ -21,16 +21,16 @@
                 </div>
                 <div class="cards">
             
-                    
+                    @foreach($juegos as $juego)
                     <div class="card">
                         <img src="./images/assassins.png" alt="" />
                         <div class="card-info">
-                            <h2>Nombre Juego</h2>
-                            <p>Genero</p>
+                            <h2>{{$juego->nombreJuego}}</h2>
+                            <p>{{$juego->idGenero}}</p>
                             <a href="/juego" class="btn btn-primary">Ver</a>
                         </div>
                     </div>
-
+                    @endforeach
 
                 </div>
         </section>

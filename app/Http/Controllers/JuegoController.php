@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Juego;
 use App\Models\Genero;
+use App\Models\Usuario;
+use App\Models\Rol;
+use App\Models\UsuarioRol;
+use App\Models\Biblioteca;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -19,11 +23,11 @@ class JuegoController extends Controller
 
     public function index()
     {   
-        $juego = Juego::all();
-        if($juego->isEmpty()){
+        $juegos = Juego::all()->where('delete',FALSE);
+        if($juegos->isEmpty()){
             return response()->json([], 204);
         }
-        return view('mainview',compact('juego'));    }
+        return view('catalogo',compact('juegos'));    }
     /*
     public function index()
     {
@@ -313,5 +317,68 @@ class JuegoController extends Controller
         $juego->delete = TRUE;
         $juego->save();
         return response()->json($juego);
+    }
+
+    public function newGame($id){
+        $usuario = Usuario::find($id);
+        $usuarioRol = UsuarioRol::all()->where('delete',FALSE);
+        foreach($usuarioRol as $uR){
+            if($uR->idUsuario == $usuario->id){
+                $rol = Rol::find($uR->idRol);
+                if($rol->nombreRol == 'Administrador' || $rol->nombreRol == 'Desarrollador'){
+                    $genero = Genero::all()->where('delete',FALSE);
+                    return view('crearJuego',compact('usuario','genero'));
+                }
+                else{
+                    return response()->json([
+                        "msg" => 'Solo los administradores y desarrolladores pueden agregar juegos',
+                    ]);
+
+                }
+            }
+        } 
+        
+    }
+   
+    public function crear(Request $request){
+        $validator = Validator::make(
+            [
+                'nombreJuego' => $request -> nombreJuego,
+                'edadRestriccion'=> $request -> edadRestriccion,
+                'almacenamiento'=> $request -> almacenamiento,
+                'linkJuego'=> $request -> linkJuego,
+            ],
+
+            [
+                'nombreJuego' => 'required|min:3',
+                'edadRestriccion'=> 'required|min:3',
+                'almacenamiento'=> 'required|min:3',
+                'linkJuego'=> 'required|min:3',
+
+            ]
+            );
+            if($validator->fails())
+        {
+            return response()->json([
+                'msg' => 'Datos ingresados invalidos'
+            ]);
+        }
+
+       $juego =  new Juego();
+       $juego->nombreJuego = $request->nombreJuego;
+       $juego->edadRestriccion = $request->edadRestriccion;
+       $juego->linkJuego = $request->linkJuego;
+       $juego->idGenero = $request->idGenero;
+       $juego->delete=FALSE;
+       $juego->save(); 
+       
+       $biblioteca = new Biblioteca();
+       $biblioteca->idUsuario = $request->id;
+       $biblioteca->idJuego = $juego->id;
+       $biblioteca->delete= FALSE;
+       $biblioteca->save();
+       
+       $juegos = Juego::all()->where('delete',FALSE);
+       return view('catalogo','juegos');
     }
 }

@@ -78,7 +78,9 @@ Route::delete('/carteras/delete/{id}','CarteraController@destroy');
 
 //rutas de juegos
 Route::get('/juegos','JuegoController@index');
+Route::get('/juegos/Id={id}/añadirJuego','JuegoController@newGame');
 Route::post('/juegos/create','JuegoController@store');
+Route::post('/crearJuego','JuegoController@crear')->name('nuevoJuego');
 Route::get('/juegos/{id}','JuegoController@show');
 Route::put('/juegos/update/{id}','JuegoController@update');
 Route::delete('/juegos/delete/{id}','JuegoController@destroy');
@@ -160,6 +162,7 @@ Route::delete('/comunidads/delete/{id}','ComunidadController@destroy');
 
 //rutas de Biblioteca
 Route::get('/bibliotecas','BibliotecaController@index');
+Route::get('/bibliotecas/Id={{id}}/verJuegos','BibliotecaController@viewGames');
 Route::post('/bibliotecas/create','BibliotecaController@store');
 Route::get('/bibliotecas/{id}','BibliotecaController@show');
 Route::put('/bibliotecas/update/{id}','BibliotecaController@update');

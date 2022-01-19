@@ -25,12 +25,26 @@
                 <input type="text"/>
             </div>
             
-        </div>
-        <div class="games">
-            <div class="user">
-                <h2>Juegos</h2>
+            <div class="status">
+                <h1>Juegos adquiridos:</h1>
+                <input type="text" />
             </div>
-        </div>
+            <div class="cards">
+        
+                @foreach($juegos as $juego)
+                <div class="card">
+                    <img src="./images/assassins.png" alt="" />
+                    <div class="card-info">
+                        <h2>{{$juego->nombreJuego}}</h2>
+                        <p>{{$juego->idGenero}}</p>
+                    </div>
+                </div>
+                @endforeach
+    
+            </div>
+
+
+
     </section>
     </main>
     <div class="circle1"></div>
