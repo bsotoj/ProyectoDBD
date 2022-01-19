@@ -24,9 +24,6 @@ Route::get('/login', function () {
 Route::get('/register2', function () {
     return view('register2');
 });
-Route::get('/register', function () {
-    return view('register');
-});
 
 Route::get('/profile', function () {
     return view('profile');
@@ -34,6 +31,14 @@ Route::get('/profile', function () {
 
 Route::get('/cartera', function () {
     return view('cartera');
+});
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/carrito', function () {
+    return view('carrito');
 });
 
 //rutas de Usuario
