@@ -38,19 +38,12 @@
                     </div>
                     <div class="link">
                         <img src="./images/library.png" alt="" />
-<<<<<<< Updated upstream
                         <a href="/biblioteca" class="biblioteca">Biblioteca</a>
                         
-=======
-                        BANDERITA 
-                        <a href="/bibliotecas/Id={{$user['id']}}/verJuegos" class="biblioteca">Biblioteca</a>
-                
->>>>>>> Stashed changes
                     </div>
 
                     <div class="link">
                         <img src="./images/library.png" alt="" />
-                        BANDERITA 
                         <a href="/juegos/Id={{$user['id']}}/añadirJuego" class="biblioteca">Añadir nuevo juego</a>
                 
                     </div>
