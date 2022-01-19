@@ -32,6 +32,10 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
+Route::get('/cartera', function () {
+    return view('cartera');
+});
+
 //rutas de Usuario
 Route::get('/usuarios','UsuarioController@index');
 
