@@ -85,7 +85,7 @@ header {
     width: 40px;
 }
 
-/*-------------------*/
+/*--------CLASIFIACIÓN Y DESCRIPCIÓN-----------*/
 /*Boton login*/
 .wishList{
     padding: 10px 20px;
@@ -112,11 +112,11 @@ header {
 .row{
     display:flex;
     align-items:center;
-    padding-top: 6rem;
+    padding-top: 7rem;
 }
 .header-content{
     flex-basis: 50%;
-    padding-top: 4em;
+    padding-top: 5em;
     padding-left: 4em;
     align-items: center;
     text-align: center;
@@ -133,4 +133,148 @@ header {
     flex-basis: 50%;
     align-items: center;
     text-align: center;
+}
+/* -----------detalles------------*/
+.detalles{
+    margin-top: 80px;
+}
+.container{
+    padding:3rem;
+    display: flex;
+}
+.grid-wrapper,.detalles-content{
+    flex-basis: 60%;
+}
+.grid-wrapper{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,auto));/*Realiza 2x2 columnas*/
+    padding-left: 8rem;
+    padding-top:1rem;
+}
+.grid-box{
+    background: var(--black-color);
+    margin: 10px;
+    height: 150px;
+    width: 300px;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.grid-box h1{
+    color: #fff;
+    font-weight: 700;
+}
+
+.grid-box h3{
+    color: var(--white-color);
+    font-weight: 500;
+    font-size: 30px;
+    margin-top: 5px;
+}
+.genero{
+    background: #D34B95; 
+}
+.almacenamiento{
+    background:#9956A1;
+}
+.retriccion{
+    background: #605997;
+}
+.desarrollador{
+    background: #38547B;
+}
+.detalles-content{
+    padding-left: 2rem;
+    position: relative;
+}
+.detalles-content h1{
+    font-size:6vmin;
+    margin-bottom:30px;
+}
+
+.detalles-content p{
+    padding-right: 6rem;
+    margin-bottom: 30px;
+    text-align: justify;/*Justifica el textp*/
+}
+
+/*-----Usuarios-----*/
+
+.row-resenas{
+    display:flex;
+    padding-top: 4rem;
+}
+.row-resenas h1{
+    font-size:6vmin;
+    margin-bottom:30px;
+}
+.row-resenas p{
+    margin-left: 60px;
+    margin-bottom: 40px;
+    text-align: justify;/*Justifica el textp*/
+}
+.user-opnion{
+    flex-basis: 50%;
+    padding-top: 5em;
+    padding-left: 4em;
+    align-items: center;
+    text-align: center;    
+}
+
+.user-like{
+    flex-basis: 50%;
+    align-items: center;
+    text-align: center;
+}
+.user-like h2{
+    font-size: 7vmin;
+    margin-bottom: 30px;
+    color: var(--white-color);
+    text-align: center;
+}
+
+.contenido-resena{
+    padding-left: 100px;
+}
+table{
+    position: relative;
+    width: 100%; 
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+}
+
+td, th {
+    padding: 15px 20px;
+    text-align: justify;
+
+}
+
+th {
+    background-color: var(--subtitle-color);
+    color: var(--white-color);
+    font-weight: 200;
+    text-transform: uppercase;
+
+}
+
+tr {
+    width: 100%;
+    background-color: var(--white-color);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.grid-box2{
+    background: var(--black-color);
+    margin: 10px;
+    height: 100px;
+    width: 300px;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 20px;
+}
+.like{
+    background: #2F4858;
 }
