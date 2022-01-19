@@ -18,19 +18,17 @@
             </div>
             <div class="usuario">
                 <img src="./images/profilepic.png" alt="" />
-                <p> Usuario</p>
+                <p>Usuario</p>
             </div>
             <div class = "buscar">
                 <h3>Buscar Juego</h3>
                 <input type="text"/>
             </div>
             
-            <div class="status">
-                <h1>Juegos adquiridos:</h1>
-                <input type="text" />
-            </div>
-            <div class="cards">
-        
+        </div>
+        <div class="games">
+            <div class="user">
+                <h2>Juegos</h2>
                 @foreach($juegos as $juego)
                 <div class="card">
                     <img src="./images/assassins.png" alt="" />
@@ -40,11 +38,8 @@
                     </div>
                 </div>
                 @endforeach
-    
             </div>
-
-
-
+        </div>
     </section>
     </main>
     <div class="circle1"></div>
