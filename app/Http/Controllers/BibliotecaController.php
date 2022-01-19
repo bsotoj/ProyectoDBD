@@ -18,12 +18,16 @@ class BibliotecaController extends Controller
     public function index()
     {
         $biblioteca = Biblioteca::all()->where('delete',FALSE);
+
         if($biblioteca != NULL){
             return response()->json($biblioteca);
         }
+        /*
         return response()->json([
             'message' => 'Biblioteca no encontrada'
         ], 404);
+        */
+        return view('biblioteca',['idJuego'=>$biblioteca]);
     }
 
     /**

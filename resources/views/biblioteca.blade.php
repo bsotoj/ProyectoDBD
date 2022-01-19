@@ -18,7 +18,7 @@
             </div>
             <div class="usuario">
                 <img src="./images/profilepic.png" alt="" />
-                <p>Usuario</p>
+                <p> Usuario</p>
             </div>
             <div class = "buscar">
                 <h3>Buscar Juego</h3>
