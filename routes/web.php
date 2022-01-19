@@ -41,6 +41,10 @@ Route::get('/carrito', function () {
     return view('carrito');
 });
 
+Route::get('/listaDeseos', function () {
+    return view('listaDeseos');
+});
+
 //rutas de Usuario
 Route::get('/usuarios','UsuarioController@index');
 
