@@ -49,16 +49,15 @@ Route::get('/juego', function () {
     return view('juego');
 });
 
-<<<<<<< Updated upstream
 Route::get('/catalogo', function () {
     return view('catalogo');
 });
-=======
+
 Route::get('/biblioteca', function () {
     return view('biblioteca');
 });
 
->>>>>>> Stashed changes
+
 
 //rutas de Usuario
 Route::get('/usuarios','UsuarioController@index');
