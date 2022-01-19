@@ -14,6 +14,7 @@ class UsuarioController extends Controller
      
         $usuario = Usuario::all()->where('delete',FALSE);
         return response()->json($usuario);
+        return view('profile',compact('usuario'));
     }
 
     

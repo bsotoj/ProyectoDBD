@@ -27,6 +27,11 @@ Route::get('/register2', function () {
 Route::get('/register', function () {
     return view('register');
 });
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
 //rutas de Usuario
 Route::get('/usuarios','UsuarioController@index');
 
