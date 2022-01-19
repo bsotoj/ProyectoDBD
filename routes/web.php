@@ -53,9 +53,11 @@ Route::get('/juego', function () {
 //rutas de Usuario
 Route::get('/usuarios','UsuarioController@index');
 Route::get('/userlogin','UsuarioController@login')->name('infoLogin');
+Route::get('/usuarios/Id={id}/editarPerfil','VistaProfileController@viewSet');
 Route::post('/usuarios/create','UsuarioController@store');
 Route::get('/usuarios/{id}','UsuarioController@show');
 Route::put('/usuarios/update/{id}','UsuarioController@update');
+Route::put('/edit','VistaProfileController@setInfo')->name('setUserProfile');
 Route::delete('/usuarios/delete/{id}','UsuarioController@destroy');
 //rutas de Cartera
 

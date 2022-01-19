@@ -16,10 +16,14 @@
             <div class="dashboard">
                 <div class="user">
                     <img src="./images/profilepic.png" alt="" />
-                    <h3> {{$answer->nombreUsuario}}</h3>
+                    <h3> {{$user->nombreUsuario}}</h3>
                     <p>{{$rol->nombreRol}}</p>
                 </div>
                 <div class="links">
+                    <div class="link">
+                        <img src="./images/library.png" alt="" />
+                        <a href="/usuarios/Id={{$user['id']}}/editarPerfil" class="modificarUsuario">Editar Perfil</a>
+                    </div>
                     <div class="link">
                         <img src="./images/twitch.png" alt="" />
                         <h2>Carrito</h2>
@@ -36,6 +40,7 @@
                         <img src="./images/library.png" alt="" />
                         <h2>Librería</h2>
                     </div>
+                    
                 </div>
                 <div class="pro">
                     <h2>¿Buscas más juegos?</h2>

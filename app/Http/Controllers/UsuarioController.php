@@ -150,12 +150,12 @@ if($validator->fails()){
         $users = Usuario::all()->where('delete',FALSE);
         foreach($users as $usuario){
             if($usuario->nombreUsuario == $request->nombreUsuario & $usuario->contraseña == $request->contraseña){
-                $answer = Usuario::find($usuario->id);
+                $user = Usuario::find($usuario->id);
                 $uRol = UsuarioRol::all()->where('delete',FALSE); 
                 foreach($uRol as $usuarioRolBuscado){
-                    if($usuarioRolBuscado->idUsuario == $answer->id){
+                    if($usuarioRolBuscado->idUsuario == $user->id){
                         $rol = Rol::find($usuarioRolBuscado->idRol);
-                        return view('profile',compact('answer','rol'));
+                        return view('profile',compact('user','rol'));
 
                     }
                 }
