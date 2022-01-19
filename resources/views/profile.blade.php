@@ -38,8 +38,8 @@
                     </div>
                     <div class="link">
                         <img src="./images/library.png" alt="" />
-                        <a href="/biblioteca" class="biblioteca">Biblioteca</a>
-                        
+                        <a href="/bibliotecas/Id={{$user['id']}}/verJuegos" class="biblioteca">Biblioteca</a>
+
                     </div>
 
                     <div class="link">

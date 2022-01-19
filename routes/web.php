@@ -53,12 +53,6 @@ Route::get('/catalogo', function () {
     return view('catalogo');
 });
 
-Route::get('/biblioteca', function () {
-    return view('biblioteca');
-});
-
-
-
 //rutas de Usuario
 Route::get('/usuarios','UsuarioController@index');
 Route::get('/userlogin','UsuarioController@login')->name('infoLogin');
@@ -162,11 +156,14 @@ Route::delete('/comunidads/delete/{id}','ComunidadController@destroy');
 
 //rutas de Biblioteca
 Route::get('/bibliotecas','BibliotecaController@index');
-Route::get('/bibliotecas/Id={{id}}/verJuegos','BibliotecaController@viewGames');
+Route::get('/bibliotecas/Id={id}/verJuegos','BibliotecaController@viewGames');
 Route::post('/bibliotecas/create','BibliotecaController@store');
 Route::get('/bibliotecas/{id}','BibliotecaController@show');
 Route::put('/bibliotecas/update/{id}','BibliotecaController@update');
 Route::delete('/bibliotecas/delete/{id}','BibliotecaController@destroy');
+
+
+
 
 //rutas de Comentario
 Route::get('/comentarios','ComentarioController@index');

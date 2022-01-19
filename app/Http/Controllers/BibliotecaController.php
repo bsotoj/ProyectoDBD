@@ -184,17 +184,16 @@ class BibliotecaController extends Controller
    
 
     public function viewGames($id){
-        $biblioteca = Biblioteca::all()->where('delete',FALSE)
-                                       ->where('idUsuario',$id);
-        if($biblioteca == NULL){
-            return response()->json([
-                "msg" => "Este usuario no tiene juegos",
-            ]);
+        $bibliotecas = Biblioteca::all()->where('delete',FALSE)
+                                        ->where('idUsuario',$id);
+        $juegos= array();
+        $juego= Juego::all()->where('delete',FALSE);
+        $usuario = Usuario::find($id);
+        foreach($bibliotecas as $biblioteca){
+            $juego = Juego::find($biblioteca->idJuego);
+            array_push($juegos,$juego);
         }
-        $usuario = Usuario::find($id);                               
-        $juegos = Juego::all()->where('delete',FALSE)
-                             ->where('id',$biblioteca->idJuego);
-        return view('biblioteca',compact('usuario','juegos'));                     
-    
+        return view('biblioteca',compact('usuario','juegos'));
+        
     }
 }
