@@ -7,11 +7,24 @@
     outline: none; border: none;
     text-decoration: none;
     text-transform: uppercase;
+    --title-color:#FF4574 ;
+    --subtitle-color: #B14FD2;
+    --black-color:#24252A;
+    --white-color:#fff;
+    --grey-color:#adadad;
+}
+
+body{
+    margin:0;
+    padding: 0;
+
+    height: 100vh;
+    overflow: hidden;
 }
 
 .container{
     min-height: 100vh;
-    background: #eee;
+    background: linear-gradient(120deg,#B14FD2,#FF9671);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,7 +33,7 @@
 }
 
 .container form{
-    background: #fff;
+    background: var(--white-color);
     border-radius: 5px;
     box-shadow: 0 10px 15px rgba(0,0,0,.1);
     padding: 20px;
@@ -55,22 +68,25 @@
 .container form .flexbox .inputBox{
     flex:1 1 150px;
 }
+.btn{
+    padding-top: 5px;
+    text-align: center;
+}
 
 .container form .submit-btn{
-    width: 100%;
-    background:linear-gradient(45deg, #FF4574, #B14FD2);
+    width: 40%;
+    background: var(--subtitle-color);
     margin-top: 20px;
     padding: 10px;
     font-size: 20px;
-    color:#fff;
+    color: var(--white-color);
     border-radius: 10px;
     cursor: pointer;
     transition: .2s linear;
 }
 
 .container form .submit-btn:hover{
-    letter-spacing: 2px;
-    opacity: .8;
+    background-color: var(--title-color);
 }
 
 .container .card-container{

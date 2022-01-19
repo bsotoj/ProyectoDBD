@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- custom css file link  -->
-    <link href="{{ asset('css/cartera.style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/cartera2.style.css') }}" rel="stylesheet">
 
 </head>
 
@@ -106,7 +106,9 @@
                     <input type="text" maxlength="4" class="cvv-input">
                 </div>
             </div>
-            <input type="submit" value="Cargar" class="submit-btn">
+            <div class="btn">
+                <input type="submit" value="Cargar" class="submit-btn">
+            </div>
         </form>
 
     </div>
@@ -117,7 +119,6 @@
 
 
     <script>
-
         document.querySelector('.card-number-input').oninput = () => {
             document.querySelector('.card-number-box').innerText = document.querySelector('.card-number-input').value;
         }
@@ -147,7 +148,6 @@
         document.querySelector('.cvv-input').oninput = () => {
             document.querySelector('.cvv-box').innerText = document.querySelector('.cvv-input').value;
         }
-
     </script>
 
 </body>
