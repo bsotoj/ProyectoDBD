@@ -4,7 +4,7 @@
 <head>
     <title>DEBEDE</title>
     <!--Referencia a archivo .css-->
-    <link href="{{ asset('css/register3.style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/juegoEliminar.style.css') }}" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
@@ -13,13 +13,16 @@
     <header>
         <div class="nav">
             <img src="{{ asset('images/logo2.png')}}" alt="" class="logo">
+            <a class="debede" href="#">DEBEDE</a>
             <ul class="nav-list">
-                <li><a href="#">Ayuda</a></li>
+                <li><i class="fas fa-shopping-cart"></i><a href="#">Carrito</a></li>
+                <li><i class="far fa-heart"></i><a href="#">Lista de deseos</a></li>
+                <li><i class="far fa-user"></i></i><a href="#">Mi cuenta</a></li>
             </ul>
         </div>
     </header>
 
-    <div class="register-container">
+    <div class="delete-container">
         <h1>Juego a eliminar</h1>
         <form action="{{action('VistaAdminController@gameSoftDelete')}}" method="POST">
             @method('DELETE')
@@ -36,4 +39,3 @@
         </form>
     </div>
 </body>
-
