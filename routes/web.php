@@ -49,9 +49,7 @@ Route::get('/juego', function () {
     return view('juego');
 });
 
-Route::get('/catalogo', function () {
-    return view('catalogo');
-});
+Route::get('/catalogo','JuegoController@index');
 
 //rutas de Usuario
 Route::get('/usuarios','UsuarioController@index');
@@ -71,7 +69,7 @@ Route::put('/carteras/update/{id}','CarteraController@update');
 Route::delete('/carteras/delete/{id}','CarteraController@destroy');
 
 //rutas de juegos
-Route::get('/juegos','JuegoController@index');
+Route::get('/juegos','JuegoController@index')->name('getGames');
 Route::get('/juegos/Id={id}/añadirJuego','JuegoController@newGame');
 Route::post('/juegos/create','JuegoController@store');
 Route::post('/crearJuego','JuegoController@crear')->name('nuevoJuego');
@@ -159,7 +157,9 @@ Route::get('/bibliotecas','BibliotecaController@index');
 Route::get('/bibliotecas/Id={id}/verJuegos','BibliotecaController@viewGames');
 Route::post('/bibliotecas/create','BibliotecaController@store');
 Route::get('/bibliotecas/{id}','BibliotecaController@show');
+Route::get('/bibliotecas/Id={id}/editarJuego','VistaControllerJuego@viewGame');
 Route::put('/bibliotecas/update/{id}','BibliotecaController@update');
+Route::put('/biblioteca/edit','VistaControllerJuego@setGameU')->name('setGameUser');
 Route::delete('/bibliotecas/delete/{id}','BibliotecaController@destroy');
 
 

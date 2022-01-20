@@ -12,31 +12,33 @@
 </head>
 
 <body>
-    <main>
-        <section class="glass">
-            <div class="games">
-                <div class="status">
-                    <h1>Cátalogo:</h1>
-                    <input type="text" />
-                </div>
-                <div class="cards">
-            
-                    @foreach($juegos as $juego)
-                    <div class="card">
-                        <img src="./images/assassins.png" alt="" />
-                        <div class="card-info">
-                            <h2>{{$juego->nombreJuego}}</h2>
-                            <p>{{$juego->idGenero}}</p>
-                            <a href="/juego" class="btn btn-primary">Ver</a>
-                        </div>
+    <form action="{{route('getGames')}}" method="GET">
+        <main>
+            <section class="glass">
+                <div class="games">
+                    <div class="status">
+                        <h1>Cátalogo:</h1>
+                        <input type="text" />
                     </div>
-                    @endforeach
+                    <div class="cards">
 
-                </div>
-        </section>
-    </main>
-    <div class="circle1"></div>
-    <div class="circle2"></div>
+                        @foreach($juegos as $juego)
+                        <div class="card">
+                            <img src="./images/assassins.png" alt="" />
+                            <div class="card-info">
+                                <h2>{{$juego->nombreJuego}}</h2>
+                                <p>{{$juego->idGenero}}</p>
+                                <a href="/juego" class="btn btn-primary">Ver</a>
+                            </div>
+                        </div>
+                        @endforeach
+
+                    </div>
+            </section>
+        </main>
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+    </form>
 </body>
 
 </html>

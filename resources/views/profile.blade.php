@@ -60,13 +60,19 @@
                             <h3>Añadir juego</h3>
                         </a>
                     </div>
+                    <div class="link">
+                        <img src="./images/library.png" alt="" />
+                        <a href="/bibliotecas/Id={{$user['id']}}/editarJuego" class="modificarJuego">
+                            <h3>Modificar Juego</h3>
+                        </a>
+                    </div>
                 </div>
                 <div class="links">
                     <img src="./images/library.png" alt="" />
                     <a href="/" class="cartera">Cerrar Sesión</a>
                 </div>
                 <div class="pro">
-                    <a href="/catalogo" class="catalogo">
+                    <a href="/juegos" class="catalogo">
                         <h2>Más juegos aquí</h2>
                     </a>
                     <img src="./images/controller.png" alt="" />
