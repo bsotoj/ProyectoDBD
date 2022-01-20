@@ -7,10 +7,13 @@
     <title>DEBEDE</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link href="{{ asset('css/profile.style.css') }}" rel="stylesheet">
+    <!-- FontAwesome-->
+    <script src="https://kit.fontawesome.com/3a9c61ce37.js" crossorigin="anonymous"></script>
+    <link href="{{ asset('css/profile2.style.css') }}" rel="stylesheet">
 </head>
 
 <body>
+
     <main>
         <section class="glass">
             <div class="dashboard">
@@ -20,57 +23,52 @@
                     <p>{{$rol->nombreRol}}</p>
                 </div>
                 <div class="links">
-
                     <div class="link">
-                        <img src="./images/library.png" alt="" />
                         <a href="/usuarios/Id={{$user['id']}}/editarPerfil" class="modificarUsuario">
-                            <h3>Editar Perfil</h3>
+                        <h3><i class="far fa-user"></i>Editar Perfil</h3>
                         </a>
                     </div>
                     <div class="link">
-                        <img src="./images/library.png" alt="" />
                         <a href="/carrito" class="carrito">
-                            <h3>Carrito</h3>
+                            <h3><i class="fas fa-shopping-cart"></i>Carrito</h3>
                         </a>
                     </div>
                     <div class="link">
-                        <img src="./images/library.png" alt="" />
                         <a href="/listaDeseos" class="listaDeseos">
-                            <h3>Mi Lista</h3>
+                            <h3><i class="far fa-heart"></i></i>Mi Lista</h3>
                         </a>
                     </div>
 
                     <div class="link">
-                        <img src="./images/library.png" alt="" />
                         <a href="/cartera" class="cartera">
-                            <h3>Mi Cartera</h3>
+                            <h3><i class="fas fa-wallet"></i>Mi Cartera</h3>
                         </a>
                     </div>
 
                     <div class="link">
-                        <img src="./images/library.png" alt="" />
                         <a href="/bibliotecas/Id={{$user['id']}}/verJuegos" class="biblioteca">
-                            <h3>Biblioteca</h3>
+                            <h3><i class="fas fa-gamepad"></i>Biblioteca</h3>
                         </a>
                     </div>
-                
+
                     <div class="link">
-                        <img src="./images/library.png" alt="" />
                         <a href="/juegos/Id={{$user['id']}}/añadirJuego" class="añadirJuego">
-                            <h3>Añadir juego</h3>
+                            <h3><i class="fas fa-plus"></i></i>Añadir juego</h3>
                         </a>
                     </div>
                     <div class="link">
-                        <img src="./images/library.png" alt="" />
                         <a href="/bibliotecas/Id={{$user['id']}}/editarJuego" class="modificarJuego">
-                            <h3>Modificar Juego</h3>
+                            <h3><i class="fas fa-gamepad"></i>Modificar Juego</h3>
+                        </a>
+                        
+                    </div>
+                    <div class="link">
+                        <a href="/" class="cerrarSesion">
+                        <h3><i class="fas fa-sign-out-alt"></i>Modificar Juego</h3>
                         </a>
                     </div>
                 </div>
-                <div class="links">
-                    <img src="./images/library.png" alt="" />
-                    <a href="/" class="cartera">Cerrar Sesión</a>
-                </div>
+
                 <div class="pro">
                     <a href="/juegos" class="catalogo">
                         <h2>Más juegos aquí</h2>
