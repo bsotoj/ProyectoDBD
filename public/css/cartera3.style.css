@@ -1,19 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500;700;800&display=swap');
 
 *{
-    font-family: 'Poppins', sans-serif;
+    font-family: "Montserrat", sans-serif;
     margin:0; padding:0;
     box-sizing: border-box;
     outline: none; border: none;
     text-decoration: none;
-    text-transform: uppercase;
     --title-color:#FF4574 ;
     --subtitle-color: #B14FD2;
     --black-color:#24252A;
     --white-color:#fff;
     --grey-color:#adadad;
 }
-
+li, a {
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+    background: var(--black-color);
+    
+}
 body{
     margin:0;
     padding: 0;
@@ -21,7 +30,49 @@ body{
     height: 100vh;
     overflow: hidden;
 }
+/*-------NAV------*/
+.nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    padding: 10px 30px;
+    align-items: center;
+    background: var(--black-color);
+}
 
+.fa-heart{
+    padding-right: 5px;
+}
+
+.fa-shopping-cart{
+    padding-right: 5px;
+}
+
+.fa-user{
+    padding-right: 5px;
+}
+.nav ul {
+    flex: 1;
+    text-align: right;
+}
+
+.nav ul li {
+    list-style: none;
+    /*Quita el punteo de la lista*/
+    display: inline-block;
+    /*Coloca la lista de manera lineal*/
+    margin: 0 1px;
+    /*Separación entre items*/
+    padding: 0 20px;
+}
+
+.logo {
+    width: 40px;
+}
+
+/*-------------------*/
 .container{
     min-height: 100vh;
     background: linear-gradient(120deg,#B14FD2,#FF9671);
@@ -30,6 +81,7 @@ body{
     justify-content: center;
     flex-flow: column;
     padding-bottom: 60px;
+    padding-top: 60px;
 }
 
 .container form{

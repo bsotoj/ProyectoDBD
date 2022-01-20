@@ -52,8 +52,11 @@ header{
     align-items: center;
     background: var(--black-color);
 }
+
+
 .nav ul{
     flex: 1;
+    justify-content: space-between;
     text-align: right;
 }
 

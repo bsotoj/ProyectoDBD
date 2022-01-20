@@ -13,6 +13,7 @@
     <header>
         <div class="nav">
             <img src="{{ asset('images/logo2.png')}}" alt="" class="logo">
+            <a class="debede" href="/">DEBEDE</a>
             <ul class="nav-list">
                 <li><a href="#">Ayuda</a></li>
             </ul>
@@ -45,28 +46,28 @@
                 <label>Correo electrónico</label>
             </div>
 
-            
+
             <div class="txt_field">
                 <h5>Fecha de nacimiento</h5>
                 <input type="date" required name="fechaNacimiento">
             </div>
 
-            
+
             <div class="txt_field">
                 <input type="text" required name="nombreLista">
                 <label>Nombre lista de deseos</label>
             </div>
 
 
-               
+
             <div class="txt_field">
-                <input type="text" required name="metodoRecarga">  
+                <input type="text" required name="metodoRecarga">
                 <label>Forma de pago</label>
             </div>
-            
+
             <div class="txt_field">
                 <h5>Región</h5>
-                <select name="format" id="format"name="idRegion" id="idRegion">
+                <select name="format" id="format" name="idRegion" id="idRegion">
                     @foreach ($regions as $region)
                     <option value="{{$region->id}}">{{$region->nombreRegion}}</option>
                     @endforeach
