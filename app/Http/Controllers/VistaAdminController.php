@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Usuario;
 use App\Models\Rol;
+use App\Models\Juego;
 use App\Models\UsuarioRol;
+use App\Models\Biblioteca;
+use App\Models\Genero;
 use App\Models\Region;
 use Illuminate\Support\Facades\Validator;
 class VistaAdminController extends Controller{
@@ -44,6 +47,14 @@ class VistaAdminController extends Controller{
         return view('adminUserGet',compact('usuarios','admin'));
 
     }
+
+    public function viewGames($id){
+        $admin = Usuario::find($id);
+        $juegos = Juego::all()->where('delete',FALSE);
+        return view('adminGameGet',compact('admin','juegos'));
+        
+    }
+
 
  
     public function candidatosEditar($id){
@@ -186,4 +197,83 @@ class VistaAdminController extends Controller{
         return view('login');
     }
 
+
+    public function catalogoActualJuegos($id){
+        $genero = Genero::all()->where('delete',FALSE);
+        $usuario = Usuario::find($id);
+        return view('adminGamePost',compact('genero','usuario'));
+    }
+
+
+    
+  
+    public function adminCreateGame(Request $request){
+        $validator = Validator::make(
+            [
+            'nombreJuego' => 'required|min:1|max:255',
+            'edadRestriccion' => 'required',
+            'almacenamiento' => 'required',
+            'linkJuego' => 'required',
+        
+            ],
+        
+            [
+            'nombreJuego.required' => 'Debes ingresar un nombre de juego',
+            'nombreJuego.min'=>'Debe ser de largo mínimo :min',
+            'nombreJuego.max'=>'Debe ser de largo máximo :max',
+        
+            'edadRestriccion.required' => 'Debes ingresar una edad de restricción',
+           
+        
+            'almacenamiento.required' => 'Debes ingresar la capacidad requerida del juego',
+        
+            'linkJuego'.'required' => 'Se requiere una sinopsis(link) del juego',
+            ]
+            );
+        
+        
+        //Caso falla la validación
+        if($validator->fails()){
+        return response($validator->errors(), 400);
+        }
+        $juego = new Juego();
+        if($request->nombreJuego !=NULL){
+            $juego->nombreJuego = $request->nombreJuego;
+            
+        }
+        if($request->edadRestriccion !=NULL){
+            $juego->edadRestriccion = $request->edadRestriccion; 
+            
+        }
+        if($request->almacenamiento !=NULL){
+            $juego->almacenamiento = $request->almacenamiento; 
+            
+        }
+        if($request->linkJuego !=NULL){
+            $juego->linkJuego = $request->linkJuego; 
+            
+        }
+        if($request->idGenero !=NULL){
+            $juego->idGenero = $request->idGenero; 
+            
+        }
+       
+        $juego->delete = FALSE;
+        $juego->save();
+        $biblioteca = new Biblioteca();
+        $biblioteca->idUsuario = $request->id;
+        $biblioteca->idJuego = $juego->id;
+        $biblioteca->delete= FALSE;
+        $biblioteca->save();
+        $juegos = Juego::all()->where('delete',FALSE);
+
+        return view('catalogo',compact('juegos'));
+
+        
+    }
 }
+
+    
+
+
+

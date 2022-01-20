@@ -28,6 +28,13 @@
                         <h3><i class="far fa-user"></i>Editar Perfil</h3>
                         </a>
                     </div>
+                
+                    <div class="link">
+                        <a href="/administrar/Id={{$user['id']}}/admin" class="modificarUsuario">
+                        <h3><i class="far fa-user"></i>Operaciones Admin</h3>
+                        </a>
+                    </div>
+                    
                     <div class="link">
                         <a href="/carrito" class="carrito">
                             <h3><i class="fas fa-shopping-cart"></i>Carrito</h3>
@@ -64,7 +71,7 @@
                     </div>
                     <div class="link">
                         <a href="/" class="cerrarSesion">
-                        <h3><i class="fas fa-sign-out-alt"></i>Cerrar sesión</h3>
+                        <h3><i class="fas fa-sign-out-alt"></i>Modificar Juego</h3>
                         </a>
                     </div>
                 </div>

@@ -36,6 +36,8 @@
                             <h3>Editar Usuario</h3>
                         </a>
                     </div>
+
+                    
                     <div class="link">
                         <img src="./images/library.png" alt="" />
                         <a href="/administrar/Id={{$user['id']}}/eliminar" class="eliminarUsuario">
@@ -43,16 +45,18 @@
                         </a>
                     </div>
 
+
+
                     <div class="link">
                         <img src="./images/library.png" alt="" />
-                        <a href="/listaDeseos" class="listaDeseos">
+                        <a href="/adminGames/Id={{$user['id']}}"class="listaDeseos">
                             <h3>Mostrar Juegos</h3>
                         </a>
                     </div>
 
                     <div class="link">
                         <img src="./images/library.png" alt="" />
-                        <a href="/cartera" class="cartera">
+                        <a href="/adminGames/Id={{$user['id']}}/post" class="admin">
                             <h3>Añadir Juego</h3>
                         </a>
                     </div>

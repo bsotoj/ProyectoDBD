@@ -72,6 +72,10 @@ Route::get('/administrar/Id={id}/eliminar','VistaAdminController@getUsers');
 Route::delete('/softDelete','VistaAdminController@softDelete')->name('borrarUsuario');
 Route::get('/redirigirPerfil/Id={id}','VistaAdminController@redirigir');
 
+Route::get('adminGames/Id={id}','VistaAdminController@viewGames');
+Route::get('/adminGames/Id={id}/post','VistaAdminController@catalogoActualJuegos');
+Route::post('/adminGames/create','VistaAdminController@adminCreateGame')->name('gameByAdmin');
+
 //rutas de Cartera
 
 Route::get('/carteras','CarteraController@index');
