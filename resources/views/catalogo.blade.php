@@ -18,21 +18,21 @@
                 <div class="games">
                     <div class="status">
                         <h1>Cátalogo:</h1>
-                        <input type="text" />
+                        <input type="text"placeholder="Buscar Juego...">
                     </div>
                     <div class="cards">
-
                         @foreach($juegos as $juego)
                         <div class="card">
                             <img src="./images/assassins.png" alt="" />
                             <div class="card-info">
-                                <h2>{{$juego->nombreJuego}}</h2>
-                                <p>{{$juego->idGenero}}</p>
-                                <a href="/juego" class="btn btn-primary">Ver</a>
+                                <h3>{{$juego->nombreJuego}}</h3>
+                                <h3>Edad Recomendada: {{$juego->edadRestriccion}}</h3>
+                                <a href="/juego" class="btn btn-primary">
+                                    <h2>Ver</h2>
+                                </a>
                             </div>
                         </div>
                         @endforeach
-
                     </div>
             </section>
         </main>
