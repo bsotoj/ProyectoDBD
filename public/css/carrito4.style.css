@@ -37,6 +37,14 @@ li, a {
     background: var(--black-color);
 }
 
+h3 {
+    color: var(--title-color);
+    font-weight: 300;
+    font-size: 16px;
+    background: var(--white-color);
+    padding-top: 5px;
+}
+
 header {
     display: flex;
     justify-content: flex-end;
@@ -57,17 +65,18 @@ header {
     background: var(--black-color);
 }
 
-.fa-heart{
+.fa-heart {
     padding-right: 5px;
 }
 
-.fa-shopping-cart{
+.fa-shopping-cart {
     padding-right: 5px;
 }
 
-.fa-user{
+.fa-user {
     padding-right: 5px;
 }
+
 .nav ul {
     flex: 1;
     text-align: right;
@@ -88,18 +97,19 @@ header {
 }
 
 /*-------------------*/
-body{
-    margin:0;
+body {
+    margin: 0;
     padding: 0;
-    background: linear-gradient(120deg,#B14FD2,#FF9671);
+    background: linear-gradient(120deg, #B14FD2, #FF9671);
     height: 100vh;
     overflow: hidden;
 }
-.cart-page{
+
+.cart-page {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     width: 1200px;
     background: var(--white-color);
     border-radius: 10px;
@@ -109,21 +119,27 @@ body{
     padding-right: 80px;
     text-align: center;
 }
-.cart-page h1{
+
+.cart-page h1 {
     text-align: center;
     padding-bottom: 10px;
     color: var(--black-color);
 }
 
-table{
+table {
     position: relative;
-    width: 100%; 
+    width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
     border-radius: 3px 3px 0 0;
     overflow: hidden;
-   
-   }
+
+}
+
+.opciones {
+    display: flex;
+    flex-direction: column;
+}
 
 td, th {
     padding: 15px 20px;
@@ -145,36 +161,38 @@ tr {
     font-family: 'Montserrat', sans-serif;
 }
 
-.total-price{
+.total-price {
     padding-top: 20px;
     display: flex;
     justify-content: flex-start;
+    padding-right: 27em;
+    padding-bottom: 40px;
 }
 
-.total-price table{
+.total-price table {
     border-top: 7px solid #ff523b;
-    width: 100%; 
+    width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
 }
 
-td:last-child{
+td:last-child {
     text-align: right;
 }
 
-th:last-child{
+th:last-child {
     text-align: right;
 }
 
 
-input[type="submit"]{
+input[type="submit"] {
     width: 30%;
     height: 50px;
     border: 1px solid;
     background: var(--subtitle-color);
-    border-radius:20px;
+    border-radius: 20px;
     font-size: 18px;
     color: var(--white-color);
     font-weight: 700;
@@ -183,6 +201,6 @@ input[type="submit"]{
     transition: all .5s ease;
 }
 
-input[type="submit"]:hover{
+input[type="submit"]:hover {
     background-color: var(--title-color);
 }
