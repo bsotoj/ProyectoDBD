@@ -59,12 +59,17 @@
                         @endforeach
                     </div>
                     <a href="/">
+
+                    
+                    <a href="/" >
+
                         <h1><i class="fa fa-home"></i>Salir</h1>
                     </a>
             </section>
         </main>
         <div class="circle1"></div>
         <div class="circle2"></div>
+        
     </form>
 </body>
 
