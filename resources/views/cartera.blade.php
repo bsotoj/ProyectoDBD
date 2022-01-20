@@ -33,8 +33,8 @@
 
             <div class="front">
                 <div class="image">
-                    <img src="image/chip.png" alt="">
-                    <img src="image/visa.png" alt="">
+                    <img src="images/chip.png" alt="">
+                    <img src="images/visa.png" alt="">
                 </div>
                 <div class="card-number-box">################</div>
                 <div class="flexbox">
@@ -57,7 +57,7 @@
                 <div class="box">
                     <span>cvv</span>
                     <div class="cvv-box"></div>
-                    <img src="image/visa.png" alt="">
+                    <img src="/images/visa.png" alt="">
                 </div>
             </div>
 
