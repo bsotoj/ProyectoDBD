@@ -53,7 +53,7 @@
 
             <div class="txt_field">
                 <h5>Región</h5>
-                <select name="format" id="format" name="idRegion" id="idRegion">
+                <select name="idRegion" id="idRegion">
                     @foreach ($regiones as $region)
                     <option value="{{$region->id}}">{{$region->nombreRegion}}</option>
                     @endforeach
