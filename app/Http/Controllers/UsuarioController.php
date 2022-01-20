@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Usuario;
 use App\Models\Region;
 use App\Models\Cartera;
+use App\Models\Juego;
 use App\Models\ListaDeseo;
+use App\Models\ListaDeseosJuegos;
 use App\Models\Rol;
 use App\Models\UsuarioRol;
 use Illuminate\Support\Facades\Validator;
@@ -327,5 +329,51 @@ if($validator->fails()){
 
         $usuarios = Usuario::all()->where('delete',FALSE);
         return view('login');
+    }
+
+
+    public function dirigirCatalogo($id){
+        $user = Usuario::find($id);
+        $juegos = Juego::all()->where('delete',FALSE);
+        return view('catalogo2',compact('user','juegos'));
+
+    }
+
+    public function juegoCandidatoWish($idUsuario,$idJuego){
+        $user = Usuario::find($idUsuario);
+        $juego = Juego::find($idJuego);
+        return view('juegoListaDeseo',compact('user','juego'));
+    }
+
+   
+    public function wishlistJuego($idUsuario,$idJuego){
+        $user = Usuario::find($idUsuario);
+        $juego = Juego::find($idJuego);
+        
+        $listaDeseo = ListaDeseo::find($user->idListaDeseos);
+        $listaDeseoJuego = ListaDeseosJuegos::find($listaDeseo->id); 
+        if($listaDeseoJuego->idJuego != $idJuego){
+            $wishList =  new ListaDeseosJuegos();
+            $wishList->idJuego = $idJuego;
+            $wishList->idListaDeseo = $listaDeseo->id; 
+            $wishList->delete = FALSE; 
+            $wishList->save();
+
+            $ws = ListaDeseosJuegos::all()->where('delete',FALSE);
+            $aux = array();
+
+
+            foreach($ws as $listaActual){
+                if($listaActual->idListaDeseo == $user->idListaDeseos){
+                    $j = Juego::find($listaActual->idJuego);
+                    array_push($aux,$j);
+                }
+            }
+            
+            return view('wishListUser',compact('aux','user'));
+
+        }
+     
+        
     }
 }

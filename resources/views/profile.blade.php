@@ -86,9 +86,9 @@
                         </a>
                     </div>
                 </div>
-
+    
                 <div class="pro">
-                    <a href="/juegos" class="catalogo">
+                    <a href="/wishList/Id={{$user['id']}}/e" class="usuario">
                         <h2>¡Mira nuestro catálogo!</h2>
                     </a>
                     <img src="/images/controller.png" alt="" />

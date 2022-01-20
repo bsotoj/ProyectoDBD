@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -25,9 +25,9 @@
 
     <div class="row">
         <div class="header-content">
-            <h1>Stardew Valley</h1>
+            <h1>{{$juego->nombreJuego}}</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti unde esse suscipit, cumque sapiente dolorem asperiores nulla debitis aperiam corrupti magnam! Autem commodi debitis deserunt velit quos natus voluptate iusto?</p>
-            <a href="#" class="wishList">Lista de deseos</a>
+            <a href="/wishList/user/{{$user['id']}}/game/{{$juego['id']}}/agregar" class="wishList">Lista de deseos</a>
             <a href="#" class="cart">Carrito</a>
         </div>
         <div class="image">
