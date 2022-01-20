@@ -4,7 +4,7 @@
 <head>
     <title>DEBEDE</title>
     <!--Referencia a archivo .css-->
-    <link href="{{ asset('css/register3.style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/crearJuego.style.css') }}" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
@@ -20,8 +20,8 @@
     </header>
 
    
-    <div class="container">
-        <h1>Seleccionar juego a modificar</h1>
+    <div class="edit-container">
+        <h1>Juego a modificar</h1>
         <form action="{{action('VistaAdminController@prepararJuegoModificar')}}" method="GET">
             <div class="txt_field">
                 <h5>Juegos</h5>
@@ -32,8 +32,7 @@
                 </select>    
             </div>
            
-            <input type="submit" value="Modificar">
-            <div class="signup_link"><a href="/profile">Volver a perfil</a>
+            <button type="submit" class="btn btn-success d-grid gap-2 col-2 mx-auto color3">Modificar juego</button>
         </form>
     </div>
 </body>

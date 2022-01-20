@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<header>
+    <header>
         <div class="nav">
             <img src="{{ asset('images/logo2.png')}}" alt="" class="logo">
             <a class="debede" href="#">DEBEDE</a>
