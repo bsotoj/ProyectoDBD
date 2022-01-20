@@ -52,7 +52,9 @@
                         </a>
                     </div>
                     <div class="link">
-                        <a href="/listaDeseos" class="listaDeseos">
+
+                   
+                        <a href="/wishListShow/Id={{$user['id']}}" class="listaDeseos">
                             <h3><i class="far fa-heart"></i></i>Mi Lista</h3>
                         </a>
                     </div>

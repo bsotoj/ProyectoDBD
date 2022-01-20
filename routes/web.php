@@ -64,6 +64,7 @@ Route::put('/editarUsuario','VistaAdminController@updateUser')->name('upUser');
 Route::get("/wish/userID/{idUsuario}/gameID/{idJuego}","UsuarioController@juegoCandidatoWish");
 Route::get("/wishList/Id={id}/e","UsuarioController@dirigirCatalogo"); 
 Route::get('/wishList/userID/{idUsuario}/gameID/{idJuego}',"UsuarioController@wishlistJuego");
+Route::get("/wishListShow/Id={idUsuario}","UsuarioController@mostrarListaDeseos");
 
 Route::get('/administrar/Id={id}/admin','VistaAdminController@adminView');
 Route::get('/administrar/Id={id}/get','VistaAdminController@viewUsers');

@@ -376,4 +376,18 @@ if($validator->fails()){
      
         
     }
+
+    public function mostrarListaDeseos($idUsuario){
+        $user = Usuario::find($idUsuario);
+        $listaDeseo = ListaDeseo::find($user->idListaDeseos);
+        $listaDeseoJuego = ListaDeseosJuegos::all()->where('idListaDeseo',$listaDeseo->id)
+                                                    ->where('delete',FALSE);
+        $aux = array();
+        foreach($listaDeseoJuego as $ls){
+            $j = Juego::find($ls->idJuego);
+            array_push($aux,$j);
+        }
+
+        return view ('wishListUser',compact('aux','user'));
+    }
 }
