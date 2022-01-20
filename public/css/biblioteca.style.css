@@ -37,6 +37,12 @@ h2{
     font-weight: 600;
     opacity: 0.8;
   }
+  h5 {
+    color: #FF4574;
+    font-weight: 600;
+    opacity: 0.8;
+  }
+
 main {
     min-height: 100vh;
     background: linear-gradient(to right top,#B14FD2,#FF4574);
@@ -98,3 +104,21 @@ main {
     justify-content: top;
     text-align: center;
 }
+.card{
+    display: flex;
+    background: linear-gradient(
+      to left top,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.5)
+    );
+    border-radius: 1rem;
+    margin: 2rem 0rem;
+    padding: 2rem;
+    box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
+    justify-content: space-evenly;
+}
+.card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
