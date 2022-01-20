@@ -8,7 +8,8 @@
     <title>DEBEDE</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link href="{{ asset('css/catalogo.style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/catalogo2.style.css') }}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3a9c61ce37.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -17,12 +18,10 @@
             <div class="games">
                 <div class="status">
                     <h1>Usuarios en la plataforma:</h1>
-                    <input type="text" />
                 </div>
                 <div class="cards">
                     @foreach($usuarios as $usuario)
                     <div class="card">
-                        <img src="./images/assassins.png" alt="" />
                         <div class="card-info">
                             <h2>{{$usuario->nombreUsuario}}</h2>
                         </div>
@@ -31,8 +30,9 @@
 
                 </div>
                 <div class="links">
-                    <img src="./images/library.png" alt="" />
-                    <a href='/redirigirPerfil/Id={{$admin['id']}}' class="cartera">Volver al perfil</a>
+                    <a href='/redirigirPerfil/Id={{$admin['id']}}' class="profile">
+                        <h3><i class="far fa-user"></i>Volver al perfil</h3>
+                    </a>
                 </div>
         </section>
     </main>
