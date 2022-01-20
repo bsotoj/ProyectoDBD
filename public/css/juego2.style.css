@@ -46,7 +46,15 @@ header {
 }
 
 /*-------NAV------*/
-.nav {
+.li,a{
+    font-weight: 200;
+    font-size:16px;
+    color: #edf0f1;
+    text-decoration:none;
+  }
+  
+  .nav {
+    z-index: 3;
     position: absolute;
     top: 0;
     left: 0;
@@ -55,14 +63,22 @@ header {
     padding: 10px 30px;
     align-items: center;
     background: var(--black-color);
-}
-
-.nav ul {
+  }
+  
+  .nav,
+  fa-heart,
+  fa-shopping-cart,
+  fa-user{
+    padding-right: 5px;
+    color: var(--white-color);
+  }
+  
+  .nav ul {
     flex: 1;
     text-align: right;
-}
-
-.nav ul li {
+  }
+  
+  .nav ul li {
     list-style: none;
     /*Quita el punteo de la lista*/
     display: inline-block;
@@ -70,20 +86,13 @@ header {
     margin: 0 1px;
     /*Separación entre items*/
     padding: 0 20px;
-}
-
-.nav-list li a {
-    transition: all .05s ease 0s;
-}
-
-.nav-list a:hover {
-    border-bottom: 3px solid var(--subtitle-color);
-    /*Crea una línea debajo del texto*/
-}
-
-.logo {
+  }
+  
+  .logo {
     width: 40px;
-}
+  }
+  
+  /*-------------------*/
 
 /*--------CLASIFIACIÓN Y DESCRIPCIÓN-----------*/
 /*Boton login*/
