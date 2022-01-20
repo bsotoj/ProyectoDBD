@@ -4,23 +4,26 @@
 <head>
     <title>DEBEDE</title>
     <!--Referencia a archivo .css-->
-    <link href="{{ asset('css/register3.style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/juegoEliminar.style.css') }}" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 
 <body>
-    <header>
+<header>
         <div class="nav">
             <img src="{{ asset('images/logo2.png')}}" alt="" class="logo">
+            <a class="debede" href="#">DEBEDE</a>
             <ul class="nav-list">
-                <li><a href="#">Ayuda</a></li>
+                <li><i class="fas fa-shopping-cart"></i><a href="#">Carrito</a></li>
+                <li><i class="far fa-heart"></i><a href="#">Lista de deseos</a></li>
+                <li><i class="far fa-user"></i></i><a href="#">Mi cuenta</a></li>
             </ul>
         </div>
     </header>
 
    
-    <div class="container">
+    <div class="delete-container">
         <h1>Seleccionar usuario a modificar</h1>
         <form action="{{action('VistaAdminController@prepararUsuarioModificar')}}" method="GET">
             <div class="txt_field">
@@ -32,8 +35,8 @@
                 </select>    
             </div>
            
-            <input type="submit" value="Modificar">
-            <div class="signup_link"><a href="/profile">Volver a perfil</a>
+            <button type="submit" class="btn btn-success d-grid gap-2 col-2 mx-auto color3">Modificar</button>
+
         </form>
     </div>
 </body>

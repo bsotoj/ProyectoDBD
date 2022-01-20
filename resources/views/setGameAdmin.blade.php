@@ -4,7 +4,7 @@
 <head>
     <title>DEBEDE</title>
     <!--Referencia a archivo .css-->
-    <link href="{{ asset('css/setProfile2.style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/juegoEliminar.style.css') }}" rel="stylesheet">
     <!-- FontAwesome-->
     <script src="https://kit.fontawesome.com/3a9c61ce37.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
@@ -24,7 +24,7 @@
         </div>
     </header>
 
-    <div class="edit-container">
+    <div class="delete-container">
         <h1>Editar juego</h1>
 
         <form action="{{route('setUserProfile')}}" method="POST">
