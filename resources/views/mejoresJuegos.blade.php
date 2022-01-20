@@ -53,10 +53,11 @@
                     <div class="cards">
                         @foreach($juegos2 as $juego)
                         <div class="card">
-                            <img src="./images/assassins.png" alt="" />
+                            <img src="/images/assassins.png" alt="" />
                             <div class="card-info">
                                 <h3>{{$juego->idJuego}}</h3>
                                 <h3>Juego: {{$juego->nombreJuego}}</h3>
+                                <h3>Edad Recomendada: {{$juego->edadRestriccion}}</h3>
                                 <a href="/juego" class="btn btn-primary">
                                     <h2>Ver</h2>
                                 </a>
