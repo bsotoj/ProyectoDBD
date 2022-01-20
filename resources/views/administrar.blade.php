@@ -71,7 +71,7 @@
                 
                     <div class="link">
                         <img src="./images/library.png" alt="" />
-                        <a href="/juegos/Id={{$user['id']}}/añadirJuego" class="añadirJuego">
+                        <a href="/adminGame/Id={{$user['id']}}/delete" class="admin">
                             <h3>Eliminar Juego</h3>
                         </a>
                     </div>

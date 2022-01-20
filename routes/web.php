@@ -78,6 +78,8 @@ Route::post('/adminGames/create','VistaAdminController@adminCreateGame')->name('
 Route::get('adminGame/editarJuego','VistaAdminController@juegosCandidatosEditar');
 Route::get('/adminGames/set','VistaAdminController@prepararJuegoModificar');
 Route::put('/adminGames/setGame','VistaAdminController@adminSetGame');
+Route::get('/adminGame/Id={id}/delete','VistaAdminController@catalogoParaBorrar');
+Route::delete('/adminGame/softDelete','VistaAdminController@gameSoftDelete');
 
 //rutas de Cartera
 

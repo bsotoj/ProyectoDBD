@@ -11,6 +11,7 @@
 
 
 <body>
+
     <form action="{{action('VistaAdminController@adminSetGame')}}" method="POST">
         @method('PUT')
         <H1 class="center display-4">Editar Juego</H1>

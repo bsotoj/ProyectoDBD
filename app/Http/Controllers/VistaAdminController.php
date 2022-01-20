@@ -334,6 +334,28 @@ class VistaAdminController extends Controller{
 
     }
 
+
+
+    public function catalogoParaBorrar($id){
+        $admin = Usuario::find($id);
+        $juegos = Juego::all()->where('delete',FALSE);
+        return view('adminGameDelete',compact('admin','juegos'));
+
+    }
+
+
+    //SOFT DELETE PARA UN JUEGO SIENDO ADMIN
+    public function gameSoftDelete(Request $request){
+        $juego = Juego::find($request->idJuego);
+        $juego->delete = TRUE;
+        $juego->save();
+        $juegos = Juego::all()->where('delete',FALSE);
+        $user= Usuario::find($request->id);
+        return view('catalogoSoftDelete',compact('user','juegos'));
+        
+
+    }
+
 }
 
     
