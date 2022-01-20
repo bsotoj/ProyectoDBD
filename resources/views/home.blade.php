@@ -23,7 +23,7 @@
     <div class="home">
         <div class="content">
             <h2>DEBEDE</h2>
-            <p>Lorem ipsum dolor sit</p>
+            <p>Gaming a otro nivel.</p>
             <a href="{{route('regiones')}}" class="register">Registrarse</a>
             <a href="/login" class="login">Iniciar sesion</a>
         </div>

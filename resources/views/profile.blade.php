@@ -89,7 +89,7 @@
 
                 <div class="pro">
                     <a href="/juegos" class="catalogo">
-                        <h2>Más juegos aquí</h2>
+                        <h2>¡Mira nuestro catálogo!</h2>
                     </a>
                     <img src="./images/controller.png" alt="" />
                 </div>
@@ -104,21 +104,21 @@
                         <img src="./images/assassins.png" alt="" />
                         <div class="card-info">
                             <h2>Assassins Creed Valhalla</h2>
-                            <p>Acción</p>
+                            <h3>Edad Recomendada: 15</h3>
                         </div>
                     </div>
                     <div class="card">
                         <img src="./images/sackboy.png" alt="" />
                         <div class="card-info">
                             <h2>Sackboy A Great Advanture</h2>
-                            <p>Aventura</p>
+                            <h3>Edad Recomendada: 18</h3>
                         </div>
                     </div>
                     <div class="card">
                         <img src="./images/spiderman.png" alt="" />
                         <div class="card-info">
                             <h2>Spiderman Miles Morales</h2>
-                            <p>Acción</p>
+                            <h3>Edad Recomendada: 12</h3>
                         </div>
                     </div>
                 </div>
