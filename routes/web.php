@@ -49,9 +49,6 @@ Route::get('/juego', function () {
     return view('juego');
 });
 
-Route::get('/setProfile2', function () {
-    return view('setProfile2');
-});
 
 Route::get('/catalogo','JuegoController@index');
 

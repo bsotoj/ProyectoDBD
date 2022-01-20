@@ -2,43 +2,56 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <title>Crear Juego</title>
+    <title>DEBEDE</title>
+    <!--Referencia a archivo .css-->
+    <link href="{{ asset('css/crearJuego.style.css') }}" rel="stylesheet">
+    <!-- FontAwesome-->
+    <script src="https://kit.fontawesome.com/3a9c61ce37.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 
-
 <body>
-    <form action="{{route('nuevoJuego')}}" method="POST">
-        <H1 class="center display-4">Agregar un nuevo juego</H1>
-        <div class="txt_field">
-            <label for="exampleInputPassword1" class="form-label">Nombre: </label>
-            <input type="text" class="form-control" name="nombreJuego" value="" 
-                required>
+    <header>
+        <div class="nav">
+            <img src="{{ asset('images/logo2.png')}}" alt="" class="logo">
+            <a class="debede" href="#">DEBEDE</a>
+            <ul class="nav-list">
+                <li><i class="fas fa-shopping-cart"></i><a href="#">Carrito</a></li>
+                <li><i class="far fa-heart"></i><a href="#">Lista de deseos</a></li>
+                <li><i class="far fa-user"></i></i><a href="#">Mi cuenta</a></li>
+            </ul>
         </div>
+    </header>
 
-        <div class="txt_field">
-            <label for="exampleInputPassword1" class="form-label">Edad Restricción: </label>
-            <input type="number" class="form-control" name="edadRestriccion" value="" 
-                required>
-        </div>
+    <div class="edit-container">
+        <h1>Agregar un nuevo juego</h1>
 
-        <div class="txt_field">
-            <label for="exampleInputPassword1" class="form-label">Almacenamiento requerido: </label>
-            <input type="text" class="form-control" name="almacenamiento" value="" placeholder="100"
-                required>
-        </div>
+        <form action="{{route('setUserProfile')}}" method="POST">
+            @method('PUT')
 
-        <div class="txt_field">
-            <label for="exampleInputPassword1" class="form-label">Link del Juego: </label>
-            <input type="text" class="form-control" name="linkJuego" value="" placeholder="https://www.youtube.com/watch?v=OOB3j9lmBZI&ab_channel=MaximusDread"
-                required>
-        </div>
+            <div class="txt_field">
+                <h5>Nombre</h5>
+                <input type="text" name="nombreJuego" value="" required >
+            </div>
 
-    
-        <div class="txt_field">
+
+            <div class="txt_field">
+                <h5>Restricción edad</h5>
+                <input type="number" name="edadRestriccion" value="" min="1" max="18"required>
+            </div>
+
+            <div class="txt_field">
+                <h5>Almacenamiento</h5>
+                <input type="number" name="contraseña"  name="almacenamiento" value="" min="1" max="9999" required>
+            </div>
+
+            <div class="txt_field">
+                <h5>Link del juego</h5>
+                <input type="text" name="linkJuego" value="" required>
+            </div>
+
+            <div class="txt_field">
                 <h5>Género</h5>
                 <select name="format" id="format"name="idGenero" id="idGenero">
                     @foreach ($genero as $gen)
@@ -47,9 +60,10 @@
                 </select>
             </div>
 
-        <input hidden type="text" class="form-control" name="id" value="{{$usuario['id']}}">
-        <button type="submit" class="btn btn-success d-grid gap-2 col-2 mx-auto color3">Agregar juego</button>
-    </form>
+            <input hidden type="text" class="form-control" name="id" value="{{$usuario['id']}}">
+            <button type="submit" class="btn btn-success d-grid gap-2 col-2 mx-auto color3">Crear juego</button>
+        </form>
+    </div>
 </body>
 
 </html>
