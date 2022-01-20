@@ -2,54 +2,68 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <title>Editar perfil</title>
+    <title>DEBEDE</title>
+    <!--Referencia a archivo .css-->
+    <link href="{{ asset('css/setProfile2.style.css') }}" rel="stylesheet">
+    <!-- FontAwesome-->
+    <script src="https://kit.fontawesome.com/3a9c61ce37.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 
-
 <body>
-    <form action="{{route('setUserProfile')}}" method="POST">
-        @method('PUT')
-        <H1 class="center display-4">Editar Perfil</H1>
-        <div class="contenedorPerfil">
-            <label for="exampleInputPassword1" class="form-label">Nombre: </label>
-            <input type="text" class="form-control" name="nombre" value="" placeholder="{{$usuario['nombre']}}"
-                required>
+    <header>
+        <div class="nav">
+            <img src="{{ asset('images/logo2.png')}}" alt="" class="logo">
+            <a class="debede" href="#">DEBEDE</a>
+            <ul class="nav-list">
+                <li><i class="fas fa-shopping-cart"></i><a href="#">Carrito</a></li>
+                <li><i class="far fa-heart"></i><a href="#">Lista de deseos</a></li>
+                <li><i class="far fa-user"></i></i><a href="#">Mi cuenta</a></li>
+            </ul>
         </div>
+    </header>
 
-        <div class="contenedorPerfil">
-            <label for="exampleInputPassword1" class="form-label">Contraseña: </label>
-            <input type="text" class="form-control" name="contraseña" value="" placeholder="{{$usuario['contraseña']}}"
-                required>
-        </div>
+    <div class="edit-container">
+        <h1>Editar perfil</h1>
 
-        <div class="contenedorPerfil">
-            <label for="exampleInputPassword1" class="form-label">Nombre de Usuario: </label>
-            <input type="text" class="form-control" name="nombreUsuario" value="" placeholder="{{$usuario['nombreUsuario']}}"
-                required>
-        </div>
+        <form action="{{route('setUserProfile')}}" method="POST">
+            @method('PUT')
 
-        <div class="contenedorPerfil">
-            <label for="exampleInputPassword1" class="form-label">Fecha de nacimiento: </label>
-            <input type="date" class="form-control" name="fechaNacimiento" value="" placeholder="{{$usuario['fechaNacimiento']}}"
-                required>
-        </div>
+            <div class="txt_field">
+                <h5>Nombre</h5>
+                <input type="text" required name="nombre" value="" placeholder="{{$usuario['nombre']}}">
+            </div>
 
-        <div class="txt_field">
-            <h5>Región</h5>
-            <select name="format" id="format" name="idRegion" id="idRegion">
-                @foreach ($regiones as $region)
-                <option value="{{$region->id}}">{{$region->nombreRegion}}</option>
-                @endforeach
-            </select>
-        </div>
 
-        <input hidden type="text" class="form-control" name="id" value="{{$usuario['id']}}">
-        <button type="submit" class="btn btn-success d-grid gap-2 col-2 mx-auto color3">Cambiar datos</button>
-    </form>
+            <div class="txt_field">
+                <h5>Usuario</h5>
+                <input type="text" required name="nombreUsuario" value="" placeholder="{{$usuario['nombreUsuario']}}">
+            </div>
+
+            <div class="txt_field">
+                <h5>Contraseña</h5>
+                <input type="password" required name="contraseña" value="" placeholder="{{$usuario['contraseña']}}">
+            </div>
+
+            <div class="txt_field">
+                <h5>Fecha de nacimiento</h5>
+                <input type="date" required name="fechaNacimiento" value="" placeholder="{{$usuario['fechaNacimiento']}}">
+            </div>
+
+            <div class="txt_field">
+                <h5>Región</h5>
+                <select name="format" id="format" name="idRegion" id="idRegion">
+                    @foreach ($regiones as $region)
+                    <option value="{{$region->id}}">{{$region->nombreRegion}}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <input hidden type="text" class="form-control" name="id" value="{{$usuario['id']}}">
+            <button type="submit" class="btn btn-success d-grid gap-2 col-2 mx-auto color3">Cambiar datos</button>
+        </form>
+    </div>
 </body>
 
 </html>

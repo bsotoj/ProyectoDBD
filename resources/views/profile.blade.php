@@ -75,7 +75,7 @@
                     </div>
                     <div class="link">
                         <a href="/" class="cerrarSesion">
-                        <h3><i class="fas fa-sign-out-alt"></i>Modificar Juego</h3>
+                        <h3><i class="fas fa-sign-out-alt"></i>Cerrar sesión</h3>
                         </a>
                     </div>
                 </div>
