@@ -24,6 +24,17 @@
                 </div>
                 <div class="links">
                     <div class="link">
+<<<<<<< Updated upstream
+=======
+                        <img src="./images/library.png" alt="" />
+                        <a href="/administrar/Id={{$user['id']}}/admin" class="administrar">
+                            <h3>Administrar</h3>
+                        </a>
+                    </div>
+
+                    <div class="link">
+                        <img src="./images/library.png" alt="" />
+>>>>>>> Stashed changes
                         <a href="/usuarios/Id={{$user['id']}}/editarPerfil" class="modificarUsuario">
                         <h3><i class="far fa-user"></i>Editar Perfil</h3>
                         </a>
@@ -70,7 +81,11 @@
                 </div>
 
                 <div class="pro">
+<<<<<<< Updated upstream
                     <a href="/juegos" class="catalogo">
+=======
+                    <a href="#" class="catalogo">
+>>>>>>> Stashed changes
                         <h2>Más juegos aquí</h2>
                     </a>
                     <img src="./images/controller.png" alt="" />

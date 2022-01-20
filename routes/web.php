@@ -59,7 +59,18 @@ Route::post('/usuarios/create','UsuarioController@store');
 Route::get('/usuarios/{id}','UsuarioController@show');
 Route::put('/usuarios/update/{id}','UsuarioController@update');
 Route::put('/edit','VistaProfileController@setInfo')->name('setUserProfile');
-Route::delete('/usuarios/delete/{id}','UsuarioController@destroy');
+Route::delete('/usuarios/delete/{id}','UsuarioController@destroy')->name('borrarUsuario');
+Route::put('/editarUsuario','VistaAdminController@updateUser')->name('upUser');
+
+
+Route::get('/administrar/Id={id}/admin','VistaAdminController@adminView');
+Route::get('/administrar/Id={id}/get','VistaAdminController@viewUsers');
+Route::get('/administrar/Id={id}/editar','VistaAdminController@candidatosEditar');
+Route::get('/admin/set','VistaAdminController@prepararUsuarioModificar')->name('setSelectedUser');
+Route::get('/administrar/Id={id}/eliminar','VistaAdminController@getUsers');
+
+Route::get('/redirigirPerfil/Id={id}','VistaAdminController@redirigir');
+
 //rutas de Cartera
 
 Route::get('/carteras','CarteraController@index');

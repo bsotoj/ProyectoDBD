@@ -324,6 +324,8 @@ if($validator->fails()){
 
         $usuario->delete = TRUE;
         $usuario->save();
-        return response()->json($usuario);
+
+        $usuarios = Usuario::all()->where('delete',FALSE);
+        return view('adminUserGet',compact('usuarios'));
     }
 }
