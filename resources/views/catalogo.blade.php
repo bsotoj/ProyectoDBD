@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
     <link href="{{ asset('css/catalogo.style.css') }}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3a9c61ce37.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -34,6 +35,9 @@
                         </div>
                         @endforeach
                     </div>
+                    <a href="/" >
+                        <h1><i class="fa fa-home"></i>Salir</h1>
+                    </a>
             </section>
         </main>
         <div class="circle1"></div>

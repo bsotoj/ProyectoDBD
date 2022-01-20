@@ -71,7 +71,6 @@
 
                 <div class="pro">
                     <a href="/juegos" class="catalogo">
-                    <a href="#" class="catalogo">
                         <h2>Más juegos aquí</h2>
                     </a>
                     <img src="./images/controller.png" alt="" />
