@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--CSS-->
-    <link href="{{ asset('css/listaDeseos2.style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/listaDeseos3.style.css') }}" rel="stylesheet">
     <!-- FontAwesome-->
     <script src="https://kit.fontawesome.com/3a9c61ce37.js" crossorigin="anonymous"></script>
     <title>DEBEDE</title>
@@ -33,6 +33,7 @@
                 <th>Nombre juego</th>
                 <th>Género</th>
                 <th>Precio</th>
+                <th>Opciones</th>
             </tr>
 
             <tr>
@@ -40,6 +41,16 @@
                 <td>Stardew Valley</td>
                 <td>leBon</td>
                 <td>10.000</td>
+                <td>
+                    <div class="opciones">
+                        <a href="#">
+                            <h3>Quitar de la lista de deseos</h3>
+                        </a>
+                        <a href="#">
+                            <h3>Añadir al carrito</h3>
+                        </a>
+                    </div>
+                </td>
             </tr>
 
             <tr>
@@ -47,6 +58,16 @@
                 <td>Sims 4</td>
                 <td>Duppont</td>
                 <td>25.000</td>
+                <td>
+                    <div class="opciones">
+                        <a href="#">
+                            <h3>Quitar de la lista de deseos</h3>
+                        </a>
+                        <a href="#">
+                            <h3>Añadir al carrito</h3>
+                        </a>
+                    </div>
+                </td>
             </tr>
 
             <tr>
@@ -54,6 +75,16 @@
                 <td>DOOM Eternal</td>
                 <td>leBon</td>
                 <td>22.000</td>
+                <td>
+                    <div class="opciones">
+                        <a href="#">
+                            <h3>Quitar de la lista de deseos</h3>
+                        </a>
+                        <a href="#">
+                            <h3>Añadir al carrito</h3>
+                        </a>
+                    </div>
+                </td>
             </tr>
         </table>
     </div>
