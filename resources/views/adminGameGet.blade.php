@@ -8,31 +8,45 @@
     <title>DEBEDE</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link href="{{ asset('css/profile2.style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/catalogo2.style.css') }}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3a9c61ce37.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <header>
+        <div class="nav">
+            <img src="{{ asset('images/logo2.png')}}" alt="" class="logo">
+            <a class="debede" href="#">DEBEDE</a>
+            <ul class="nav-list">
+                <li><i class="fas fa-shopping-cart"></i><a href="#">Carrito</a></li>
+                <li><i class="far fa-heart"></i><a href="#">Lista de deseos</a></li>
+                <li><i class="far fa-user"></i></i><a href='/redirigirPerfil/Id={{$admin[' id']}}' class="profile">Mi
+                        cuenta</a></li>
+            </ul>
+        </div>
+    </header>
     <main>
         <section class="glass">
             <div class="games">
                 <div class="status">
                     <h1>Juegos en la plataforma:</h1>
-                    <input type="text" />
                 </div>
                 <div class="cards">
                     @foreach($juegos as $juego)
                     <div class="card">
-                        <img src="./images/assassins.png" alt="" />
+                        <img src="/images/spiderman.png" alt="" />
                         <div class="card-info">
-                            <h2>{{$juego->nombreJuego}}</h2>
-                            <p>{{$juego->linkJuego}}</p>
+                            <h3>Nombre: {{$juego->nombreJuego}}</h3>
+                            <h3>Edad Recomendada: {{$juego->edadRestriccion}}</h3>
+                            <h3>Tipo de almacenamiento: {{$juego->almacenamiento}}</h3>
                         </div>
                     </div>
                     @endforeach
                 </div>
                 <div class="links">
-                    <img src="./images/library.png" alt="" />
-                    <a href='/redirigirPerfil/Id={{$admin['id']}}' class="cartera">Volver al perfil</a>
+                    <a href='/redirigirPerfil/Id={{$admin['id']}}' class="profile">
+                        <h2><i class="far fa-user"></i>Volver al perfil</h2>
+                    </a>
                 </div>
         </section>
     </main>

@@ -20,7 +20,8 @@
             <ul class="nav-list">
                 <li><i class="fas fa-shopping-cart"></i><a href="#">Carrito</a></li>
                 <li><i class="far fa-heart"></i><a href="#">Lista de deseos</a></li>
-                <li><i class="far fa-user"></i></i><a href='/redirigirPerfil/Id={{$admin['id']}}' class="profile">Mi cuenta</a></li>
+                <li><i class="far fa-user"></i></i><a href='/redirigirPerfil/Id={{$admin['id']}}' class="profile">Mi
+                        cuenta</a></li>
             </ul>
         </div>
     </header>
@@ -33,15 +34,19 @@
                 <div class="cards">
                     @foreach($usuarios as $usuario)
                     <div class="card">
+                        <img src="/images/profilepic.png" alt="" />
                         <div class="card-info">
-                            <h2>{{$usuario->nombreUsuario}}</h2>
+                            <h3>Nombre de usuario: {{$usuario->nombreUsuario}}</h3>
+                            <h3>Nombre: {{$usuario->nombre}}</h3>
+                            <h3>Fecha de nacimiento: {{$usuario->fechaNacimiento}}</h3>
+                            <h3>Contraseña: {{$usuario->contraseña}}</h3>
+                            <h3>Contacto: {{$usuario->email}}</h3>
                         </div>
                     </div>
                     @endforeach
-
                 </div>
                 <div class="links">
-                    <a href='/redirigirPerfil/Id={{$admin['id']}}' class="profile">
+                    <a href='/redirigirPerfil/Id={{$admin[' id']}}' class="profile">
                         <h2><i class="far fa-user"></i>Volver al perfil</h2>
                     </a>
                 </div>
