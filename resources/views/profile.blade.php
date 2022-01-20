@@ -29,7 +29,7 @@
         <section class="glass">
             <div class="dashboard">
                 <div class="user">
-                    <img src="./images/profilepic.png" alt="" />
+                    <img src="/images/profilepic.png" alt="" />
                     <h3>{{$user->nombreUsuario}}</h3>
                     <p>{{$rol->nombreRol}}</p>
                 </div>
@@ -91,7 +91,7 @@
                     <a href="/juegos" class="catalogo">
                         <h2>¡Mira nuestro catálogo!</h2>
                     </a>
-                    <img src="./images/controller.png" alt="" />
+                    <img src="/images/controller.png" alt="" />
                 </div>
             </div>
             <div class="games">
@@ -101,21 +101,21 @@
                 </div>
                 <div class="cards">
                     <div class="card">
-                        <img src="./images/assassins.png" alt="" />
+                        <img src="/images/assassins.png" alt="" />
                         <div class="card-info">
                             <h2>Assassins Creed Valhalla</h2>
                             <h3>Edad Recomendada: 15</h3>
                         </div>
                     </div>
                     <div class="card">
-                        <img src="./images/sackboy.png" alt="" />
+                        <img src="/images/sackboy.png" alt="" />
                         <div class="card-info">
                             <h2>Sackboy A Great Advanture</h2>
                             <h3>Edad Recomendada: 18</h3>
                         </div>
                     </div>
                     <div class="card">
-                        <img src="./images/spiderman.png" alt="" />
+                        <img src="/images/spiderman.png" alt="" />
                         <div class="card-info">
                             <h2>Spiderman Miles Morales</h2>
                             <h3>Edad Recomendada: 12</h3>
