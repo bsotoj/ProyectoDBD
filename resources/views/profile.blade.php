@@ -9,10 +9,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
     <!-- FontAwesome-->
     <script src="https://kit.fontawesome.com/3a9c61ce37.js" crossorigin="anonymous"></script>
-    <link href="{{ asset('css/profile2.style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/profile3.style.css') }}" rel="stylesheet">
 </head>
 
 <body>
+<header>
+        <div class="nav">
+            <img src="{{ asset('images/logo2.png')}}" alt="" class="logo">
+            <a class="debede" href="#">DEBEDE</a>
+            <ul class="nav-list">
+                <li><i class="fas fa-shopping-cart"></i><a href="#">Carrito</a></li>
+                <li><i class="far fa-heart"></i><a href="#">Lista de deseos</a></li>
+                <li><i class="far fa-user"></i></i><a href="#">Mi cuenta</a></li>
+            </ul>
+        </div>
+    </header>
 
     <main>
         <section class="glass">
@@ -31,7 +42,7 @@
                 
                     <div class="link">
                         <a href="/administrar/Id={{$user['id']}}/admin" class="modificarUsuario">
-                        <h3><i class="far fa-user"></i>Operaciones Admin</h3>
+                        <h3><i class="fas fa-user-cog"></i>Operaciones Admin</h3>
                         </a>
                     </div>
                     
@@ -71,7 +82,7 @@
                     </div>
                     <div class="link">
                         <a href="/" class="cerrarSesion">
-                        <h3><i class="fas fa-sign-out-alt"></i>Modificar Juego</h3>
+                        <h3><i class="fas fa-sign-out-alt"></i>Cerrar seseión</h3>
                         </a>
                     </div>
                 </div>
