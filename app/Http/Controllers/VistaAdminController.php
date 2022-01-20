@@ -206,7 +206,7 @@ class VistaAdminController extends Controller{
 
 
     
-  
+    //PUT JUEGO SIENDO ADMIN
     public function adminCreateGame(Request $request){
         $validator = Validator::make(
             [
@@ -271,9 +271,71 @@ class VistaAdminController extends Controller{
 
         
     }
+    //PUT PARA EDITAR UN JUEGO DESDE LA VISTA ADMIN 
+    public function juegosCandidatosEditar(){
+        $juegos = Juego::all()->where('delete',FALSE);
+        return view('adminGamePut',compact('juegos'));
+    }
+
+
+    public function prepararJuegoModificar(Request $request){
+        $juego = Juego::find($request->id);
+        $generos = Genero::all()->where('delete',FALSE); 
+        return view('setGameAdmin',compact('juego','generos'));
+
+    }
+    
+    public function adminSetGame(Request $request){
+        $validator = Validator::make(
+            [
+            'nombreJuego' => 'required|min:2|max:255',
+            'edadRestriccion' => 'required',
+            'almacenamiento' => 'required',
+            'linkJuego' => 'required',
+    
+            ],
+    
+            [
+            'nombreJuego.required' => 'Debes ingresar un nombre de juego',
+            'edadRestriccion.required' => 'Debes ingresar una edad de restricción',
+            'almacenamiento.required' => 'Debes ingresar la capacidad de almacenamiento',
+            'linkJuego.required' => 'Link de juego requerido',
+            ]
+            );
+    
+    
+        //Caso falla la validación
+        if($validator->fails()){
+        return response($validator->errors(), 400);
+        }
+
+        $juego = Juego::find($request->id);
+
+        if($request->nombreJuego !=NULL){
+            $juego->nombreJuego = $request->nombreJuego;
+            
+        }
+        if($request->edadRestriccion !=NULL){
+            $juego->edadRestriccion = $request->edadRestriccion; 
+            
+        }
+        if($request->almacenamiento !=NULL){
+            $juego->almacenamiento = $request->almacenamiento; 
+            
+        }
+        if($request->linkJuego !=NULL){
+            $juego->linkJuego = $request->linkJuego; 
+            
+        }
+        $juego->save();
+        $juegos= Juego::all()->where('delete',FALSE);
+        return view('catalogo',compact('juegos'));
+    
+
+    }
+
 }
 
     
-
-
+   
 

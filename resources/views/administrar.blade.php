@@ -60,10 +60,11 @@
                             <h3>Añadir Juego</h3>
                         </a>
                     </div>
-
+                    
+                
                     <div class="link">
                         <img src="./images/library.png" alt="" />
-                        <a href="/bibliotecas/Id={{$user['id']}}/verJuegos" class="biblioteca">
+                        <a href="/adminGame/editarJuego" class="admin">
                             <h3>Editar Juego</h3>
                         </a>
                     </div>

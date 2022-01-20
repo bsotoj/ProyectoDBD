@@ -75,6 +75,9 @@ Route::get('/redirigirPerfil/Id={id}','VistaAdminController@redirigir');
 Route::get('adminGames/Id={id}','VistaAdminController@viewGames');
 Route::get('/adminGames/Id={id}/post','VistaAdminController@catalogoActualJuegos');
 Route::post('/adminGames/create','VistaAdminController@adminCreateGame')->name('gameByAdmin');
+Route::get('adminGame/editarJuego','VistaAdminController@juegosCandidatosEditar');
+Route::get('/adminGames/set','VistaAdminController@prepararJuegoModificar');
+Route::put('/adminGames/setGame','VistaAdminController@adminSetGame');
 
 //rutas de Cartera
 
