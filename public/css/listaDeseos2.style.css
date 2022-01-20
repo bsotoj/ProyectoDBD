@@ -57,6 +57,17 @@ header {
     background: var(--black-color);
 }
 
+.fa-heart{
+    padding-right: 5px;
+}
+
+.fa-shopping-cart{
+    padding-right: 5px;
+}
+
+.fa-user{
+    padding-right: 5px;
+}
 .nav ul {
     flex: 1;
     text-align: right;
@@ -70,15 +81,6 @@ header {
     margin: 0 1px;
     /*Separación entre items*/
     padding: 0 20px;
-}
-
-.nav-list li a {
-    transition: all .05s ease 0s;
-}
-
-.nav-list a:hover {
-    border-bottom: 3px solid var(--subtitle-color);
-    /*Crea una línea debajo del texto*/
 }
 
 .logo {
