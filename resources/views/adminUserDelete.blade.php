@@ -21,17 +21,18 @@
 
     <div class="register-container">
         <h1>Seleccionar usuario a eliminar</h1>
-        <form action="{{route('borrarUsuario')}}" method="get">
+        <form action="{{action('VistaAdminController@softDelete')}}" method="POST">
+            @method('DELETE')
             <div class="txt_field">
                 <h5>Usuarios</h5>
-                <select name="format" id="format"name="id" id="id">
+                <select name="id" id="id">
                     @foreach ($usuarios as $usuario)
                     <option value="{{$usuario->id}}">{{$usuario->nombreUsuario}}</option>
                     @endforeach
                 </select>
             </div>
 
-            <input type="submit" value="Volver">
+            <input type="submit" value="Eliminar">
             <div class="signup_link"><a href="/profile">Volver a perfil</a>
         </form>
     </div>

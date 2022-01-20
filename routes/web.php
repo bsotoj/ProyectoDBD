@@ -63,7 +63,7 @@ Route::post('/usuarios/create','UsuarioController@store');
 Route::get('/usuarios/{id}','UsuarioController@show');
 Route::put('/usuarios/update/{id}','UsuarioController@update');
 Route::put('/edit','VistaProfileController@setInfo')->name('setUserProfile');
-Route::delete('/usuarios/delete/{id}','UsuarioController@destroy')
+Route::delete('/usuarios/delete/{id}','UsuarioController@destroy');
 Route::put('/editarUsuario','VistaAdminController@updateUser')->name('upUser');
 
 

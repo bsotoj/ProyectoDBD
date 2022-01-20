@@ -82,6 +82,7 @@ class VistaAdminController extends Controller{
                 array_push($usuarios,$usuario);
             }
         }
+        //return response()->json($usuarios);
         return view('adminUserDelete',compact('usuarios'));
     }
 
@@ -176,7 +177,7 @@ class VistaAdminController extends Controller{
 
     public function softDelete(Request $request)
     {
-       
+       //return response()->json($request);
         $usuario = Usuario::find($request->id);
         $usuario->delete = TRUE;
         $usuario->save();
