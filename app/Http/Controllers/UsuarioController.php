@@ -326,6 +326,6 @@ if($validator->fails()){
         $usuario->save();
 
         $usuarios = Usuario::all()->where('delete',FALSE);
-        return view('adminUserGet',compact('usuarios'));
+        return view('login');
     }
 }

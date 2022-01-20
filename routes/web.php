@@ -63,7 +63,7 @@ Route::post('/usuarios/create','UsuarioController@store');
 Route::get('/usuarios/{id}','UsuarioController@show');
 Route::put('/usuarios/update/{id}','UsuarioController@update');
 Route::put('/edit','VistaProfileController@setInfo')->name('setUserProfile');
-Route::delete('/usuarios/delete/{id}','UsuarioController@destroy')->name('borrarUsuario');
+Route::delete('/usuarios/delete/{id}','UsuarioController@destroy')
 Route::put('/editarUsuario','VistaAdminController@updateUser')->name('upUser');
 
 
@@ -72,7 +72,7 @@ Route::get('/administrar/Id={id}/get','VistaAdminController@viewUsers');
 Route::get('/administrar/Id={id}/editar','VistaAdminController@candidatosEditar');
 Route::get('/admin/set','VistaAdminController@prepararUsuarioModificar')->name('setSelectedUser');
 Route::get('/administrar/Id={id}/eliminar','VistaAdminController@getUsers');
-
+Route::delete('/softDelete','VistaAdminController@softDelete')->name('borrarUsuario');
 Route::get('/redirigirPerfil/Id={id}','VistaAdminController@redirigir');
 
 //rutas de Cartera

@@ -173,4 +173,16 @@ class VistaAdminController extends Controller{
 
     }
 
+
+    public function softDelete(Request $request)
+    {
+       
+        $usuario = Usuario::find($request->id);
+        $usuario->delete = TRUE;
+        $usuario->save();
+
+        $usuarios = Usuario::all()->where('delete',FALSE);
+        return view('login');
+    }
+
 }
