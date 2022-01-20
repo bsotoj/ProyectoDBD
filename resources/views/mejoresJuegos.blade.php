@@ -30,12 +30,6 @@
             <section class="glass">
                 <div class="dashboard">
 
-                    <div class="links">
-                        <div class="link">
-                            <a href="/mejoresJuegos" class="mejoresJuegos">
-                                <h3><i class="fas fa-chart-line"></i>Mejores juegos</h3>
-                            </a>
-                        </div>
 
                         <div class="link">
                             <a href="#" class="modificarUsuario">
@@ -53,16 +47,16 @@
                 </div>
                 <div class="games">
                     <div class="status">
-                        <h1>Cátalogo:</h1>
+                        <h1>Mejores Juegos:</h1>
                         <input type="text" placeholder="Busca un juego">
                     </div>
                     <div class="cards">
-                        @foreach($juegos as $juego)
+                        @foreach($juegos2 as $juego)
                         <div class="card">
                             <img src="./images/assassins.png" alt="" />
                             <div class="card-info">
-                                <h3>{{$juego->nombreJuego}}</h3>
-                                <h3>Edad Recomendada: {{$juego->edadRestriccion}}</h3>
+                                <h3>{{$juego->idJuego}}</h3>
+                                <h3>Juego: {{$juego->nombreJuego}}</h3>
                                 <a href="/juego" class="btn btn-primary">
                                     <h2>Ver</h2>
                                 </a>

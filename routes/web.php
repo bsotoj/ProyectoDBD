@@ -48,8 +48,7 @@ Route::get('/listaDeseos', function () {
 Route::get('/juego', function () {
     return view('juego');
 });
-
-
+Route::get('/mejoresJuegos','BibliotecaController@index');
 Route::get('/catalogo','JuegoController@index');
 
 //rutas de Usuario

@@ -17,17 +17,17 @@ class BibliotecaController extends Controller
      */
     public function index()
     {
-        $biblioteca = Biblioteca::all()->where('delete',FALSE);
-
-        if($biblioteca != NULL){
-            return response()->json($biblioteca);
+        $bibliotecas = Biblioteca::all()->where('delete',FALSE);
+        $juegos= array();
+        $juego= Juego::all()->where('delete',FALSE);
+        foreach($bibliotecas as $biblioteca){
+            $juego = Juego::find($biblioteca->idJuego);
+            
+            array_push($juegos,$juego);
         }
-        /*
-        return response()->json([
-            'message' => 'Biblioteca no encontrada'
-        ], 404);
-        */
-        return view('biblioteca',['idJuego'=>$biblioteca]);
+        $juegos2= array();
+        $juegos2 = array_diff_assoc($juegos, array_unique($juegos));
+        return view('mejoresJuegos',compact('juegos2'));
     }
 
     /**
