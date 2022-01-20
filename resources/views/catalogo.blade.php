@@ -18,9 +18,16 @@
             <img src="{{ asset('images/logo2.png')}}" alt="" class="logo">
             <a class="debede" href="#">DEBEDE</a>
             <ul class="nav-list">
-                <li><i class="fas fa-shopping-cart"></i><a href="#">Carrito</a></li>
-                <li><i class="far fa-heart"></i><a href="#">Lista de deseos</a></li>
-                <li><i class="far fa-user"></i></i><a href="#">Mi cuenta</a></li>
+                <li><a href="/carrito" class="carrito">
+                    <i class="fas fa-shopping-cart"></i>Carrito</li>
+                </a>
+                <li><a href="/listaDeseos" class="listaDeseos">
+                    <i class="far fa-heart"></i>Lista de deseos</li>
+                </a>
+                <li>
+                    <a href="/profile" class="profile">
+                    <i class="far fa-user"></i>Mi cuenta</li>
+                </a>
             </ul>
         </div>
     </header>
