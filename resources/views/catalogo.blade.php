@@ -16,10 +16,33 @@
     <form action="{{route('getGames')}}" method="GET">
         <main>
             <section class="glass">
+                <div class="dashboard">
+
+                    <div class="links">
+                        <div class="link">
+                            <a href="#" class="modificarUsuario">
+                                <h3><i class="far fa-user"></i>Mejores juegos</h3>
+                            </a>
+                        </div>
+
+                        <div class="link">
+                            <a href="#" class="modificarUsuario">
+                                <h3><i class="fas fa-user-cog"></i>Operaciones Admin</h3>
+                            </a>
+                        </div>
+
+                        <div class="link">
+                            <a href="/" class="cerrarSesion">
+                                <h3><i class="fas fa-sign-out-alt"></i>Cerrar seseión</h3>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
                 <div class="games">
                     <div class="status">
                         <h1>Cátalogo:</h1>
-                        <input type="text"placeholder="Buscar Juego...">
+                        <input type="text" placeholder="Buscar Juego...">
                     </div>
                     <div class="cards">
                         @foreach($juegos as $juego)
@@ -35,7 +58,7 @@
                         </div>
                         @endforeach
                     </div>
-                    <a href="/" >
+                    <a href="/">
                         <h1><i class="fa fa-home"></i>Salir</h1>
                     </a>
             </section>
