@@ -17,9 +17,6 @@
         <div class="nav">
             <img src="{{ asset('images/logo2.png')}}" alt="" class="logo">
             <a class="debede" href="/">DEBEDE</a>
-            <ul class="nav-list">
-                <li><a href="#">Ayuda</a></li>
-            </ul>
         </div>
     </header>
 
