@@ -2,56 +2,64 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <title>Editar Juego</title>
+    <title>DEBEDE</title>
+    <!--Referencia a archivo .css-->
+    <link href="{{ asset('css/setProfile2.style.css') }}" rel="stylesheet">
+    <!-- FontAwesome-->
+    <script src="https://kit.fontawesome.com/3a9c61ce37.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 
-
 <body>
-
-    <form action="{{action('VistaAdminController@adminSetGame')}}" method="POST">
-        @method('PUT')
-        <H1 class="center display-4">Editar Juego</H1>
-        <div class="contenedorJuego">
-            <label for="exampleInputPassword1" class="form-label">Nombre Juego Nuevo: </label>
-            <input type="text" class="form-control" name="nombreJuego" value="" placeholder="{{$juego['nombreJuego']}}"
-                required>
+    <header>
+        <div class="nav">
+            <img src="{{ asset('images/logo2.png')}}" alt="" class="logo">
+            <a class="debede" href="#">DEBEDE</a>
+            <ul class="nav-list">
+                <li><i class="fas fa-shopping-cart"></i><a href="#">Carrito</a></li>
+                <li><i class="far fa-heart"></i><a href="#">Lista de deseos</a></li>
+                <li><i class="far fa-user"></i></i><a href="#">Mi cuenta</a></li>
+            </ul>
         </div>
+    </header>
 
-        <div class="txt_field">
-            <h5>Género</h5>
-            <select name="idGenero" id="idGenero">
-                @foreach ($generos as $genero)
-                <option value="{{$genero->id}}">{{$genero->nombreGenero}}</option>
-                @endforeach
-            </select>
-        </div>
-      
-        <div class="contenedorJuego">
-            <label for="exampleInputPassword1" class="form-label">Edad de Restricción: </label>
-            <input type="number" class="form-control" name="edadRestriccion" value="" placeholder="{{$juego['edadRestriccion']}}"
-                required>
-        </div>
+    <div class="edit-container">
+        <h1>Editar juego</h1>
 
-        <div class="contenedorJuego">
-            <label for="exampleInputPassword1" class="form-label">Almacenamiento: </label>
-            <input type="number" class="form-control" name="almacenamiento" value="" placeholder="{{$juego['almacenamiento']}}"
-                required>
-        </div>
+        <form action="{{route('setUserProfile')}}" method="POST">
+            @method('PUT')
 
-        <div class="contenedorJuego">
-            <label for="exampleInputPassword1" class="form-label">Link de Juego: </label>
-            <input type="link" class="form-control" name="linkJuego" value="" placeholder="{{$juego['linkJuego']}}"
-                required>
-        </div>
+            <div class="txt_field">
+                <h5>Nuevo nombre juego</h5>
+                <input type="text" name="nombre" value="" placeholder="{{$juego['nombreJuego']}}" required>
+            </div>
 
 
-        <input hidden type="text" class="form-control" name="id" value="{{$juego['id']}}" >
-        <button type="submit" class="btn btn-success d-grid gap-2 col-2 mx-auto color3">Cambiar datos</button>
-    </form>
+            <div class="txt_field">
+                <h5>Id género</h5>
+                <input type="number" name="idGenero" value="" placeholder="{{$juego['idGenero']}}" required>
+            </div>
+
+            <div class="txt_field">
+                <h5>Edad restricción</h5>
+                <input type="number" name="edadRestriccion" value="" placeholder="{{$juego['edadRestriccion']}}" required>
+            </div>
+
+            <div class="txt_field">
+                <h5>Almacenamiento</h5>
+                <input type="text" ame="almacenamiento" value="" placeholder="{{$juego['almacenamiento']}}" required>
+            </div>
+
+            <div class="txt_field">
+                <h5>Link juego</h5>
+                <input type="text" rname="linkJuego" value="" placeholder="{{$juego['linkJuego']}}" required>
+            </div>
+
+            <input hidden type="text" class="form-control" name="id" value="{{$juego['id']}}" >
+            <button type="submit" class="btn btn-success d-grid gap-2 col-2 mx-auto color3">Cambiar datos</button>
+        </form>
+    </div>
 </body>
 
 </html>
