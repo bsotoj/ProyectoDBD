@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500;700;800&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    --title-color:#FF4574 ;
+    --subtitle-color: #B14FD2;
+    --black-color:#24252A;
+    --white-color:#fff;
+    --grey-color:#adadad;
+}
+body h1{
+    color: var(--title-color);
+}
+body p{
+    color: var(--black-color);
+    font-size:2.3vmin;
+}
+body a{
+    text-decoration: none;/*Quita el subrayado del link*/
+    color: var(--white-color);
+}
+
+li,a{
+    font-weight: 500;
+    font-size:16px;
+    color: #edf0f1;
+    text-decoration:none;
+    background: var(--black-color);
+}
+
+h3 {
+    color: var(--black-color);
+    font-weight: 500;
+    opacity: 0.8;
+  }
+  
+header{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    padding: 30px 5%;
+    background: var(--black-color);
+}
+
+/*-------NAV------*/
+.li,a{
+    font-weight: 200;
+    font-size:16px;
+    color: #edf0f1;
+    text-decoration:none;
+  }
+  
+  .nav {
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    padding: 10px 30px;
+    align-items: center;
+    background: var(--black-color);
+  }
+  
+  .nav,
+  fa-heart,
+  fa-shopping-cart,
+  fa-user{
+    padding-right: 5px;
+    color: var(--white-color);
+  }
+  
+  .nav ul {
+    flex: 1;
+    text-align: right;
+  }
+  
+  .nav ul li {
+    list-style: none;
+    /*Quita el punteo de la lista*/
+    display: inline-block;
+    /*Coloca la lista de manera lineal*/
+    margin: 0 1px;
+    /*Separación entre items*/
+    padding: 0 20px;
+  }
+  
+  .logo {
+    width: 40px;
+  }
+  
+  /*-------------------*/
+/*-------HOME------*/
+body{
+    margin:0;
+    padding: 0;
+    background: linear-gradient(120deg,#B14FD2,#FF9671);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.login-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    background: var(--white-color);
+    border-radius: 10px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.login-container h1{
+    text-align: center;
+    padding-bottom: 10px;
+    color: var(--subtitle-color);
+}
+
+.links{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+  }
