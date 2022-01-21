@@ -18,9 +18,10 @@
             <img src="{{ asset('images/logo2.png')}}" alt="" class="logo">
             <a class="debede" href="#">DEBEDE</a>
             <ul class="nav-list">
-                <li><i class="fas fa-shopping-cart"></i><a href="#">Carrito</a></li>
-                <li><i class="far fa-heart"></i><a href="/wishListShow/Id={{$user['id']}}" class="listaDeseos">Lista de deseos</a></li>
-                <li><i class="far fa-user"></i></i><a href="#">Mi cuenta</a></li>
+                <li>
+                    <a href="/redirigirPerfil/Id={{$user['id']}}" class="profile" class="profile">
+                        <i class="far fa-user"></i>Mi cuenta</a>
+                </li>
             </ul>
         </div>
     </header>
@@ -28,7 +29,7 @@
     <div class="small-container cart-page">
         <h1>Lista de deseos de {{$user->nombreUsuario}}</h1>
         <table>
-        @foreach($aux as $juego)
+            @foreach($aux as $juego)
             <tr>
                 <th>Nombre juego</th>
                 <th>Espacio requerido</th>

@@ -16,11 +16,6 @@
         <div class="nav">
             <img src="{{ asset('images/logo2.png')}}" alt="" class="logo">
             <a class="debede" href="#">DEBEDE</a>
-            <ul class="nav-list">
-                <li><i class="fas fa-shopping-cart"></i><a href="#">Carrito</a></li>
-                <li><i class="far fa-heart"></i><a href="#">Lista de deseos</a></li>
-                <li><i class="far fa-user"></i></i><a href="#">Mi cuenta</a></li>
-            </ul>
         </div>
     </header>
 
@@ -58,7 +53,7 @@
                 <input type="text" rname="linkJuego" value="" placeholder="{{$juego['linkJuego']}}" required>
             </div>
 
-            <input hidden type="text" class="form-control" name="id" value="{{$juego['id']}}" >
+            <input hidden type="text" class="form-control" name="id" value="{{$juego['id']}}">
             <button type="submit" class="btn btn-success d-grid gap-2 col-2 mx-auto color3">Cambiar datos</button>
         </form>
     </div>

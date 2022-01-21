@@ -13,9 +13,7 @@
     <header>
         <div class="nav">
             <img src="{{ asset('images/logo2.png')}}" alt="" class="logo">
-            <ul class="nav-list">
-                <li><a href="#">Ayuda</a></li>
-            </ul>
+            <a class="debede" href="#">DEBEDE</a>
         </div>
     </header>
 

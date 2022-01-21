@@ -17,9 +17,10 @@
             <img src="{{ asset('images/logo2.png')}}" alt="" class="logo">
             <a class="debede" href="#">DEBEDE</a>
             <ul class="nav-list">
-                <li><i class="fas fa-shopping-cart"></i><a href="#">Carrito</a></li>
-                <li><i class="far fa-heart"></i><a href="#">Lista de deseos</a></li>
-                <li><i class="far fa-user"></i></i><a href="#">Mi cuenta</a></li>
+                <li>
+                    <a href="/redirigirPerfil/Id={{$usuario['id']}}" class="profile" class="profile">
+                        <i class="far fa-user"></i>Mi cuenta</a>
+                </li>
             </ul>
         </div>
     </header>
@@ -32,18 +33,18 @@
 
             <div class="txt_field">
                 <h5>Nombre</h5>
-                <input type="text" name="nombreJuego" value="" required >
+                <input type="text" name="nombreJuego" value="" required>
             </div>
 
 
             <div class="txt_field">
                 <h5>Restricción edad</h5>
-                <input type="number" name="edadRestriccion" value="" min="1" max="18"required>
+                <input type="number" name="edadRestriccion" value="" min="1" max="18" required>
             </div>
 
             <div class="txt_field">
                 <h5>Almacenamiento</h5>
-                <input type="number" name="contraseña"  name="almacenamiento" value="" min="1" max="9999" required>
+                <input type="number" name="contraseña" name="almacenamiento" value="" min="1" max="9999" required>
             </div>
 
             <div class="txt_field">
@@ -53,7 +54,7 @@
 
             <div class="txt_field">
                 <h5>Género</h5>
-                <select name="format" id="format"name="idGenero" id="idGenero">
+                <select name="format" id="format" name="idGenero" id="idGenero">
                     @foreach ($genero as $gen)
                     <option value="{{$gen->id}}">{{$gen->nombreGenero}}</option>
                     @endforeach

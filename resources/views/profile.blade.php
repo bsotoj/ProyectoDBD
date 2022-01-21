@@ -13,14 +13,15 @@
 </head>
 
 <body>
-<header>
+    <header>
         <div class="nav">
             <img src="{{ asset('images/logo2.png')}}" alt="" class="logo">
             <a class="debede" href="#">DEBEDE</a>
             <ul class="nav-list">
-                <li><i class="fas fa-shopping-cart"></i><a href="#">Carrito</a></li>
-                <li><i class="far fa-heart"></i><a href="/wishListShow/Id={{$user['id']}}">Lista de deseos</a></li>
-                <li><i class="far fa-user"></i></i><a href="#">Mi cuenta</a></li>
+                <li>
+                    <a href="/redirigirPerfil/Id={{$user['id']}}" class="profile" class="profile">
+                        <i class="far fa-user"></i>Mi cuenta</a>
+                </li>
             </ul>
         </div>
     </header>
@@ -36,16 +37,16 @@
                 <div class="links">
                     <div class="link">
                         <a href="/usuarios/Id={{$user['id']}}/editarPerfil" class="modificarUsuario">
-                        <h3><i class="far fa-user"></i>Editar Perfil</h3>
+                            <h3><i class="far fa-user"></i>Editar Perfil</h3>
                         </a>
                     </div>
-                
+
                     <div class="link">
                         <a href="/administrar/Id={{$user['id']}}/admin" class="modificarUsuario">
-                        <h3><i class="fas fa-user-cog"></i>Operaciones Admin</h3>
+                            <h3><i class="fas fa-user-cog"></i>Operaciones Admin</h3>
                         </a>
                     </div>
-                    
+
                     <div class="link">
                         <a href="/carrito" class="carrito">
                             <h3><i class="fas fa-shopping-cart"></i>Carrito</h3>
@@ -53,7 +54,7 @@
                     </div>
                     <div class="link">
 
-                   
+
                         <a href="/wishListShow/Id={{$user['id']}}" class="listaDeseos">
                             <h3><i class="far fa-heart"></i></i>Mi Lista</h3>
                         </a>
@@ -80,15 +81,15 @@
                         <a href="/bibliotecas/Id={{$user['id']}}/editarJuego" class="modificarJuego">
                             <h3><i class="fas fa-gamepad"></i>Modificar Juego</h3>
                         </a>
-                        
+
                     </div>
                     <div class="link">
                         <a href="/" class="cerrarSesion">
-                        <h3><i class="fas fa-sign-out-alt"></i>Cerrar sesión</h3>
+                            <h3><i class="fas fa-sign-out-alt"></i>Cerrar sesión</h3>
                         </a>
                     </div>
                 </div>
-    
+
                 <div class="pro">
                     <a href="/wishList/Id={{$user['id']}}/e" class="usuario">
                         <h2>¡Mira nuestro catálogo!</h2>

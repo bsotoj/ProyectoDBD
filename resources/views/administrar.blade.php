@@ -6,18 +6,19 @@
     <!--Referencia a archivo .css-->
     <link href="{{ asset('css/administrar.style.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
-    
+
 </head>
 
 <body>
-<header>
+    <header>
         <div class="nav">
             <img src="{{ asset('images/logo2.png')}}" alt="" class="logo">
             <a class="debede" href="#">DEBEDE</a>
             <ul class="nav-list">
-                <li><i class="fas fa-shopping-cart"></i><a href="#">Carrito</a></li>
-                <li><i class="far fa-heart"></i><a href="#">Lista de deseos</a></li>
-                <li><i class="far fa-user"></i></i><a href="#">Mi cuenta</a></li>
+                <li>
+                    <a href="/redirigirPerfil/Id={{$user['id']}}" class="profile" class="profile">
+                        <i class="far fa-user"></i>Mi cuenta</a>
+                </li>
             </ul>
         </div>
     </header>

@@ -18,14 +18,14 @@
             <a class="debede" href="#">DEBEDE</a>
         </div>
     </header>
-    
+
     <div class="edit-container">
         <h1>Agregar un nuevo juego</h1>
         <form action="{{route('gameByAdmin')}}" method="POST">
 
             <div class="txt_field">
                 <h5>Nombre del Juego</h5>
-                <input type="text" name="nombreJuego" value="" required >
+                <input type="text" name="nombreJuego" value="" required>
             </div>
 
 

@@ -14,22 +14,15 @@
 </head>
 
 <body>
-    <header>
+<header>
         <div class="nav">
             <img src="{{ asset('images/logo2.png')}}" alt="" class="logo">
             <a class="debede" href="#">DEBEDE</a>
             <ul class="nav-list">
-                <li><a href="/carrito" class="carrito">
-                        <i class="fas fa-shopping-cart"></i>Carrito</li>
-                </a>
-                <li><a href="/listaDeseos" class="listaDeseos">
-                        <i class="far fa-heart"></i>Lista de deseos</li>
-                </a>
                 <li>
-                    <a href='/redirigirPerfil/Id={{$user['id']}}' class="profile" class="profile">
-                        <i class="far fa-user"></i>Mi cuenta
+                    <a href="/redirigirPerfil/Id={{$user['id']}}" class="profile" class="profile">
+                        <i class="far fa-user"></i>Mi cuenta</a>
                 </li>
-                </a>
             </ul>
         </div>
     </header>
