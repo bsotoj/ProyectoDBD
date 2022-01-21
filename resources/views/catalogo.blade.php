@@ -61,7 +61,7 @@
                 <div class="games">
                     <div class="status">
                         <h1>Cátalogo:</h1>
-                        <input type="text" placeholder="Busca un juego">
+                        <input type="text" placeholder="Busca un juego...">
                     </div>
                     <div class="cards">
                         @foreach($juegos as $juego)
