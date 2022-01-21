@@ -5,38 +5,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CSS-->
+    <link href="{{ asset('css/listaDeseos3.style.css') }}" rel="stylesheet">
+    <!-- FontAwesome-->
+    <script src="https://kit.fontawesome.com/3a9c61ce37.js" crossorigin="anonymous"></script>
     <title>DEBEDE</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link href="{{ asset('css/catalogo.style.css') }}" rel="stylesheet">
 </head>
 
 <body>
-    <main>
-        <section class="glass">
-            <div class="games">
-                <div class="status">
-                    <h1>Lista de deseo de {{$user->nombreUsuario}}</h1>
-                    <input type="text" />
-                </div>
-                <div class="cards">
-                    @foreach($aux as $juego)
-                    <div class="card">
-                        <img src="./images/assassins.png" alt="" />
-                        <div class="card-info">
-                            <h2>{{$juego->nombreJuego}}</h2>
-                            <p>Edad de Restricción: {{$juego->edadRestriccion}}</p>
-                            <p>Espacio requerido: {{$juego->almacenamiento}}</p>
-                            <p>Link: {{$juego->linkJuego}}</p>
-                    </div>
-                    @endforeach
-                     <a href='/redirigirPerfil/Id={{$user['id']}}'  class="btn btn-primary">Volver al perfil</a>
+    <header>
+        <div class="nav">
+            <img src="{{ asset('images/logo2.png')}}" alt="" class="logo">
+            <a class="debede" href="#">DEBEDE</a>
+            <ul class="nav-list">
+                <li><i class="fas fa-shopping-cart"></i><a href="#">Carrito</a></li>
+                <li><i class="far fa-heart"></i><a href="/wishListShow/Id={{$user['id']}}" class="listaDeseos">Lista de deseos</a></li>
+                <li><i class="far fa-user"></i></i><a href="#">Mi cuenta</a></li>
+            </ul>
+        </div>
+    </header>
 
-                </div>
-        </section>
-    </main>
-    <div class="circle1"></div>
-    <div class="circle2"></div>
+    <div class="small-container cart-page">
+        <h1>Lista de deseos de {{$user->nombreUsuario}}</h1>
+        <table>
+        @foreach($aux as $juego)
+            <tr>
+                <th>Nombre juego</th>
+                <th>Espacio requerido</th>
+                <th>Edad restricción</th>
+                <th>Link</th>
+                <th>Opciones</th>
+            </tr>
+
+            <tr>
+                <td>{{$juego->nombreJuego}}</td>
+                <td>{{$juego->almacenamiento}}</td>
+                <td>{{$juego->edadRestriccion}}</td>
+                <td>{{$juego->linkJuego}}</td>
+                <td>
+                    <div class="opciones">
+                        <a href="#">
+                            <h3>Quitar de la lista de deseos</h3>
+                        </a>
+                        <a href="#">
+                            <h3>Añadir al carrito</h3>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+
+            @endforeach
+        </table>
+    </div>
 </body>
 
 </html>
