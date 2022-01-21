@@ -19,7 +19,7 @@
             <a class="debede" href="#">DEBEDE</a>
             <ul class="nav-list">
                 <li><i class="fas fa-shopping-cart"></i><a href="#">Carrito</a></li>
-                <li><i class="far fa-heart"></i><a href="#">Lista de deseos</a></li>
+                <li><i class="far fa-heart"></i><a href="/wishListShow/Id={{$user['id']}}">Lista de deseos</a></li>
                 <li><i class="far fa-user"></i></i><a href="#">Mi cuenta</a></li>
             </ul>
         </div>
