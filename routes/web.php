@@ -39,7 +39,7 @@ Route::get('/login', function () {
 
 Route::get('/carrito', function () {
     return view('carrito');
-});
+})->name('carrito');
 
 Route::get('/listaDeseos', function () {
     return view('listaDeseos');
@@ -48,6 +48,7 @@ Route::get('/listaDeseos', function () {
 Route::get('/juego', function () {
     return view('juego');
 });
+Route::get('/vistaJuegosFiltro','JuegoController@viewGenero');
 Route::get('/mejoresJuegos','BibliotecaController@index');
 Route::get('/catalogo','JuegoController@index');
 
@@ -93,7 +94,8 @@ Route::delete('/carteras/delete/{id}','CarteraController@destroy');
 
 //rutas de juegos
 Route::get('/juegos','JuegoController@index')->name('getGames');
-Route::get('/juegos/Id={id}/añadirJuego','JuegoController@newGame');
+Route::get('/juegos/Id={id}/añadirJuego','JuegoController@newGame')->name('genero');
+Route::get('/juegos/Id={id}/genero','JuegoController@viewGenero');
 Route::post('/juegos/create','JuegoController@store');
 Route::post('/crearJuego','JuegoController@crear')->name('nuevoJuego');
 Route::get('/juegos/{id}','JuegoController@show');

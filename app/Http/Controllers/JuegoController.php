@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Validator;
 
 
 
+
 class JuegoController extends Controller
 {
     /**
@@ -23,11 +24,12 @@ class JuegoController extends Controller
 
     public function index()
     {   
+        $genero = Genero::all()->where('delete',FALSE);
         $juegos = Juego::all()->where('delete',FALSE);
         if($juegos->isEmpty()){
             return response()->json([], 204);
         }
-        return view('catalogo',compact('juegos'));    }
+        return view('catalogo',compact('juegos','genero'));    }
     /*
     public function index()
     {
@@ -181,9 +183,18 @@ class JuegoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function viewGenero($id)
     {
-        //
+        
+        $genero = Genero::all()->where('delete',FALSE)
+                                ->where('id',$id);
+        $juegos= array();
+        $juego = Juego::all()->where('delete',FALSE);
+        foreach($genero as $gen){
+            $juego = Juego::find($gen->$id);
+            array_push($juegos,$juego);
+        }
+        //return view('vistaJuegosFiltro',compact('usuario','juegos'));
     }
 
     /**

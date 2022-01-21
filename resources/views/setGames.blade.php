@@ -28,7 +28,7 @@
     <div class="edit-container">
         <h1>Editar juego</h1>
 
-        <form action="{{route('setUserProfile')}}" method="POST">
+        <form action="{{action('VistaControllerJuego@setGameU')}}" method="POST">
             @method('PUT')
 
             <div class="txt_field">
@@ -66,7 +66,7 @@
                 <input type="text" rname="linkJuego" value="" placeholder="{{$juego['linkJuego']}}" required>
             </div>
 
-            <input hidden type="text" class="form-control" name="id" value="{{$usuario['id']}}">
+            <input hidden type="text" class="form-control" >
             <button type="submit" class="btn btn-success d-grid gap-2 col-2 mx-auto color3">Cambiar datos</button>
         </form>
     </div>

@@ -8,6 +8,7 @@ use App\Models\Biblioteca;
 use App\Models\Usuario;
 use App\Models\Juego;
 
+
 class BibliotecaController extends Controller
 {
     /**
@@ -18,6 +19,7 @@ class BibliotecaController extends Controller
     public function index()
     {
         $bibliotecas = Biblioteca::all()->where('delete',FALSE);
+       
         $juegos= array();
         $juego= Juego::all()->where('delete',FALSE);
         foreach($bibliotecas as $biblioteca){

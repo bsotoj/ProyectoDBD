@@ -10,8 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
     <link href="{{ asset('css/catalogo2.style.css') }}" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3a9c61ce37.js" crossorigin="anonymous"></script>
-    <!-- FontAwesome-->
-    <script src="https://kit.fontawesome.com/3a9c61ce37.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -19,28 +17,37 @@
         <div class="nav">
             <img src="{{ asset('images/logo2.png')}}" alt="" class="logo">
             <a class="debede" href="#">DEBEDE</a>
+            <ul class="nav-list">
+                <li><i class="fas fa-shopping-cart"></i><a href="#">Carrito</a></li>
+                <li><i class="far fa-heart"></i><a href="#">Lista de deseos</a></li>
+                <li><i class="far fa-user"></i></i><a href="#">Mi cuenta</a></li>
+            </ul>
         </div>
     </header>
-
+    
     <form action="{{route('getGames')}}" method="GET">
         <main>
             <section class="glass">
                 <div class="dashboard">
 
 
-                   
+                        <div class="link">
+                            <a href="#" class="modificarUsuario">
+                                <h3><i class="fas fa-user-cog"></i>XXX</h3>
+                            </a>
+                        </div>
 
-                    <div class="link">
-                        <a href="/" class="cerrarSesion">
-                            <h3><i class="fas fa-sign-out-alt"></i>Cerrar sesión</h3>
-                        </a>
+                        <div class="link">
+                            <a href="/" class="cerrarSesion">
+                                <h3><i class="fas fa-sign-out-alt"></i>Cerrar sesión</h3>
+                            </a>
+                        </div>
                     </div>
-                </div>
 
                 </div>
                 <div class="games">
                     <div class="status">
-                        <h1>Mejores Juegos:</h1>
+                        <h1>Juegos Filtro: {{}}</h1>
                         <input type="text" placeholder="Busca un juego">
                     </div>
                     <div class="cards">
@@ -52,7 +59,7 @@
                                 <h3>Juego: {{$juego->nombreJuego}}</h3>
                                 <h3>Edad Recomendada: {{$juego->edadRestriccion}}</h3>
                                 <a href="/juego" class="btn btn-primary">
-                                    <h2><i class="fa fa-search"></i>Ver</h2>
+                                    <h2>Ver</h2>
                                 </a>
                             </div>
                         </div>
@@ -62,7 +69,7 @@
         </main>
         <div class="circle1"></div>
         <div class="circle2"></div>
-
+        
     </form>
 </body>
 
