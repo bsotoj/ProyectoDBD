@@ -26,7 +26,7 @@
                         <i class="far fa-heart"></i>Lista de deseos</li>
                 </a>
                 <li>
-                    <a href="/profile" class="profile">
+                    <a href='/redirigirPerfil/Id={{$user['id']}}' class="profile" class="profile">
                         <i class="far fa-user"></i>Mi cuenta
                 </li>
                 </a>
