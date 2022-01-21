@@ -79,7 +79,7 @@ Route::get('/adminGames/Id={id}/post','VistaAdminController@catalogoActualJuegos
 Route::post('/adminGames/create','VistaAdminController@adminCreateGame')->name('gameByAdmin');
 Route::get('adminGame/editarJuego','VistaAdminController@juegosCandidatosEditar');
 Route::get('/adminGames/set','VistaAdminController@prepararJuegoModificar');
-Route::put('/adminGames/setGame','VistaAdminController@adminSetGame');
+Route::put('/adminGames/setGame','VistaAdminController@adminSetGame')->name('editarJuego');
 Route::get('/adminGame/Id={id}/delete','VistaAdminController@catalogoParaBorrar');
 Route::delete('/adminGame/softDelete','VistaAdminController@gameSoftDelete');
 

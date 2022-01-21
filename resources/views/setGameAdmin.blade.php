@@ -27,7 +27,7 @@
     <div class="delete-container">
         <h1>Editar juego</h1>
 
-        <form action="{{route('setUserProfile')}}" method="POST">
+        <form action="{{route('editarJuego')}}" method="POST">
             @method('PUT')
 
             <div class="txt_field">
@@ -35,12 +35,14 @@
                 <input type="text" name="nombre" value="" placeholder="{{$juego['nombreJuego']}}" required>
             </div>
 
-
             <div class="txt_field">
-                <h5>Id género</h5>
-                <input type="number" name="idGenero" value="" placeholder="{{$juego['idGenero']}}" required>
+                <h5>Género</h5>
+                <select name="idGenero" id="idGenero">
+                    @foreach ($generos as $genero)
+                    <option value="{{$genero->id}}">{{$genero->nombreGenero}}</option>
+                    @endforeach
+                </select>
             </div>
-
             <div class="txt_field">
                 <h5>Edad restricción</h5>
                 <input type="number" name="edadRestriccion" value="" placeholder="{{$juego['edadRestriccion']}}" required>
@@ -48,7 +50,7 @@
 
             <div class="txt_field">
                 <h5>Almacenamiento</h5>
-                <input type="text" ame="almacenamiento" value="" placeholder="{{$juego['almacenamiento']}}" required>
+                <input type="number" ame="almacenamiento" value="" placeholder="{{$juego['almacenamiento']}}" required>
             </div>
 
             <div class="txt_field">
